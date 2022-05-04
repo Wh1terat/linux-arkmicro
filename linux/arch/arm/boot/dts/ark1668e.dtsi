@@ -521,7 +521,9 @@
 			compatible = "arkmicro,ark1668e-i2s";
 			reg = <0xe4000000 0x1000
 					0xe4900000 0x1000>;
-			//external-adc;
+#ifdef I2S_USE_EXTERNAL_CODEC
+			external-adc;
+#endif
 			interrupts = <GIC_SPI 6 IRQ_TYPE_LEVEL_HIGH>;
 			nco-reg = <0xe4900174>;
 			dmas = <&dmac 0 1 0>, <&dmac 1 0 1>;
@@ -534,7 +536,9 @@
 			compatible = "arkmicro,ark1668e-i2s";
 			reg = <0xe4200000 0x1000
 					0xE4900000 0x1000>;
-			//external-dac;
+#ifdef I2S_USE_EXTERNAL_CODEC
+			external-dac;
+#endif
 			interrupts = <GIC_SPI 19 IRQ_TYPE_LEVEL_HIGH>;
 			nco-reg = <0xe490019c>;
 			dmas = <&dmac 25 1 0>, <&dmac 26 0 1>;

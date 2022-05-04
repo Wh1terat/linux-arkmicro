@@ -208,7 +208,7 @@ static unsigned char *get_data_addr(unsigned char regaddr)
 	return addr;
 }
 
-#if 0
+#if 1
 static int register_write(unsigned char regaddr, unsigned char regval)
 {
 	unsigned char *data_addr;
@@ -295,7 +295,6 @@ static int bd37033_select_input_channel(struct bd37033_data *bd, unsigned char v
 	unsigned char input_select = select_data.select_data_input_selector;
 	unsigned char mute_state = select_data.select_data_input_gain >> 7;
 	int ret = -1;
-
 	switch(value)
 	{
 		case BD37033_INPUT_SELECTOR_A_SINGLE:
@@ -313,7 +312,7 @@ static int bd37033_select_input_channel(struct bd37033_data *bd, unsigned char v
 			ret = bd37033_write_byte(client, client->addr, SELECT_ADDR_INPUT_SELECTOR, input_select);
 			if(ret == 0)
 				select_data.select_data_input_selector = input_select;
-			bd37033_set_mute(bd,mute_state);
+			bd37033_set_mute(bd,mute_state);//mute_state
 			break;
 		case BD37033_INPUT_SELECTOR_FULL_DIFF_TYPE_NEGATIVE_INPUT:
 			input_select &= ~(0x1<<7);
@@ -624,7 +623,7 @@ int bd37033_sys_reset(struct bd37033_data *bd)
 }
 
 int bd37033_set_default(struct bd37033_data *bd)
-{//printk("==============[%s]:[ %d]\n", __FUNCTION__, __LINE__);		
+{
 	//input channel select
 	if(mp.input_channel >= 0)
 		bd37033_set_stream(mp.input_channel);
@@ -656,7 +655,7 @@ int bd37033_set_default(struct bd37033_data *bd)
 	if (!of_property_read_u32(bd->client->dev.of_node, "rrout-gain", &bd->dac.vol_flout))
 		mp.rr_gain = bd->dac.vol_flout;
 	//printk("dac.vol_flout = %d dac.vol_flout = %d dac.vol_flout = %d dac.vol_flout = %d\n",bd->dac.vol_flout,bd->dac.vol_flout,bd->dac.vol_flout,bd->dac.vol_flout);
-	printk("mp.fl_gain = %d mp.fr_gain = %d mp.rl_gain = %d mp.rr_gain = %d\n",mp.fl_gain,mp.fr_gain,mp.rl_gain,mp.rr_gain);
+	//printk("mp.fl_gain = %d mp.fr_gain = %d mp.rl_gain = %d mp.rr_gain = %d\n",mp.fl_gain,mp.fr_gain,mp.rl_gain,mp.rr_gain);
 	if(mp.fl_gain >= 0)
 		bd37033_set_fader(SELECT_ADDR_FADER_1CH_FRONT,mp.fl_gain);
 	if(mp.fr_gain >= 0)
@@ -695,7 +694,7 @@ int bd37033_set_default(struct bd37033_data *bd)
 
 
 static void bd37033_init(struct bd37033_data *bd)
-{//printk("==============[%s]:[ %d]\n", __FUNCTION__, __LINE__);
+{
 	struct i2c_client *client = NULL;
 
 	if (bd == NULL)
@@ -832,7 +831,6 @@ static int set_stream (struct snd_kcontrol * kcontrol, struct snd_ctl_elem_value
 		return 0;
 
 	input_ch = ucontrol->value.integer.value[0];
-
 	ret = bd37033_set_stream(input_ch);
 
 	return ret;
@@ -1955,7 +1953,7 @@ static int bd37033_startup(struct snd_pcm_substream *substream,struct snd_soc_da
 	struct snd_soc_dai *codec_dai = rtd->codec_dai;
 
 	/* variable MCLK */
-	ret = snd_soc_dai_set_sysclk(codec_dai, 0, 0, SND_SOC_CLOCK_IN);
+//	ret = snd_soc_dai_set_sysclk(codec_dai, 0, 0, SND_SOC_CLOCK_IN);
 
 	return ret;
 }
@@ -1965,7 +1963,7 @@ static int bd37033_hw_params(
 {
 	void __iomem 	*Sys_base;
 	unsigned int val;
-	
+#if 0
 	Sys_base = ioremap(0xe4900000, 0x1ff);
 
 	//cancel pop noise
@@ -2036,6 +2034,7 @@ static int bd37033_hw_params(
 		writel(val, Sys_base + 0x174);
 	}
 	iounmap(Sys_base);
+#endif
 	return 0;
 }
 
@@ -2149,6 +2148,62 @@ static struct snd_soc_component_driver soc_component_dev_bd37033= {
 //	iounmap(Sys_base);
 //}
 
+static ssize_t bd37033_store(struct device *dev, struct device_attribute *attr, const char *buf, size_t count)
+{
+	int val=0, flag=0;
+	u8 i=0, reg, num, value_w, value_r;
+
+	struct bd37033_data *bd = dev_get_drvdata(dev);
+	val = simple_strtol(buf, NULL, 16);
+	flag = (val >> 16) & 0xFF;
+
+	if (flag) {
+		reg = (val >> 8) & 0xFF;
+		value_w = val & 0xFF;
+		printk("\nWrite: start REG:0x%02x,val:0x%02x,count:0x%02x\n", reg, value_w, flag);
+		while(flag--) {
+			register_write(reg, value_w);
+			printk("Write 0x%02x to REG:0x%02x\n", value_w, reg);
+			reg++;
+		}
+	} else {
+		reg = (val >> 8) & 0xFF;
+		num = val & 0xff;
+		printk("\nRead: start REG:0x%02x,count:0x%02x\n", reg, num);
+		do {
+			value_r = 0;
+			//es7210_read(reg, &value_r, bd->client);
+			value_r = register_read(reg);
+			printk("REG[0x%02x]: 0x%02x;  ", reg, value_r);
+			reg++;
+			i++;
+			if ((i==num) || (i%4==0))	printk("\n");
+		} while (i<num);
+	}
+
+	return count;
+}
+
+static ssize_t bd37033_show(struct device *dev, struct device_attribute *attr, char *buf)
+{
+	printk("echo flag|reg|val > bd37033\n");
+	printk("eg read star addres=0x06,count 0x10:echo 0610 >bd37033\n");
+	printk("eg write star addres=0x90,value=0x3c,count=4:echo 4903c >bd37033\n");
+	//printk("eg write value:0xfe to address:0x06 :echo 106fe > bd37033\n");
+	return 0;
+}
+static DEVICE_ATTR(bd37033, 0644, bd37033_show, bd37033_store);
+
+static struct attribute *bd37033_debug_attrs[] = {
+	&dev_attr_bd37033.attr,
+	NULL,
+};
+
+static struct attribute_group bd37033_debug_attr_group = {
+	.name   = "bd37033_debug",
+	.attrs  = bd37033_debug_attrs,
+};
+
 static int bd37033_drv_probe(struct i2c_client *client, const struct i2c_device_id *id)
 { //printk("==============[%s]:[ %d]\n", __FUNCTION__, __LINE__);
 	struct bd37033_data *bd;
@@ -2173,14 +2228,23 @@ static int bd37033_drv_probe(struct i2c_client *client, const struct i2c_device_
 //	ret =  snd_soc_register_codec(&client->dev,
 //				&soc_codec_dev_bd37033, bd37033_dai,
 //				ARRAY_SIZE(bd37033_dai));
+//	ret =  devm_snd_soc_register_component(&client->dev,
+//				&soc_component_dev_bd37033, bd37033_dai,
+//				ARRAY_SIZE(bd37033_dai));
 	ret =  devm_snd_soc_register_component(&client->dev,
-				&soc_component_dev_bd37033, bd37033_dai,
-				ARRAY_SIZE(bd37033_dai));
+				&soc_component_dev_bd37033, NULL,
+				0);
 	if (ret < 0) {
 		dev_err(&client->dev, "Failed to register codec: %d\n", ret);
 	}
-	return ret;
+
+	ret = sysfs_create_group(&client->dev.kobj, &bd37033_debug_attr_group);
+	if (ret) {
+		pr_err("failed to create attr group\n");
+	}
+
 	//printk(KERN_INFO "==============>%s end\n", __FUNCTION__);
+	return ret;
 }
 
 static int bd37033_drv_remove(struct i2c_client *client)

@@ -59,8 +59,10 @@ static int ark1668e_i2s_startup(
 	//unsigned int i2s_master = SND_SOC_DAIFMT_I2S | SND_SOC_DAIFMT_CBS_CFS;
 	//snd_soc_dai_set_fmt(dai, i2s_master);
 	/*default:internal codec:ark1668e-i2s-slave*/
-	unsigned int i2s_slave = SND_SOC_DAIFMT_I2S | SND_SOC_DAIFMT_CBM_CFM;
-	snd_soc_dai_set_fmt(dai, i2s_slave);
+	if(!i2s->extdac){
+		unsigned int i2s_slave = SND_SOC_DAIFMT_I2S | SND_SOC_DAIFMT_CBM_CFM;
+		snd_soc_dai_set_fmt(dai, i2s_slave);
+	}
 
 	/* reset */
 	writel(SACR0_RST, i2s->base + I2S_SACR0);

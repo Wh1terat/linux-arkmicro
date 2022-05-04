@@ -1,10 +1,13 @@
 // SPDX-License-Identifier: GPL-2.0
 /dts-v1/;
-#include "ark1668e.dtsi"
-#include "ark1668e-pinctrl.dtsi"
 
 //#define I2S_USE_EXTERNAL_CODEC
 //#define ARK1668E_I2S_FULL_DUPLEX_MODE
+
+
+#include "ark1668e.dtsi"
+#include "ark1668e-pinctrl.dtsi"
+
 
 / {
 	i2c-gpio-0 {
@@ -120,7 +123,7 @@
 			"MIC2", "Mic Jack";
 
 #ifdef I2S_USE_EXTERNAL_CODEC
-		//simple-audio-card,aux-devs = <&amp>;
+		simple-audio-card,aux-devs = <&amp>;
 
 		simple-audio-card,format = "i2s";
 		simple-audio-card,cpu {
