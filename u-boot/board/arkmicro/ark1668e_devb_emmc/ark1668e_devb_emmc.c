@@ -5,6 +5,7 @@
 #include <asm-generic/gpio.h>
 #include <asm/arch/ark-common.h>
 #include <linux/usb/musb.h>
+#include <asm/io.h>
 
 DECLARE_GLOBAL_DATA_PTR;
 
@@ -48,6 +49,110 @@ DECLARE_GLOBAL_DATA_PTR;
 
 #define CHECKDATA_ERROR          	2
 
+/***************************add by wdz*****************************/
+
+#define GPIO_SWPORTA_DR							    0x00
+#define GPIO_SWPORTA_DDR							0x04
+#define GPIO_SWPORTA_CTL							0x08
+#define GPIO_SWPORTA_INTEN							0x30
+#define GPIO_SWPORTA_INTMASK						0x34
+#define GPIO_SWPORTA_INTTYPE_LEVEL					0x38
+#define GPIO_SWPORTA_INT_POLARITY					0x3c
+#define GPIO_SWPORTA_INTSTATUS						0x40
+#define GPIO_SWPORTA_RAW_INTSTATUS					0x44
+#define GPIO_SWPORTA_DEBOUNCE						0x48
+#define GPIO_SWPORTA_EOI						    0x4c
+#define GPIO_SWPORTA_EXT_PORTA						0x50
+#define GPIO_SWPORTA_EXT_PORTB						0x54
+#define GPIO_SWPORTA_EXT_PORTC						0x58
+#define GPIO_SWPORTA_EXT_PORTD						0x5c
+#define GPIO_SWPORTA_LS_SYNC						0x60
+#define GPIO_SWPORTA_ID_CODE						0x64
+#define GPIO_SWPORTA_INT_BOTHEDGE					0x68
+#define GPIO_SWPORTA_VER_ID_CODE					0x6C
+#define GPIO_SWPORTA_CONFIG_REG2					0x70
+#define GPIO_SWPORTA_CONFIG_REG1					0x74
+
+#define GPIO_BANK_NUM       32
+
+static unsigned long gpio_bases[] = {
+	CONFIG_GPIO_BASEADDR,
+    CONFIG_GPIO_BASEADDR + 0x80,
+    CONFIG_GPIO_BASEADDR + 0x100,
+    CONFIG_GPIO_BASEADDR + 0x180,
+	CONFIG_GPIO_BASEADDR + 0x200,
+	CONFIG_GPIO_BASEADDR + 0x280,
+};
+
+static inline int GPIO_BANK(unsigned gpio)
+{
+    return gpio >> 5;
+}
+
+static inline int GPIO_OFFSET(unsigned gpio)
+{
+    return gpio & 0x1F;
+}
+
+static inline void *GPIO_MODREG(unsigned gpio)
+{
+    return (void*)(gpio_bases[GPIO_BANK(gpio)] + GPIO_SWPORTA_DDR);
+}
+
+static inline void *GPIO_WDATAREG(unsigned gpio)
+{
+    return (void*)(gpio_bases[GPIO_BANK(gpio)] + GPIO_SWPORTA_DR);
+}
+
+static inline void *GPIO_RDATAREG(unsigned gpio)
+{
+    return (void*)(gpio_bases[GPIO_BANK(gpio)] + GPIO_SWPORTA_EXT_PORTA);
+}
+
+int arke_gpio_request(unsigned gpio, const char *label)
+{
+	return 0;
+}
+
+int arke_gpio_free(unsigned gpio)
+{
+	return 0;
+}
+
+int arke_gpio_direction_input(unsigned gpio)
+{
+    writel(readl(GPIO_MODREG(gpio)) & ~(1 << GPIO_OFFSET(gpio)), GPIO_MODREG(gpio));
+
+    return 0;
+}
+
+int arke_gpio_direction_output(unsigned gpio, int value)
+{
+    writel(readl(GPIO_MODREG(gpio)) | (1 << GPIO_OFFSET(gpio)), GPIO_MODREG(gpio));
+    if (value)
+        writel(readl(GPIO_WDATAREG(gpio)) | (1 << GPIO_OFFSET(gpio)), GPIO_WDATAREG(gpio));
+    else
+        writel(readl(GPIO_WDATAREG(gpio)) & ~(1 << GPIO_OFFSET(gpio)), GPIO_WDATAREG(gpio));
+
+    return 0;
+}
+
+int arke_gpio_get_value(unsigned gpio)
+{
+    return !!(readl(GPIO_RDATAREG(gpio)) & (1 << GPIO_OFFSET(gpio)));
+}
+
+int arke_gpio_set_value(unsigned gpio, int value)
+{
+    if (value)
+        writel(readl(GPIO_WDATAREG(gpio)) | (1 << GPIO_OFFSET(gpio)), GPIO_WDATAREG(gpio));
+    else
+        writel(readl(GPIO_WDATAREG(gpio)) & ~(1 << GPIO_OFFSET(gpio)), GPIO_WDATAREG(gpio));
+
+    return 0;
+}
+
+/************************add by wdz*************************/
 
 extern const struct musb_platform_ops ark_musb_ops;
 
@@ -557,6 +662,17 @@ int board_late_init(void)
 	musb_register(&musb_platform_data, NULL, (void *)MUSB_BASE);
 #endif
 
+	/**************************add by wdz************************/
+	arke_gpio_direction_output(21,0);
+        arke_gpio_direction_output(23,1);
+        arke_gpio_direction_output(22,1);
+
+        arke_gpio_direction_output(190,1);
+
+        mdelay(50);
+        arke_gpio_direction_output(21,1);
+        mdelay(100);
+	/**************************add by wdz************************/
 	update_from_ota = env_get("update_from_ota");	
     printf("update_from_ota %s\n",update_from_ota);
  	need_update = env_get("need_update");
