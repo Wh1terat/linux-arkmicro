@@ -14,9 +14,10 @@ CONFIG_DEBUG_UART_CLOCK=24000000
 CONFIG_TARGET_ARK1668E_DEVB_EMMC=y
 CONFIG_SPI_CS0_GPIO=101
 CONFIG_EMMC_DEV_PART="1"
-CONFIG_EMMCPARTS_DEFAULT="mmcblk0:512k(bootstrap),1m(bootloader),1m(bootloader_bak),2m(bootloaderenv),5m(bootanimation),4m(reversingtrack),30m(userdata),1m(fdt),12m(kernel),2048m(rootfs),200m(reserved),1m(fdt_b),12m(kernel_b),2048m(rootfs_b),-(ota)"
+CONFIG_EMMCPARTS_DEFAULT="mmcblk0:512k(bootstrap),1m(bootloader),1m(bootloader_bak),2m(bootloaderenv),10m(bootanimation),4m(reversingtrack),30m(userdata),1m(fdt),12m(kernel),2048m(rootfs),200m(reserved),1m(fdt_b),12m(kernel_b),2048m(rootfs_b),-(ota)"
 CONFIG_DEFAULT_DEVICE_TREE="ark1668e_devb_emmc"
 CONFIG_DEBUG_UART=y
+# CONFIG_LOCALVERSION_AUTO is not set
 # CONFIG_SYS_MALLOC_F is not set
 # CONFIG_EXPERT is not set
 # CONFIG_ARCH_FIXUP_FDT_MEMORY is not set
