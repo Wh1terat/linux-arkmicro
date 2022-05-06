@@ -43,7 +43,7 @@
 			reset-gpio = <&gportf 27 0>;
 			reg = <0x59>; /* i2c address(7 bits) */
 			default-channel = <0>;
-            carback-config = <1>;
+            carback-config = <0>;
 			port {
 				ark7116_0: endpoint@0{
 					remote-endpoint = <&itu_1>;
@@ -231,9 +231,9 @@
 &ituin {
 	status = "okay";
 	channel = <1>;             //for no pinctr
-	x_pos = <0>;
+	x_pos = <880>;
 	y_pos = <0>;
-	//width = <800>;          //if this line is commented out, it is displayed in full screen
+	width = <1040>;          //if this line is commented out, it is displayed in full screen
 	height = <720>;
 
 	port {
@@ -340,7 +340,7 @@
 
 				cy,inp_dev_name = "cyttsp5_mt";
 				/* CY_MT_FLAG_FLIP | CY_MT_FLAG_INV_X | CY_MT_FLAG_INV_Y */
-				cy,flags = <0x0>;//<0x38>;
+				cy,flags = <0x20>;//<0x38>;
 				cy,abs =
 					/* ABS_MT_POSITION_X, CY_ABS_MIN_X, CY_ABS_MAX_X, 0, 0 */
 					<0x35 0 1920 0 0
