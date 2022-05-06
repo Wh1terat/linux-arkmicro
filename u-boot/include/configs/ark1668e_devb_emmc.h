@@ -269,7 +269,7 @@
 	"fdt_part=fdt\0" \
 	"fdtsize=0x8000\0" \
 	"kernelsize=0x400000\0" \
-	"bootanimationsize=0x200000\0" \
+	"bootanimationsize=0xa00000\0" \
 	EMMCARGS
 #if 0
 #define CONFIG_BOOTCOMMAND	\
