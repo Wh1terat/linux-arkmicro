@@ -15,7 +15,6 @@
 #define SCREEN_HEIGHT	480
 
 #define TRACK_FRAME_NUM		2
-
 struct carback_context {
 		int gpio_id;
         struct device *dev;
@@ -32,6 +31,7 @@ struct carback_context {
 		int carback_signal;
 		int carback_count;
 		int track_setting;
+        int track_append_setting;
 		int track_data_status;
 		int track_frame_delay;
         wait_queue_head_t carback_waiq;

@@ -231,6 +231,7 @@ unsigned int car_pic_id;
 unsigned int track2_pic_id;//small track for vbox
 extern struct carback_context* g_carback_context;
 extern int first_draw_track;
+extern int track_switch_id;
 
 static user2_header* g_pheader2_buf;
 track_context2 *g_ptrack_context2 = NULL;
@@ -254,8 +255,8 @@ static void show_header_info(void)
 		return;
 	}
 
-	ARKTRACK_DBGPRTK("header_buf ===>identity=0x%0x track_total=%d car_total=%d  signal_total= %d radar_total=%d file_type=0x%0x file_size=0x%0x\n",\
-								p->identity,p->track_total,p->car_total,p->signal_total,p->radar_total,p->file_type,p->file_size);
+	ARKTRACK_DBGPRTK("header_buf ===>identity=0x%0x track_total=%d car_total=%d  signal_total= %d append1 = %d append2 = %d radar_total=%d file_type=0x%0x file_size=0x%0x\n",\
+								p->identity,p->track_total,p->car_total,p->signal_total,p->append1_total,p->append2_total,p->radar_total,p->file_type,p->file_size);
 
 	ARKTRACK_DBGPRTK("track rect ===> pos_x=%d  pos_y=%d  width=%d  height=%d\n",p->track_rect.pos_x,\
 								p->track_rect.pos_y,p->track_rect.width,p->track_rect.height);
@@ -263,6 +264,10 @@ static void show_header_info(void)
 								p->car_rect.pos_y,p->car_rect.width,p->car_rect.height);
 	ARKTRACK_DBGPRTK("signal rect   ===> pos_x=%d  pos_y=%d  width=%d  height=%d\n",p->signal_rect.pos_x,\
 								p->signal_rect.pos_y,p->signal_rect.width,p->signal_rect.height);
+	ARKTRACK_DBGPRTK("append1 rect   ===> pos_x=%d  pos_y=%d  width=%d  height=%d\n",p->append1_rect.pos_x,\
+								p->append1_rect.pos_y,p->append1_rect.width,p->append1_rect.height);
+	ARKTRACK_DBGPRTK("append2 rect   ===> pos_x=%d  pos_y=%d  width=%d  height=%d\n",p->append2_rect.pos_x,\
+								p->append2_rect.pos_y,p->append2_rect.width,p->append2_rect.height);
 	ARKTRACK_DBGPRTK("radar0 rect===> pos_x=%d  pos_y=%d  width=%d  height=%d\n",p->radar_rect[0].pos_x,\
 								p->radar_rect[0].pos_y,p->radar_rect[0].width,p->radar_rect[0].height);
 	ARKTRACK_DBGPRTK("radar1 rect===> pos_x=%d  pos_y=%d  width=%d  height=%d\n",p->radar_rect[1].pos_x,\
@@ -280,6 +285,10 @@ static void show_header_info(void)
 								p->car[0].image_type,p->car[0].image_store_id,p->car[0].image_id,p->car[0].image_offset,p->car[0].image_size);
 	ARKTRACK_DBGPRTK("signal[0]   image===> image_type=%d  image_store_id=%d  image_id=0x%0x  image_offset=0x%0x image_size=0x%0x\n",\
 								p->signal[0].image_type,p->signal[0].image_store_id,p->signal[0].image_id,p->signal[0].image_offset,p->signal[0].image_size);
+	ARKTRACK_DBGPRTK("append1[0]   image===> image_type=%d  image_store_id=%d  image_id=0x%0x  image_offset=0x%0x image_size=0x%0x\n",\
+								p->append1[0].image_type,p->append1[0].image_store_id,p->append1[0].image_id,p->append1[0].image_offset,p->append1[0].image_size);
+	ARKTRACK_DBGPRTK("append2[0]   image===> image_type=%d  image_store_id=%d  image_id=0x%0x  image_offset=0x%0x image_size=0x%0x\n",\
+								p->append2[0].image_type,p->append2[0].image_store_id,p->append2[0].image_id,p->append2[0].image_offset,p->append2[0].image_size);
  	ARKTRACK_DBGPRTK("radar[1] image===> image_type=%d  image_store_id=%d  image_id=0x%0x  image_offset=0x%0x image_size=0x%0x\n",\
 								p->radar[1].image_type,p->radar[1].image_store_id,p->radar[1].image_id,p->radar[1].image_offset,p->radar[1].image_size);
 	ARKTRACK_DBGPRTK("track2[0]image===> image_type=%d  image_store_id=%d  image_id=0x%0x  image_offset=0x%0x image_size=0x%0x\n",\
@@ -505,6 +514,53 @@ int set_disp_signal_id(unsigned int disp_signal_id)
 	//printk(KERN_ALERT "++++++p->disp_signal_id = %d\n" ,p->disp_signal_id);
 	return 0;
 }
+
+int set_disp_append1_id(unsigned int disp_append1_id)
+{
+	static unsigned int pre_id = IMAGE_ID_NONE;
+	track_context *p = g_ptrack_context;
+
+	if(p == NULL){
+		printk(KERN_ALERT "%s: g_ptrack_context NULL, error!\n", __FUNCTION__);
+		return -1;
+	}
+
+	if(disp_append1_id >= APPEND1_MAX && disp_append1_id < IMAGE_ID_NONE){
+		printk(KERN_ERR "set_disp_append1_id image id error!\n" );
+		return -1;
+	}
+	
+	if(pre_id != disp_append1_id || IMAGE_ID_NONE == disp_append1_id){
+		p->disp_append1_id = disp_append1_id;
+		pre_id = disp_append1_id;
+	}
+	//printk(KERN_ALERT "++++++p->disp_append1_id = %d\n" ,p->disp_append1_id);
+	return 0;
+}
+
+int set_disp_append2_id(unsigned int disp_append2_id)
+{
+	static unsigned int pre_id = IMAGE_ID_NONE;
+	track_context *p = g_ptrack_context;
+
+	if(p == NULL){
+		printk(KERN_ALERT "%s: g_ptrack_context NULL, error!\n", __FUNCTION__);
+		return -1;
+	}
+
+	if(disp_append2_id >= APPEND2_MAX && disp_append2_id < IMAGE_ID_NONE){
+		printk(KERN_ERR "set_disp_append2_id image id error!\n" );
+		return -1;
+	}
+	
+	if(pre_id != disp_append2_id || IMAGE_ID_NONE == disp_append2_id){
+		p->disp_append2_id = disp_append2_id;
+		pre_id = disp_append2_id;
+	}
+	//printk(KERN_ALERT "++++++p->disp_append2_id = %d\n" ,p->disp_append2_id);
+	return 0;
+}
+
 int set_disp_track2_id(unsigned int track2_id)
 {
 	static unsigned int pre_id = IMAGE_ID_NONE;
@@ -604,7 +660,7 @@ static int init_track_context(unsigned int addr)
 
 	show_header_info();
 
-	if(check_header_info < 0){
+	if(check_header_info() < 0){
 
 		printk(KERN_ERR "identity info error!\n");
 		return ret;
@@ -653,6 +709,30 @@ static int init_track_context(unsigned int addr)
 		}
 		g_ptrack_context->disp_signal_buf = p;
 		g_ptrack_context->disp_signal_size= size;
+	}
+
+	if(g_pheader_buf->append1_total> 0){
+		size = 4* g_pheader_buf->append1_rect.width * g_pheader_buf->append1_rect.height;
+		p = vzalloc(size);
+		if (p == NULL) {
+			printk(KERN_ERR "%s %d: failed to allocate car\n",__FUNCTION__, __LINE__);
+			ret = -ENOMEM;
+			goto err_car;
+		}
+		g_ptrack_context->disp_append1_buf = p;
+		g_ptrack_context->disp_append1_size= size;
+	}
+
+	if(g_pheader_buf->append2_total> 0){
+		size = 4* g_pheader_buf->append2_rect.width * g_pheader_buf->append2_rect.height;
+		p = vzalloc(size);
+		if (p == NULL) {
+			printk(KERN_ERR "%s %d: failed to allocate car\n",__FUNCTION__, __LINE__);
+			ret = -ENOMEM;
+			goto err_car;
+		}
+		g_ptrack_context->disp_append2_buf = p;
+		g_ptrack_context->disp_append2_size= size;
 	}
 
 	if(g_pheader_buf->radar_total > 0){
@@ -868,6 +948,12 @@ static unsigned int get_picture_addr(enum image_type type, unsigned int id)
 	else if(type == IMAGE_TYPE_SIGNAL){
 		offset = g_pheader_buf->signal[id].image_offset;
 	}
+	else if(type == IMAGE_TYPE_APPEND1){
+		offset = g_pheader_buf->append1[id].image_offset;
+	}
+	else if(type == IMAGE_TYPE_APPEND2){
+		offset = g_pheader_buf->append2[id].image_offset;
+	}
 	else if(type == IMAGE_TYPE_RADAR){
 		for(i = 0; i < RADAR_MAX;i++){
 			if(g_pheader_buf->radar[i].image_id == id){
@@ -897,6 +983,12 @@ static unsigned int get_picture_offset(enum image_type type, unsigned int id)
 	}
 	else if(type == IMAGE_TYPE_SIGNAL){
 		offset = g_pheader_buf->signal[id].image_offset;
+	}
+	else if(type == IMAGE_TYPE_APPEND1){
+		offset = g_pheader_buf->append1[id].image_offset;
+	}
+	else if(type == IMAGE_TYPE_APPEND2){
+		offset = g_pheader_buf->append2[id].image_offset;
 	}
 	else if(type == IMAGE_TYPE_RADAR){
 		for(i = 0; i < RADAR_MAX;i++){
@@ -928,6 +1020,12 @@ static unsigned int get_picture_size(enum image_type type, unsigned int id)
 	}
 	else if(type == IMAGE_TYPE_SIGNAL){
 		image_size = g_pheader_buf->signal[id].image_size;
+	}
+	else if(type == IMAGE_TYPE_APPEND1){
+		image_size = g_pheader_buf->append1[id].image_size;
+	}
+	else if(type == IMAGE_TYPE_APPEND2){
+		image_size = g_pheader_buf->append2[id].image_size;
 	}
 	else if(type == IMAGE_TYPE_RADAR){
 		for(i = 0; i < RADAR_MAX;i++){
@@ -1096,6 +1194,18 @@ static int copy_pic_data(void *dest,void *src,enum image_type type,unsigned int 
 		pos_x = p->signal_rect.pos_x;
 		pos_y = p->signal_rect.pos_y;	
 	}
+	else if(type == IMAGE_TYPE_APPEND1){
+		width = p->append1_rect.width;
+		height= p->append1_rect.height;
+		pos_x = p->append1_rect.pos_x;
+		pos_y = p->append1_rect.pos_y;	
+	}
+	else if(type == IMAGE_TYPE_APPEND2){
+		width = p->append2_rect.width;
+		height= p->append2_rect.height;
+		pos_x = p->append2_rect.pos_x;
+		pos_y = p->append2_rect.pos_y;	
+	}
 	else if(type == IMAGE_TYPE_TRACK2){
 		
 		width = p->track2_rect.width;
@@ -1200,6 +1310,90 @@ static unsigned int subjoin_signal_pic(void *dest)
 	
 	copy_pic_data(dest,dest_signal,IMAGE_TYPE_SIGNAL,p->disp_signal_id,SRC_COVER_DST);
 	last_id = p->disp_signal_id; 
+
+	return fill_size;
+}
+
+static unsigned int subjoin_append1_pic(void *dest)
+{	
+	static unsigned int last_id = IMAGE_ID_NONE;
+	track_context *p = g_ptrack_context;
+	void *dest_append1 = p->disp_append1_buf;
+	unsigned int dest_size  = p->disp_append1_size;
+	unsigned int fill_size = 0;
+	unsigned int source_size;
+	unsigned int source_offset;
+	void *source;
+ 
+	if(p->disp_append1_id  > APPEND1_MAX)
+		return 0;
+	
+	if(first_draw_track) 
+		last_id = IMAGE_ID_NONE;
+		
+	source_offset = get_picture_offset(IMAGE_TYPE_APPEND1,p->disp_append1_id);
+	source_size   = get_picture_size(IMAGE_TYPE_APPEND1,p->disp_append1_id);
+	
+	//printk(KERN_ALERT "++++++ subjoin_append1_pic source_offset=%0x ,source_size=%0x\n",source_offset,source_size );
+	
+	if(source_size == 0 || source_offset < sizeof(user_header)){
+		printk(KERN_ERR "subjoin append1 pic source error, disp_append1_id=0x%0x.\n",p->disp_append1_id);
+		return 0;
+	}
+
+	if(last_id == IMAGE_ID_NONE || last_id != p->disp_append1_id){
+		source = (void*)get_picture_addr(IMAGE_TYPE_APPEND1,p->disp_append1_id);
+		fill_size = zlib_uncompress_block(dest_append1, dest_size, source, source_size);
+		if(fill_size != dest_size){
+			printk(KERN_ERR " zlib uncompress append1 error!\n");
+			return fill_size;
+		}
+	}
+	
+	copy_pic_data(dest,dest_append1,IMAGE_TYPE_APPEND1,p->disp_append1_id,SRC_COVER_DST);
+	last_id = p->disp_append1_id; 
+
+	return fill_size;
+}
+
+static unsigned int subjoin_append2_pic(void *dest)
+{	
+	static unsigned int last_id = IMAGE_ID_NONE;
+	track_context *p = g_ptrack_context;
+	void *dest_append2 = p->disp_append2_buf;
+	unsigned int dest_size  = p->disp_append2_size;
+	unsigned int fill_size = 0;
+	unsigned int source_size;
+	unsigned int source_offset;
+	void *source;
+ 
+	if(p->disp_append2_id  > APPEND2_MAX)
+		return 0;
+	
+	if(first_draw_track) 
+		last_id = IMAGE_ID_NONE;
+		
+	source_offset = get_picture_offset(IMAGE_TYPE_APPEND2,p->disp_append2_id);
+	source_size   = get_picture_size(IMAGE_TYPE_APPEND2,p->disp_append2_id);
+	
+	//printk(KERN_ALERT "++++++ subjoin_append2_pic source_offset=%0x ,source_size=%0x\n",source_offset,source_size );
+	
+	if(source_size == 0 || source_offset < sizeof(user_header)){
+		printk(KERN_ERR "subjoin append2 pic source error, disp_append2_id=0x%0x.\n",p->disp_append2_id);
+		return 0;
+	}
+
+	if(last_id == IMAGE_ID_NONE || last_id != p->disp_append2_id){
+		source = (void*)get_picture_addr(IMAGE_TYPE_APPEND2,p->disp_append2_id);
+		fill_size = zlib_uncompress_block(dest_append2, dest_size, source, source_size);
+		if(fill_size != dest_size){
+			printk(KERN_ERR " zlib uncompress append2 error!\n");
+			return fill_size;
+		}
+	}
+	
+	copy_pic_data(dest,dest_append2,IMAGE_TYPE_APPEND2,p->disp_append2_id,SRC_COVER_DST);
+	last_id = p->disp_append2_id; 
 
 	return fill_size;
 }
@@ -1442,11 +1636,36 @@ int track_paint_init(void)
 		if(g_ptrack_context2)
 			g_carback_context->pmradar_param = &g_ptrack_context2->mradar_param;
 		
+
+	printk(KERN_ALERT "++++++track_switch_id = %d",track_switch_id);
+	if(track_switch_id == 0){
 		set_disp_track_id(TRACK_STRAIGHT_FORWARD_ID);
+		set_disp_car_id(CAR_NORMAL_STATUS_ID);
+		set_disp_radar_id(RADAR_NORMAL_STATUS_ID);
+		set_disp_track2_id(IMAGE_ID_NONE);
+		set_disp_signal_id(IMAGE_ID_NONE);
+		set_disp_append1_id(APPEND1_NORMAL_STATUS_ID);
+		set_disp_append2_id(APPEND2_NORMAL_STATUS_ID);
+
+	}else if(track_switch_id == 1){
+		set_disp_track_id(IMAGE_ID_NONE);
 		set_disp_car_id(CAR_NORMAL_STATUS_ID);
 		set_disp_radar_id(RADAR_NORMAL_STATUS_ID);
 		set_disp_track2_id(TRACK2_STRAIGHT_FORWARD_ID);
 		set_disp_signal_id(IMAGE_ID_NONE);
+		set_disp_append1_id(APPEND1_NORMAL_STATUS_ID);
+		set_disp_append2_id(APPEND2_NORMAL_STATUS_ID);
+
+    }else{
+		set_disp_track_id(TRACK_STRAIGHT_FORWARD_ID);
+		set_disp_car_id(CAR_NORMAL_STATUS_ID);
+		set_disp_radar_id(RADAR_NORMAL_STATUS_ID);
+		set_disp_track2_id(IMAGE_ID_NONE);
+		set_disp_signal_id(IMAGE_ID_NONE);
+		set_disp_append1_id(APPEND1_NORMAL_STATUS_ID);
+		set_disp_append2_id(APPEND2_NORMAL_STATUS_ID);
+
+    }
 		
 		printk("track_paint init width=%d, height=%d,xpos=%d,ypos=%d.\n",g_carback_context->track_disp_width,\
 			g_carback_context->track_disp_height,g_carback_context->track_disp_xpos,g_carback_context->track_disp_ypos);
@@ -1490,6 +1709,8 @@ unsigned int track_paint_fill(void *dest, unsigned int width, unsigned int heigh
 	static unsigned int last_car_id   = 0;
 	static unsigned int last_radar_id = 0;
 	static unsigned int last_signal_id = -1;
+	static unsigned int last_append1_id = -1;
+	static unsigned int last_append2_id = -1;
 	static unsigned int last_track2_id= 0;
 	track_context *p = g_ptrack_context;
 	user_header* ph = g_pheader_buf;
@@ -1514,18 +1735,21 @@ unsigned int track_paint_fill(void *dest, unsigned int width, unsigned int heigh
 		last_car_id   = 0;
 		last_radar_id = 0;
 		last_signal_id = -1;
+		last_append1_id = -1;
+		last_append2_id = -1;
 		last_track2_id= 0;
 		return g_carback_context->track_display_size;
 	}
 
-	if (p->disp_track_id == IMAGE_ID_NONE){
+	if (p->disp_track_id == IMAGE_ID_NONE && p->disp_track2_id == IMAGE_ID_NONE){
 		memset(dest,0,p->disp_track_size);
 		return p->disp_track_size;
 	}
 	
 	if( g_carback_context->carback_signal ){
 		if(last_track_id == p->disp_track_id && last_car_id == p->disp_car_id   &&
-	   last_radar_id == p->disp_radar_id &&last_track2_id == p->disp_track2_id && last_signal_id == p->disp_signal_id ){
+	   last_radar_id == p->disp_radar_id &&last_track2_id == p->disp_track2_id && last_signal_id == p->disp_signal_id 
+	   && last_append1_id == p->disp_append1_id && last_append2_id == p->disp_append2_id){
 		if(g_ptrack_context2 == NULL || !g_ptrack_context2->disp_mradar_id_change)
 	        return 0;
 	 }
@@ -1535,34 +1759,44 @@ unsigned int track_paint_fill(void *dest, unsigned int width, unsigned int heigh
 		if(last_signal_id != p->disp_signal_id)
 			memset(dest,0,g_carback_context->track_display_size);
 		if(ph->signal_total)    
-		subjoin_signal_pic(dest);
+			subjoin_signal_pic(dest);
+		if(ph->append2_total)  
+			subjoin_append2_pic(dest);
 	}else{
-		if(g_carback_context->layer_status){
-			if(ph->track_total )
-				subjoin_track_pic(dest);
-		 
-			if(ph->car_total)
-				subjoin_car_pic(dest);
+		if(!g_carback_context->track_append_setting){
+            memset(dest,0,g_carback_context->track_display_size);
+            g_carback_context->track_append_setting = 1;
+		}
+		if(ph->track_total )
+			subjoin_track_pic(dest);
+	 
+		if(ph->car_total)
+			subjoin_car_pic(dest);
 
-			if(ph->radar_total)  
-				subjoin_radar_pic(dest);
-		 
-			if(ph->track2_total) 
-				subjoin_track2_pic(dest);
-			
-			if(g_ptrack_context2 && vbox_track_paint) {
-				subjoin_mradar_pic(dest);
-			}
+		if(ph->radar_total)  
+			subjoin_radar_pic(dest);
+
+		if(ph->append1_total)  
+			subjoin_append1_pic(dest);
+
+		if(ph->append2_total)  
+			subjoin_append2_pic(dest);
+	 
+		if(ph->track2_total) 
+			subjoin_track2_pic(dest);
+		
+		if(g_ptrack_context2 && vbox_track_paint) {
+			subjoin_mradar_pic(dest);
 		}
 	}
-	if(g_carback_context->layer_status){
-		last_track_id = p->disp_track_id;
-		last_car_id   = p->disp_car_id;
-		last_radar_id = p->disp_radar_id;
-		last_track2_id= p->disp_track2_id; 
-	}
-	
+
+	last_track_id = p->disp_track_id;
+	last_car_id   = p->disp_car_id;
+	last_radar_id = p->disp_radar_id;
 	last_signal_id = p->disp_signal_id;
+	last_append1_id = p->disp_append1_id;
+	last_append2_id = p->disp_append2_id;
+	last_track2_id= p->disp_track2_id; 
  
 	return fill_size; 
 }
