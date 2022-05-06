@@ -1412,6 +1412,16 @@ int ark_track_get_screen_info(int* width,int* height)
 }
 EXPORT_SYMBOL(ark_track_get_screen_info);
 
+int ark_track_no_signal_handle(void)
+{ 
+	ark_disp_set_layer_en(ARK1668E_LCDC_LAYER_OSD1, 1);
+	//This is handled because it cannot be blend display in one layer
+	ark1668e_lcdc_set_video_osd_size(ARK1668E_LCDC_LAYER_VIDEO2, 0, 0);
+	ark_disp_set_layer_en(ARK1668E_LCDC_LAYER_VIDEO2, 1);
+	return 0;
+}
+EXPORT_SYMBOL(ark_track_no_signal_handle);
+
 /*******************************************************************************/
 
 int ark1668e_lcdfb_ioctl(struct fb_info *info, unsigned int cmd, unsigned long arg)
