@@ -13,6 +13,7 @@ extern unsigned int track_pic_id;
 extern unsigned int radar_pic_id;
 extern unsigned int car_pic_id;
 extern unsigned int track2_pic_id;//small track for vbox
+extern int track_switch_id;
 
 static u8 get_rx_crc(u8 *buf, u8 len)
 {
@@ -55,12 +56,37 @@ void demo_parse_mcu_data(unsigned char *buf,unsigned char size)
 		wheel_anglesign = data[1];
 		wheel_angle     = data[2];
 
+	if(track_switch_id == 0){
+ 		set_disp_track_id(TRACK_STRAIGHT_FORWARD_ID);
+
 		if(wheel_anglesign == 0)
 			track_pic_id = TRACK_STRAIGHT_FORWARD_ID + wheel_angle;
 		else
 			track_pic_id = TRACK_STRAIGHT_FORWARD_ID - wheel_angle;
 		
 		set_disp_track_id(track_pic_id);
+
+	}else if(track_switch_id == 1){
+ 		set_disp_track2_id(TRACK2_STRAIGHT_FORWARD_ID);
+
+		if(wheel_anglesign == 0)
+			track2_pic_id = TRACK2_STRAIGHT_FORWARD_ID + wheel_angle;
+		else
+			track2_pic_id = TRACK2_STRAIGHT_FORWARD_ID - wheel_angle;
+		
+		set_disp_track2_id(track2_pic_id);
+
+    }else{ 
+ 		set_disp_track_id(TRACK_STRAIGHT_FORWARD_ID);
+
+		if(wheel_anglesign == 0)
+			track_pic_id = TRACK_STRAIGHT_FORWARD_ID + wheel_angle;
+		else
+			track_pic_id = TRACK_STRAIGHT_FORWARD_ID - wheel_angle;
+		
+		set_disp_track_id(track_pic_id);
+        
+        }
 	}
 	else if(cmd == 0x03){
 		

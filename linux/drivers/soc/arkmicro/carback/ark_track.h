@@ -5,6 +5,8 @@
 #define CAR_MAX      10
 #define RADAR_MAX    200
 #define SIGNAL_MAX   10
+#define APPEND1_MAX   10
+#define APPEND2_MAX   10
  
 //#define ARK_TRACK_DBG
 
@@ -229,17 +231,21 @@
 #define RADAR_CHANNEL_RL  	2
 #define RADAR_CHANNEL_RR  	3
 
-#define TRACK_STRAIGHT_FORWARD_ID   40
+#define TRACK_STRAIGHT_FORWARD_ID   37
 #define CAR_NORMAL_STATUS_ID		0
 #define SIGNAL_NORMAL_STATUS_ID		0
+#define APPEND1_NORMAL_STATUS_ID		0
+#define APPEND2_NORMAL_STATUS_ID		0
 #define RADAR_NORMAL_STATUS_ID		0x23322332		
-#define TRACK2_STRAIGHT_FORWARD_ID  35
+#define TRACK2_STRAIGHT_FORWARD_ID  37
 
 enum image_type{
 	IMAGE_TYPE_TRACK = 1,
 	IMAGE_TYPE_CAR,
 	IMAGE_TYPE_RADAR,
 	IMAGE_TYPE_SIGNAL,
+	IMAGE_TYPE_APPEND1,
+	IMAGE_TYPE_APPEND2,
 	IMAGE_TYPE_TRACK2,
 	IMAGE_TYPE_MRADAR
 };
@@ -273,18 +279,24 @@ typedef struct {
 	unsigned int car_total;
 	unsigned int radar_total;
 	unsigned int signal_total;
+	unsigned int append1_total;
+	unsigned int append2_total;
 	unsigned int track2_total;
 
 	rect_info track_rect;
 	rect_info car_rect;
 	rect_info radar_rect[4];
 	rect_info signal_rect;
+	rect_info append1_rect;
+	rect_info append2_rect;
 	rect_info track2_rect;
 
 	item_info track[TRACK_MAX];
 	item_info car[CAR_MAX];
 	item_info radar[RADAR_MAX];
 	item_info signal[SIGNAL_MAX];
+	item_info append1[APPEND1_MAX];
+	item_info append2[APPEND2_MAX];
 	item_info track2[TRACK_MAX];
 
 }user_header;
@@ -318,6 +330,8 @@ typedef struct {
 	rect_info car_rect;
 	rect_info radar_rect[4];
 	rect_info signal_rect;
+	rect_info append1_rect;
+	rect_info append2_rect;
 	rect_info track2_rect;
 	//rect_info mradar_rect[MRADAR_MAX];
 
@@ -338,18 +352,24 @@ typedef struct {
 	unsigned int disp_car_id;
 	unsigned int disp_radar_id;
 	unsigned int disp_signal_id;
+	unsigned int disp_append1_id;
+	unsigned int disp_append2_id;
 	unsigned int disp_track2_id;
 
 	unsigned char* disp_track_buf;
 	unsigned char* disp_car_buf;
 	unsigned char* disp_radar_buf[4];
 	unsigned char* disp_signal_buf;
+	unsigned char* disp_append1_buf;
+	unsigned char* disp_append2_buf;
 	unsigned char* disp_track2_buf;
 
 	unsigned int disp_track_size;
 	unsigned int disp_car_size;
 	unsigned int disp_radar_size;
 	unsigned int disp_signal_size;
+	unsigned int disp_append1_size;
+	unsigned int disp_append2_size;
 	unsigned int disp_track2_size;
 
 	track_param_context track_param;
@@ -379,6 +399,8 @@ extern int set_disp_track_id(unsigned int image_id);
 extern int set_disp_car_id(unsigned int image_id);
 extern int set_disp_radar_id(unsigned int image_id);
 extern int set_disp_signal_id(unsigned int image_id);
+extern int set_disp_append1_id(unsigned int image_id);
+extern int set_disp_append2_id(unsigned int image_id);
 extern int set_disp_track2_id(unsigned int image_id);
 extern int set_disp_mradar_id(unsigned char *pimage_id);
 

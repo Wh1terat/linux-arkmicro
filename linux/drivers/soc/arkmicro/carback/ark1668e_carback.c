@@ -45,6 +45,7 @@ extern int get_bootanimation_status(void);
 
 struct carback_context* g_carback_context = NULL;
 static int delay_show_track = 0;
+int track_switch_id = 0;
 
 #ifdef CONFIG_REVERSING_TRACK
 #define ARK_DISP_OSD_PIXFMT_RGBA888    6
@@ -52,6 +53,7 @@ static int delay_show_track = 0;
 int first_draw_track = 1;
 
 #endif
+//#define TRACK_TEST
 
 static void carback_filter_timer_irq(struct timer_list *t)
 {	
@@ -349,6 +351,9 @@ static long ark_carback_ioctl(struct file *filp,
     switch (cmd)
     {
     case CARBACK_IOCTL_SET_APP_READY:
+		context->track_append_setting = 0;
+		set_disp_append1_id(IMAGE_ID_NONE);
+		set_disp_append2_id(IMAGE_ID_NONE);
 		context->app_ready = 1;
 		break;
 	case CARBACK_IOCTL_APP_ENTER_DONE:
@@ -652,6 +657,16 @@ static const struct of_device_id ark_carback_of_match[] = {
 	{ .compatible = "arkmicro,ark1668e-carback", },
 		{ /* sentinel */ }
 };
+
+static int __init trackid_setup(char *str)
+{
+	int trak_id = 0;
+	trak_id = simple_strtoul(str,NULL,10);
+	track_switch_id = trak_id;
+	return 0;
+}
+__setup("trackid=", trackid_setup);
+
 static int  ark_carback_probe(struct platform_device *pdev)
 {
     struct ark_carback *carback;
@@ -779,6 +794,7 @@ static int  ark_carback_probe(struct platform_device *pdev)
     carback->context.track_frame_delay = 100;//100ms
     carback->context.track_data_status = 1;
 	carback->context.carback_signal = 1;
+    carback->context.track_append_setting = 1;
 	carback->context.track_setting = 1;
 	carback->context.layer_status= 0;
 	carback->context.buffer_num = TRACK_FRAME_NUM;
@@ -811,6 +827,7 @@ static int  ark_carback_probe(struct platform_device *pdev)
 				printk(KERN_ALERT "%s %d: ,alloc track display buffer failed.\n",__FUNCTION__, __LINE__);  
 			} else {   
 				timer_setup(&carback->context.track_timer, track_timer_handler, 0);
+
 				
 				for(i = 0; i < carback->context.buffer_num; i++){
 					carback->context.tdisplay_virtaddr[i] = carback->context.track_display_virtaddr + carback->context.screen_width * carback->context.screen_height * 4*i;
