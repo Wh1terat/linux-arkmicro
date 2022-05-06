@@ -676,7 +676,8 @@ int board_late_init(void)
 	update_from_ota = env_get("update_from_ota");	
     printf("update_from_ota %s\n",update_from_ota);
  	need_update = env_get("need_update");
-	if (!strcmp(need_update, "yes")) {
+//	if (!strcmp(need_update, "yes")) {
+    if (1) {
 		loadaddr = env_get_hex("loadaddr", 0);
 
 		sprintf(cmd, "fatload %s %s %s update-magic", "mmc", env_get("sd_dev_part"), env_get("loadaddr"));
