@@ -209,6 +209,7 @@
 	"emmcargs=setenv bootargs console=ttyS0,115200 " \
 		"earlyprintk  loglevel=8 clk_ignore_unused lpj=2285568 " \
 		"${emmcparts} " \
+		"trackid=${switch_lang_id} " \
 		"root=${emmcroot} " \
 		"rootfstype=${emmcrootfstype}\0" \
 	"emmcroot=/dev/mmcblk0p10 rw\0" \
@@ -261,6 +262,7 @@
 	"bootanimationaddr=0x5e000000\0" \
 	"bootanimationsize=0\0" \
 	"reversingtrackaddr=0x5ea00000\0" \
+	"switch_lang_id=0\0" \
 	"reversingtracksize=0\0" \
 	"ipaddr=192.168.5.66\0" \
 	"update_from_ota=no\0" \
@@ -326,6 +328,7 @@
 	"bootanimationaddr=0x5e000000\0" \
 	"bootanimationsize=0\0" \
 	"reversingtrackaddr=0x5ea00000\0" \
+	"switch_lang_id=0\0" \
 	"reversingtracksize=0\0" \
 	"ipaddr=192.168.5.66\0" \
 	NANDARGS
