@@ -212,7 +212,7 @@
 		"root=${emmcroot} " \
 		"rootfstype=${emmcrootfstype}\0" \
 	"emmcroot=/dev/mmcblk0p10 rw\0" \
-	"emmcrootfstype=ext2 rootwait\0" \
+	"emmcrootfstype=ext4 rootwait\0" \
 	"emmcboot=echo Booting from emmc ...; " \
 		"run emmcargs; " \
 		"mmc dev ${emmc_dev_part}; " \
