@@ -43,7 +43,7 @@
 			reset-gpio = <&gportf 27 0>;
 			reg = <0x59>; /* i2c address(7 bits) */
 			default-channel = <0>;
-            carback-config = <0>;
+            carback-config = <1>;
 			port {
 				ark7116_0: endpoint@0{
 					remote-endpoint = <&itu_1>;

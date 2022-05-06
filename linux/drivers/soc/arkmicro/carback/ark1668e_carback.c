@@ -52,6 +52,7 @@ int first_show_track = 1;
 int vbox_track_paint = 0; 
 
 #endif
+
 //#define TRACK_TEST
 
 static void carback_filter_timer_irq(struct timer_list *t)
@@ -315,6 +316,7 @@ void track_paint_work(struct work_struct *work)
 
 	carback_signal_detect();
 	context->layer_status = dvr_get_layer_status();
+		
 	if(context->carback_signal == 0 )
 			set_disp_signal_id(SIGNAL_NORMAL_STATUS_ID);
 
@@ -351,10 +353,10 @@ void track_paint_work(struct work_struct *work)
 
     mod_timer(&context->track_timer, jiffies + msecs_to_jiffies(carback->context.track_frame_delay));//  1000/(100+30)=8 frame per sec 
     if(first_show_track){
-		delay_count = 260/(carback->context.track_frame_delay+30) + 20;
+		delay_count = 260/(carback->context.track_frame_delay+30) + 8;
     }
 	else{
-    	delay_count = 260/(carback->context.track_frame_delay+30) + 20;//delay 260ms show
+    	delay_count = 260/(carback->context.track_frame_delay+30) + 8;//delay 260ms show
 	}
 
     if(vbox_track_paint) delay_count = 1;
@@ -971,7 +973,6 @@ static int  ark_carback_probe(struct platform_device *pdev)
 				printk(KERN_ALERT "%s %d: ,alloc track display buffer failed.\n",__FUNCTION__, __LINE__);  
 			} else {   
 				timer_setup(&carback->context.track_timer, track_timer_handler, 0);
-
 				
 				for(i = 0; i < carback->context.buffer_num; i++){
 					carback->context.tdisplay_virtaddr[i] = carback->context.track_display_virtaddr + carback->context.screen_width * carback->context.screen_height * 4*i;
