@@ -53,6 +53,7 @@ int track_switch_id = 0;
 int first_draw_track = 1;
 
 #endif
+
 //#define TRACK_TEST
 
 static void carback_filter_timer_irq(struct timer_list *t)
@@ -827,7 +828,6 @@ static int  ark_carback_probe(struct platform_device *pdev)
 				printk(KERN_ALERT "%s %d: ,alloc track display buffer failed.\n",__FUNCTION__, __LINE__);  
 			} else {   
 				timer_setup(&carback->context.track_timer, track_timer_handler, 0);
-
 				
 				for(i = 0; i < carback->context.buffer_num; i++){
 					carback->context.tdisplay_virtaddr[i] = carback->context.track_display_virtaddr + carback->context.screen_width * carback->context.screen_height * 4*i;

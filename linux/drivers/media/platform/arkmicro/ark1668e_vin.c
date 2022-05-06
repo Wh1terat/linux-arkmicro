@@ -959,7 +959,8 @@ int ark_vin_display_int_handler(void)
 			{
 				frame_id = vin->dvr_dev->frame_finish[i];
 				vin->dvr_dev->scale_in_yphyaddr = vin->dvr_dev->framebuf_phyaddr[frame_id];
-				queue_work(vin->dvr_dev->scale_queue, &vin->dvr_dev->scale_work);
+				if(vin->dvr_dev->is_odd)
+					queue_work(vin->dvr_dev->scale_queue, &vin->dvr_dev->scale_work);
 				if (vin->dvr_dev->framebuf_status[frame_id] == FRAMEBUF_STATUS_BUSY) {
 					vin->dvr_dev->framebuf_status[frame_id] = FRAMEBUF_STATUS_FREE;
 				} else {
@@ -1070,6 +1071,13 @@ static irqreturn_t ark_vin_int_handler(int irq, void *dev_id)
 	//printk(KERN_ALERT "ark_vin_int_handler--intr_stat=0x%0x\n",intr_stat);
 	
 	if (intr_stat & (FIELD_INTERRUPT | FRAME_INTERRUPT_INTERRUPT)) {
+
+		if(intr_stat & (FIELD_INTERRUPT)){
+			dvr_dev->is_odd = 1;
+		}else{
+			dvr_dev->is_odd = 0;
+		}
+
 		if(vin->stream_flag){
 			spin_lock(&vin->ark_queue_lock);
 			if (vin->cur_frm) {
@@ -1545,7 +1553,6 @@ static int vin_async_complete(struct v4l2_async_notifier *notifier)
 		else
 			ark_vin->dvr_dev->buffer_size = ITU656_FRAME_SIZE*ITU656_FRAME_NUM;
 	}
-	
 	ark_vin->dvr_dev->scale_buffer_size = ark_vin->dvr_dev->scale_alloc_width*ark_vin->dvr_dev->scale_alloc_height*2*ark_vin->dvr_dev->scale_framebuf_num;
 
 	vin_alloc_buf(support_max_resolution);
@@ -1600,7 +1607,6 @@ static int vin_async_complete(struct v4l2_async_notifier *notifier)
 			 "video_register_device failed: %d\n", ret);
 		return ret;
 	}
-	
 	return 0;
 }
 
@@ -1627,6 +1633,7 @@ static int vin_driver_init(struct device *dev)
 	vin->dvr_dev->signal_flag = 0;
 	vin->dvr_dev->first_show_flag = 1;
 	vin->dvr_dev->system = NTSC;
+	vin->dvr_dev->is_odd = 0;
 	vin->dvr_dev->cur_buffer = 0;
 	vin->dvr_dev->carback_signal = 0;
 	vin->dvr_dev->frame_finish_count = 0;

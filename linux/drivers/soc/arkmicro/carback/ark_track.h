@@ -403,5 +403,6 @@ extern int set_disp_append1_id(unsigned int image_id);
 extern int set_disp_append2_id(unsigned int image_id);
 extern int set_disp_track2_id(unsigned int image_id);
 extern int set_disp_mradar_id(unsigned char *pimage_id);
+extern int ark_track_no_signal_handle(void);
 
 #endif

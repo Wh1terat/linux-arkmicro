@@ -1690,6 +1690,7 @@ unsigned int track_paint_fill(void *dest, unsigned int width, unsigned int heigh
 	if( !g_carback_context->carback_signal ){
 		if(last_signal_id != p->disp_signal_id)
 			memset(dest,0,g_carback_context->track_display_size);
+		ark_track_no_signal_handle();
 		if(ph->signal_total)    
 			subjoin_signal_pic(dest);
 		if(ph->append2_total)  
@@ -1714,13 +1715,15 @@ unsigned int track_paint_fill(void *dest, unsigned int width, unsigned int heigh
 		}
 	}
 
-	last_track_id = p->disp_track_id;
-	last_car_id   = p->disp_car_id;
-	last_radar_id = p->disp_radar_id;
+	if(g_carback_context->layer_status){
+		last_track_id = p->disp_track_id;
+		last_car_id   = p->disp_car_id;
+		last_radar_id = p->disp_radar_id;
+		last_track2_id= p->disp_track2_id; 
+	}
 	last_signal_id = p->disp_signal_id;
 	last_append1_id = p->disp_append1_id;
 	last_append2_id = p->disp_append2_id;
-	last_track2_id= p->disp_track2_id; 
  
 	return g_carback_context->track_display_size; 
 }
