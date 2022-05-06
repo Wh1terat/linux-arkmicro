@@ -131,6 +131,7 @@ struct dvr_dev{
 	int itu_channel;
 	int system;		//ntsc or pal
 	int interlace;
+	int is_odd;
 	int itu601en;
 	int chip_info;
 	int discard_frame;
