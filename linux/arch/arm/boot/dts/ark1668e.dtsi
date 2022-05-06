@@ -956,9 +956,9 @@
 			compatible = "on2,ark-vdec";
 			reg = <0xe0900000 0x1000
 #ifdef DDR512
-					0x5e000000 0x500000>;//max space 10Mbyte
+					0x5e000000 0xa00000>;//max space 10Mbyte
 #else
-					0x4e000000 0x500000>;//max space 10Mbyte
+					0x4e000000 0xa00000>;//max space 10Mbyte
 #endif
 			interrupts = <GIC_SPI 24 IRQ_TYPE_LEVEL_HIGH>;
 			clocks = <&mfcclk>;
