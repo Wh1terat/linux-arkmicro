@@ -25,4 +25,4 @@ cd ${TARGET_DIR}/usr/bin/ && \
    ln -sf fw_printenv fw_setenv
 
 
-#sed -i '/# GENERIC_SERIAL$/s~^.*#~::respawn:-/bin/sh #~' ${TARGET_DIR}/etc/inittab
+sed -i '/# GENERIC_SERIAL$/s~^.*#~::respawn:-/bin/sh #~' ${TARGET_DIR}/etc/inittab
