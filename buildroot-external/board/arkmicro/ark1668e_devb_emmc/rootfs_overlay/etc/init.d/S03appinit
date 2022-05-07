@@ -1,5 +1,5 @@
 #!/bin/sh
-
+console::respawn:-/bin/sh
 start() {
 	if  [ ! -d /data ];  then
 	mkdir -p /data
