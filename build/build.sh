@@ -71,7 +71,7 @@ linuxbuild() {
 
 brbuild() {
 
-    echo "version=B316_CN_KY_`date '+%y%m%d%H%M'`" >  ${ETC_DIR}/version
+    echo "version=E230R_CN_KY_`date '+%y%m%d%H%M'`" >  ${ETC_DIR}/version
 
 	cd $BR_DIR
 	make -j20 BR2_EXTERNAL=${BR_EXTERNAL_DIR} ${BR_CONFIG_FILE} O=${BR_OUTPUT_DIR}
