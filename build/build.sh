@@ -25,6 +25,7 @@ UBOOT_OUTPUT_DIR=${OUTPUT_DIR}/u-boot
 LINUX_OUTPUT_DIR=${OUTPUT_DIR}/linux
 BR_OUTPUT_DIR=${OUTPUT_DIR}/buildroot
 IMAGES_DIR=${OUTPUT_DIR}/images
+ETC_DIR=${BR_EXTERNAL_DIR}/board/arkmicro/${BOARD_TYPE}/rootfs_overlay/etc/
 
 ubootclean() {
 	cd ${UBOOT_OUTPUT_DIR}
@@ -46,9 +47,9 @@ brclean() {
 
 ubootbuild() {
 	cd $SDK_DIR/u-boot
-        make O=${UBOOT_OUTPUT_DIR} ${UBOOT_CONFIG_FILE}
-	make O=${UBOOT_OUTPUT_DIR}
-	make O=${UBOOT_OUTPUT_DIR} envtools
+        make -j20 O=${UBOOT_OUTPUT_DIR} ${UBOOT_CONFIG_FILE}
+	make -j20 O=${UBOOT_OUTPUT_DIR}
+	make -j20 O=${UBOOT_OUTPUT_DIR} envtools
 	if [ -f "${UBOOT_OUTPUT_DIR}/spl/u-boot-spl.bin" ]; then
 		cp -rf ${UBOOT_OUTPUT_DIR}/spl/u-boot-spl.bin $IMAGES_DIR/ubootspl.bin
 	fi
@@ -62,16 +63,19 @@ ubootbuild() {
 
 linuxbuild() {
 	cd $SDK_DIR/linux
-	make O=${LINUX_OUTPUT_DIR} ${LINUX_CONFIG_FILE}
-	make O=${LINUX_OUTPUT_DIR}
+	make -j20 O=${LINUX_OUTPUT_DIR} ${LINUX_CONFIG_FILE}
+	make -j20 O=${LINUX_OUTPUT_DIR}
 	cp -rf ${LINUX_OUTPUT_DIR}/arch/arm/boot/dts/${DTB_FILE_NAME} $IMAGES_DIR
 	cp -rf ${LINUX_OUTPUT_DIR}/arch/arm/boot/zImage $IMAGES_DIR
 }
 
 brbuild() {
+
+    echo "version=B316_CN_KY_`date '+%y%m%d%H%M'`" >  ${ETC_DIR}/version
+
 	cd $BR_DIR
-	make BR2_EXTERNAL=${BR_EXTERNAL_DIR} ${BR_CONFIG_FILE} O=${BR_OUTPUT_DIR}
-	make O=${BR_OUTPUT_DIR}
+	make -j20 BR2_EXTERNAL=${BR_EXTERNAL_DIR} ${BR_CONFIG_FILE} O=${BR_OUTPUT_DIR}
+	make -j20 O=${BR_OUTPUT_DIR}
 
 	if [ -f "${BR_OUTPUT_DIR}/images/rootfs.ubi" ]; then
 		cp -rf ${BR_OUTPUT_DIR}/images/rootfs.ubi $IMAGES_DIR
@@ -164,7 +168,13 @@ elif [ "$2" == "config" ] ; then
 		rm -rf $TOOLCHAIN_PACKAGE_DIR/$TOOLCHAIN_NAME.tar
 	fi
 	source $SDK_DIR/env.source
-	if [ "$3" == "uboot" ] ; then
+	if [ "$3" == "" ] ; then
+		echo "config all..."
+		ubootconfig
+		linuxconfig
+		brconfig
+		exit $?
+	elif [ "$3" == "uboot" ] ; then
 		echo "config u-boot..."
 		ubootconfig
 		exit $?
