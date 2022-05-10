@@ -416,6 +416,6 @@
 	status = "disabled";
 };
 
-&sdadc {
-	external-i2s;
-};
+//&sdadc {
+//	external-i2s;
+//};
