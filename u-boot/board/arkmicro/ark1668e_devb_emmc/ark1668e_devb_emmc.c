@@ -154,6 +154,7 @@ int arke_gpio_set_value(unsigned gpio, int value)
 
 /************************add by wdz*************************/
 
+
 extern const struct musb_platform_ops ark_musb_ops;
 
 static struct musb_hdrc_config musb_config = {
@@ -661,23 +662,20 @@ int board_late_init(void)
 	usb_controller_reset();
 	musb_register(&musb_platform_data, NULL, (void *)MUSB_BASE);
 #endif
-
-	/**************************add by wdz************************/
 	arke_gpio_direction_output(21,0);
         arke_gpio_direction_output(23,1);
         arke_gpio_direction_output(22,1);
 
-        arke_gpio_direction_output(190,1);
+        arke_gpio_direction_output(190,0);
 
         mdelay(50);
         arke_gpio_direction_output(21,1);
         mdelay(100);
-	/**************************add by wdz************************/
 	update_from_ota = env_get("update_from_ota");	
     printf("update_from_ota %s\n",update_from_ota);
  	need_update = env_get("need_update");
 //	if (!strcmp(need_update, "yes")) {
-    if (1) {
+	if (1) {
 		loadaddr = env_get_hex("loadaddr", 0);
 
 		sprintf(cmd, "fatload %s %s %s update-magic", "mmc", env_get("sd_dev_part"), env_get("loadaddr"));

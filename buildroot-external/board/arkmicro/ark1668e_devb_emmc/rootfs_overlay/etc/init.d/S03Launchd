@@ -13,6 +13,9 @@ export LD_LIBRARY_PATH=$QTDIR/lib:$LD_LIBRARY_PATH
 
 start() {
 	eval `dbus-launch --auto-syntax`
+	echo 190 > /sys/class/gpio/export
+	echo out > /sys/class/gpio/gpio190/direction
+	echo 1 > /sys/class/gpio/gpio190/value
 	Launcher &
 	echo "Launcher is start"
 }
