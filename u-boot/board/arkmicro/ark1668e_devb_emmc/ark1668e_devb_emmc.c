@@ -709,6 +709,9 @@ int board_late_init(void)
 	}
 update_done:
 	if (do_update) {
+    printf("***************************erase.chip*******start**********************************\n");
+        run_command("emmc erase.chip", 0);
+    printf("***************************erase.chip*********end********************************\n");
 		run_command("emmc erase.part userdata", 0);
 		env_set("need_update", "no");
 		env_set("do_update", "yes");
