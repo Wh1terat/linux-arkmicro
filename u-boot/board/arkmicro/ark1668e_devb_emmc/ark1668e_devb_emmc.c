@@ -662,15 +662,10 @@ int board_late_init(void)
 	usb_controller_reset();
 	musb_register(&musb_platform_data, NULL, (void *)MUSB_BASE);
 #endif
-	arke_gpio_direction_output(21,0);
-        arke_gpio_direction_output(23,1);
-        arke_gpio_direction_output(22,1);
 
         arke_gpio_direction_output(190,0);
 
         mdelay(50);
-        arke_gpio_direction_output(21,1);
-        mdelay(100);
 	update_from_ota = env_get("update_from_ota");	
     printf("update_from_ota %s\n",update_from_ota);
  	need_update = env_get("need_update");
