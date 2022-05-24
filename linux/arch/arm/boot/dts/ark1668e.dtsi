@@ -531,7 +531,7 @@
 		i2s_dac: i2s-dac@e4200000 {
 			compatible = "arkmicro,ark1668e-i2s";
 			reg = <0xe4200000 0x1000>;
-			//full-duplex-mode;
+			full-duplex-mode;
 			interrupts = <GIC_SPI 19 IRQ_TYPE_LEVEL_HIGH>;
 			nco-reg = <0xe490019c>;
 			dmas = <&dmac 25 1 0>, <&dmac 26 0 1>;

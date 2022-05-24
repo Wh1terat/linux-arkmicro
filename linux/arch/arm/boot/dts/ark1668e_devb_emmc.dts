@@ -4,7 +4,6 @@
 #include "ark1668e-pinctrl.dtsi"
 
 //#define I2S_FULL_DUPLEX_CODEC_SUPPORT
-
 / {
 	i2c-gpio-0 {
 		#address-cells = <1>;
@@ -133,20 +132,20 @@
 		simple-audio-card,aux-devs = <&amp>;
 		simple-audio-card,dai-link@0 {		/* I2S - adc */
 			format = "i2s";
-			bitclock-master = <&capture_codec>;
-			frame-master = <&capture_codec>;
+			bitclock-master = <&capture_cpu>;
+			frame-master = <&capture_cpu>;
 			capture_cpu: cpu {
-				sound-dai = <&i2s_adc>;
+				sound-dai = <&i2s_dac>;//i2s_adc
 			};
 			capture_codec: codec {
-				sound-dai = <&cs5343_codec>;//External(ADC):es8316_codec , cs5343_codec  ; Internal:ark_codec
+				sound-dai = <&es7210_codec>;//External(ADC):escodec(es8316) , cs5343_codec  ; Internal(ADC):sdadc
 			};
 		};
 
 		simple-audio-card,dai-link@1 {		/* I2S - dac */
 			format = "i2s";
-			bitclock-master = <&playback_codec>;
-			frame-master = <&playback_codec>;
+			bitclock-master = <&playback_cpu>;
+			frame-master = <&playback_cpu>;
 			playback_cpu: cpu {
 				sound-dai = <&i2s_dac>;
 			};
