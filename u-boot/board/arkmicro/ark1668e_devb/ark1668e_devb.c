@@ -38,6 +38,8 @@ DECLARE_GLOBAL_DATA_PTR;
 #define rSYS_DEVICE_CLK_CFG7	*((volatile unsigned int *)(0xe4900230))
 #define rSYS_DEVICE_CLK_CFG8	*((volatile unsigned int *)(0xe4900234))
 
+#define rSYS_USB_CFG			*((volatile unsigned int *)(0xe4900260))	/* LiXH(ZHong) 2022.05.24 add */
+
 #define rWDT_CR		*((volatile unsigned int *)(0xe4b00000))
 
 #define MUSB_BASE				0xe0100000
@@ -116,6 +118,9 @@ static void usb_controller_reset(void)
 	udelay(100);
 	rSYS_SOFT_RSTNA |= 3 << 5;
 	udelay(10);
+
+	/* LiXH(ZHong) 2022.05.24, enhance usb0 driving capability */
+	rSYS_USB_CFG = 0x3C2E0020;	/* this value come from ArkMicro */
 }
 
 #define ARK_MMC_CLK     	24000000
