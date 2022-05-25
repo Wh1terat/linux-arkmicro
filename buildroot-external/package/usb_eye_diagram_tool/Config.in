@@ -1,0 +1,4 @@
+config BR2_PACKAGE_USB_EYE_DIAGRAM_TOOL
+	bool "usb_eye_diagram_tool"
+	help
+		USB Eye Diagram Tool
