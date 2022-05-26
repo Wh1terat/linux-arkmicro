@@ -439,7 +439,7 @@
 			i2s_adc_clk: i2s_adc_clk {
 				#clock-cells = <0>;
 				compatible = "arkmiro,ark-clk-sys";
-				clocks = <&axipll>, <&audpll>;
+				clocks = <&xtal24mhz>, <&audpll>;
 				reg = <0x6c>;
 				index-offset = <0>;
 				index-mask = <0x1>;
@@ -449,7 +449,7 @@
 			i2s_dac_clk: i2s_dac_clk {
 				#clock-cells = <0>;
 				compatible = "arkmiro,ark-clk-sys";
-				clocks = <&axipll>, <&audpll>;
+				clocks = <&xtal24mhz>, <&audpll>;
 				reg = <0x6c>;
 				index-offset = <2>;
 				index-mask = <0x1>;
@@ -459,7 +459,7 @@
 			i2s2_dac_clk: i2s2_dac_clk {
 				#clock-cells = <0>;
 				compatible = "arkmiro,ark-clk-sys";
-				clocks = <&axipll>, <&audpll>;
+				clocks = <&xtal24mhz>, <&audpll>;
 				reg = <0x6c>;
 				index-offset = <4>;
 				index-mask = <0x1>;
