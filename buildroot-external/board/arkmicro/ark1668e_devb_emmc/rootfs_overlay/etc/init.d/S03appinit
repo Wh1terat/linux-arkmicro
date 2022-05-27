@@ -15,7 +15,8 @@ start() {
 		if [ $? -ne 0 ]
 		then
 			echo "mount failed! then reformat the volume!"
-			mke2fs /dev/mmcblk0p7
+			#mke2fs /dev/mmcblk0p7
+			mkfs.vfat /dev/mmcblk0p7
 			sleep 1
 			mount /dev/mmcblk0p7 /data
 			sync
