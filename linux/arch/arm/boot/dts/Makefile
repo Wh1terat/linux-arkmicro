@@ -1225,6 +1225,7 @@ dtb-$(CONFIG_ARCH_ARKMICRO) += \
 	ark1668e_fpga.dtb \
 	ark1668e_devb.dtb \
 	ark1668e_devb_emmc.dtb \
+	ark1668e_c281.dtb \
 	ark1668-ft.dtb \
 	arkn141-dongle.dtb \
 	arkn141_dongle_sim.dtb \
