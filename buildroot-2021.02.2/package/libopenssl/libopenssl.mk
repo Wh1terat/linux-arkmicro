@@ -81,6 +81,8 @@ define LIBOPENSSL_CONFIGURE_CMDS
 			no-rc5 \
 			enable-camellia \
 			enable-mdc2 \
+			enable-ssl3 \
+			enable-ssl3-method \
 			no-tests \
 			no-fuzz-libfuzzer \
 			no-fuzz-afl \
