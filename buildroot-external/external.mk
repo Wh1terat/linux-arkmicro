@@ -13,3 +13,4 @@ include $(BR2_EXTERNAL_ARK_PATH)/package/DashBoard/DashBoard.mk
 include $(BR2_EXTERNAL_ARK_PATH)/package/ark-mplayer/ark-mplayer.mk
 include $(BR2_EXTERNAL_ARK_PATH)/package/ark1668eft/ark1668eft.mk
 include $(BR2_EXTERNAL_ARK_PATH)/package/usb_eye_diagram_tool/usb_eye_diagram_tool.mk
+include $(BR2_EXTERNAL_ARK_PATH)/package/usbmuxd/usbmuxd.mk
