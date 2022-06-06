@@ -1,10 +1,10 @@
 #!/bin/sh
 
-if [ $# -eq 0 ];
+if [ $# -eq 1 ];
 then
     usb_idx=0
 else
-	usb_idx=$1
+    usb_idx=1
 fi
 
 
