@@ -2,4 +2,7 @@ export QTDIR=/usr
 export LD_LIBRARY_PATH=$QTDIR/lib:$LD_LIBRARY_PATH
 export MALI_NOCLEAR=1
 
-/etc/build_adb.sh &
+chmod 777 /usr/bin/TYW_AWTK/C281_1668E_DASHBOARD
+chmod 777 /etc/appDaemon.sh
+/etc/appDaemon.sh &
+
