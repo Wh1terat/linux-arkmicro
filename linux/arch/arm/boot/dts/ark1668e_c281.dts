@@ -4,7 +4,7 @@
 #include "ark1668e-pinctrl.dtsi"
 
 //#define I2S_USE_EXTERNAL_CODEC
-
+//#define DYNAMIC_TRACK_DISPLAY
 / {
 	i2c-gpio-0 {
 		#address-cells = <1>;
@@ -95,64 +95,7 @@
 		#sound-dai-cells = <0>;
 	};
 
-	sound {
-		compatible = "simple-audio-card";
-		simple-audio-card,name = "ark1668e devb audio";
-		simple-audio-card,widgets =
-			"Microphone", "Mic Jack",
-			"Line", "Line In",
-			"Headphone", "Headphone Jack";
-		simple-audio-card,routing =
-			"Headphone Jack", "HPOL",
-			"Headphone Jack", "HPOR",
-			"MIC1", "Mic Jack",
-			"MIC2", "Mic Jack";
 
-#ifdef I2S_USE_EXTERNAL_CODEC
-		simple-audio-card,aux-devs = <&amp>;
-
-		simple-audio-card,format = "i2s";
-		simple-audio-card,cpu {
-			sound-dai = <&i2s_dac>;
-		};
-		simple-audio-card,codec {
-			sound-dai = <&escodec>;//External(DAC):escodec(es8316) ,cs4334_codec ;
-		};
-#else
-		simple-audio-card,dai-link@0 {		/* I2S - adc */
-			format = "i2s";
-			bitclock-master = <&capture_cpu>;
-			frame-master = <&capture_cpu>;
-			capture_cpu: cpu {
-				sound-dai = <&i2s_adc>;
-			};
-			capture_codec: codec {
-				sound-dai = <&sdadc>;//External(ADC):escodec(es8316) , cs5343_codec  ; Internal(ADC):sdadc
-			};
-		};
-
-		simple-audio-card,dai-link@1 {		/* I2S - dac */
-			format = "i2s";
-			bitclock-master = <&playback_cpu>;
-			frame-master = <&playback_cpu>;
-			playback_cpu: cpu {
-				sound-dai = <&i2s_dac>;
-			};
-			playback_codec: codec {
-				sound-dai = <&sddac>;//External(DAC):escodec(es8316) ,cs4334_codec ; Internal(DAC):sddac
-			};
-		};
-#endif
-	};
-
-	carback: carback@0 {
-		compatible = "arkmicro,ark1668e-carback";
-		interrupt-parent = <&gportd>;
-		interrupts = <1 IRQ_TYPE_EDGE_BOTH>;
-		detect-gpios = <&gportd 1 GPIO_ACTIVE_HIGH>;
-		debounce-detect = <0>;
-		reg = <0x5ea00000 0x400000>;
-	};
 
 	adc {
         compatible = "arkmicro,ark1668e-adc";
@@ -222,12 +165,12 @@
 &usb1 {
 	status = "okay";
 };
-
+#ifdef DYNAMIC_TRACK_DISPLAY
 &uart3 {
     use-in-kernel;
     use-for-mcu;
 };
-
+#endif
 &ituin {
 	status = "okay";
 	channel = <1>;             //for no pinctr
@@ -296,8 +239,4 @@
 
 &can1{
 	status = "disabled";
-};
-
-&sdadc {
-	external-i2s;
 };
