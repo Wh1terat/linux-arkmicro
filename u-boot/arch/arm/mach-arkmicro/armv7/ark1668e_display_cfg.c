@@ -68,9 +68,38 @@ static unsigned short updating[UPDATING_POINT_COUNT] =
 #endif
 
 #define UPDATELOGO_DISPLAY_ADDR	        0x4E200000
+#define UPDATE_PWM_LED_BLINKING
 
 static int screen_width, screen_height;
 static struct udevice *g_dp;
+
+#ifdef UPDATE_PWM_LED_BLINKING
+#include <pwm.h>
+
+static void update_led_blinking(int start)
+{
+	#define BACKLIGHT_PWM_PERIOD		50000
+	u32 pwm_id = 1;
+
+	/* pad config */
+	if(pwm_id < 4) {
+		u32 val = rSYS_PAD_CTRL05;
+		u32 offset = pwm_id * 3;
+		val &= ~(0x7<<offset);
+		val |= (0x1<<offset);
+		rSYS_PAD_CTRL05 = val;
+	}
+
+	if(start) {
+		u32 duty =  BACKLIGHT_PWM_PERIOD / 2;
+		pwm_config(pwm_id, duty, BACKLIGHT_PWM_PERIOD);
+		pwm_enable(pwm_id);
+	} else {
+		pwm_disable(pwm_id);
+		pwm_config(pwm_id, 0, BACKLIGHT_PWM_PERIOD);
+	}
+}
+#endif
 
 static void updating_init(void)
 {
@@ -205,9 +234,16 @@ int do_disconfig (cmd_tbl_t *cmdtp, int flag, int argc, char * const argv[])
 	}
                 
     if (percent == 0) {
+#ifdef UPDATE_PWM_LED_BLINKING
+		update_led_blinking(1);
+#endif
         ark_display_init();
     } else {
         update_progress_set(percent);
+#ifdef UPDATE_PWM_LED_BLINKING
+		if(percent == 100)
+			update_led_blinking(0);
+#endif
     }
 
 	return 0;
