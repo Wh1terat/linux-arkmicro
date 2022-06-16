@@ -78,7 +78,7 @@ static struct udevice *g_dp;
 
 static void update_led_blinking(int start)
 {
-	#define BACKLIGHT_PWM_PERIOD		50000
+	#define BACKLIGHT_PWM_PERIOD		1000000000
 	u32 pwm_id = 1;
 
 	/* pad config */
