@@ -6,3 +6,4 @@ chmod 777 /usr/bin/TYW_AWTK/C281_1668E_DASHBOARD
 chmod 777 /etc/appDaemon.sh
 /etc/appDaemon.sh &
 
+spdlog &
