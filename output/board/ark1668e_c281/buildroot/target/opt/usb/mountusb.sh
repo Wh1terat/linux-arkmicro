@@ -1,15 +1,15 @@
 #!/bin/sh
 
-mount -t vfat /dev/$1 /mnt/usb
+mount -t vfat /dev/$1 /mnt
 
 sync
 
-if [ ! -d "/mnt/usb/logs" ]; then
-        cp -rf /usr/log/logs /mnt/usb/
+if [ ! -d "/mnt/logs" ]; then
+        cp -rf /opt/logs /mnt/
 	sync
 fi
 
-if [ -f "/mnt/usb/awtk_update/update.sh" ]; then
-        /mnt/usb/awtk_update/update.sh
+if [ -f "/mnt/awtk_update/update.sh" ]; then
+        /mnt/awtk_update/update.sh
 	sync
 fi
