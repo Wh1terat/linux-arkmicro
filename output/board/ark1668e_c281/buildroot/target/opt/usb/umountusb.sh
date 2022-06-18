@@ -2,4 +2,4 @@
 
 sync
 
-umount /mnt/usb
+umount /mnt
