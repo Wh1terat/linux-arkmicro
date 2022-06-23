@@ -129,7 +129,7 @@
 			sound-dai = <&es8316_codec>;
 		};
 #else
-		simple-audio-card,aux-devs = <&amp>;
+//		simple-audio-card,aux-devs = <&amp>;
 		simple-audio-card,dai-link@0 {		/* I2S - adc */
 			format = "i2s";
 			bitclock-master = <&capture_cpu>;
