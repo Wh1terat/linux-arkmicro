@@ -232,6 +232,9 @@
 		//touchscreen-inverted-x;
 	};
 };
+&gpu{
+shared-mem-size =<0x10000000>;
+};
 
 &can0{
 	status = "disabled";
