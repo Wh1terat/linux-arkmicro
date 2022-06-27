@@ -1,0 +1,245 @@
+// SPDX-License-Identifier: GPL-2.0
+/dts-v1/;
+#include "ark1668e.dtsi"
+#include "ark1668e-pinctrl.dtsi"
+
+//#define I2S_USE_EXTERNAL_CODEC
+//#define DYNAMIC_TRACK_DISPLAY
+/ {
+	i2c-gpio-0 {
+		#address-cells = <1>;
+		#size-cells = <0>;
+		compatible = "i2c-gpio";
+		gpios = <&gportf 25 0		/* SDA */
+			&gportf 24 0		/* SCL */
+		>;
+		i2c-gpio,delay-us = <6>;	/* clk freq = 500/delay KHz */
+		i2c-gpio,scl-output-only;
+
+		amp:drv_bd37033@40{
+				status = "okay";
+				compatible = "arkmicro,drv_bd37033";
+				reg = <0x40>;		/* i2c address(7 bit)*/
+				flout-gain = <65>;	/*min = 0 ;max = 95*/
+				frout-gain = <65>;	/*min = 0 ;max = 95*/
+				rlout-gain = <65>;	/*min = 0 ;max = 95*/
+				rrout-gain = <65>;	/*min = 0 ;max = 95*/
+				#sound-dai-cells = <0>;
+		};
+	};
+
+	i2c-gpio-1 {
+		#address-cells = <1>;
+		#size-cells = <0>;
+		compatible = "i2c-gpio";
+		gpios = <&gportf 29 0		/* SDA */
+			&gportf 28 0		/* SCL */
+		>;
+		i2c-gpio,delay-us = <6>;	/* clk freq = 500/delay KHz */
+		i2c-gpio,scl-output-only;
+
+		ark7116: ark7116@B2 {
+			compatible = "arkmicro,ark7116_1668e_devb";
+			reset-gpio = <&gportf 27 0>;
+			reg = <0x59>; /* i2c address(7 bits) */
+			default-channel = <0>;
+            carback-config = <1>;
+			port {
+				ark7116_0: endpoint@0{
+					remote-endpoint = <&itu_1>;
+				};
+			};
+		};
+
+		rn6752: da380@4e {
+            compatible = "arkmicro,ark1668e_rn6752";
+            //reset-gpio = <&gpio3 11 0>;
+            reg = <0x2c>; /* i2c address(7 bits) */
+            default-channel = <0>;  /* 0:channel A; 1:channel B */
+            camera-format = <3>;    /* 0:unknown; 1:cvbs pal; 2:cvbs ntsc; 3:720p pal; 4:720p ntsc */
+			port {
+                rn6752_0: endpoint@0{
+                    remote-endpoint = <&itu_0>;
+                };
+        	};
+		};
+
+		mclk: mclk@12K {
+			#clock-cells = <0>;
+			compatible = "fixed-clock";
+			clock-frequency = <12288000>;
+		};
+
+		escodec: es8316@10 {
+			compatible = "arkmicro,es8316";
+			reg = <0x10>;
+			clocks = <&mclk>;
+			clock-names = "mclk";
+			#sound-dai-cells = <0>;
+		};
+	};
+
+	cs4334_codec: ark1668e_cs4334_codec {
+		status = "okay";
+		compatible = "arkmicro,ark1668e_cs4334_codec";
+		clock-names = "cs4334_mclk";
+		clocks = <&mclk>;
+		#sound-dai-cells = <0>;
+	};
+
+	cs5343_codec: ark1668e_cs5343_codec {
+		status = "okay";
+		compatible = "arkmicro,ark1668e_cs5343_codec";
+		clock-names = "cs5343_mclk";
+		clocks = <&mclk>;
+		#sound-dai-cells = <0>;
+	};
+
+
+
+	adc {
+        compatible = "arkmicro,ark1668e-adc";
+        reg = <0xe4500000 0x1000
+            0xe4900000 0x1000>;
+		interrupts = <GIC_SPI 4 IRQ_TYPE_LEVEL_HIGH>;
+    };
+
+};
+
+&lcdc {
+	display = <&display0>;
+	pinctrl-names = "default";
+	/* set pad only to prevent gpio use */
+	pinctrl-0 = <&pinctrl_lcd_dlvds>;
+
+	display0: display@0 {
+		interface-type = "DLVDS";
+		lvds-con = <0x4545>;
+		lvds-con2 = <0xfa000101>;
+		bits-per-pixel = <32>;
+		power-control-gpio = <&gportd 0 GPIO_ACTIVE_HIGH>;
+		lcd-wiring-mode = "RGB";
+		lcdcon-backlight;
+		pwms = <&pwm0 0 50000>;
+		pwm-names = "backlight";
+		backlight-value = <30>;
+		backlight-delay = <200>;
+
+		display-timings {
+			native-mode = <&timing0>;
+			timing0: timing0 {
+				clock-frequency = <40000000>;
+				hactive = <1280>;
+				vactive = <480>;
+				hback-porch = <20>;
+				hfront-porch = <45>;
+				vback-porch = <5>;
+				vfront-porch = <10>;
+				hsync-len = <5>;
+				vsync-len = <6>;
+				hsync-active = <1>;
+				vsync-active = <1>;
+				de-active = <0>;
+				pixelclk-active = <0>;
+			};
+		};
+	};
+};
+
+&usb0_phy {
+	compatible = "usb-nop-xceiv";
+	#phy-cells = <0>;
+	status = "okay";
+};
+
+&usb0 {
+	status = "okay";
+};
+
+&usb1_phy {
+	compatible = "usb-nop-xceiv";
+	#phy-cells = <0>;
+	status = "okay";
+};
+
+&usb1 {
+	status = "okay";
+};
+#ifdef DYNAMIC_TRACK_DISPLAY
+&uart3 {
+    use-in-kernel;
+    use-for-mcu;
+};
+#endif
+&ituin {
+	status = "okay";
+	channel = <1>;             //for no pinctr
+	x_pos = <0>;
+	y_pos = <0>;
+	//width = <800>;          //if this line is commented out, it is displayed in full screen
+	height = <720>;
+
+	port {
+		itu_0: endpoint@0 {
+			is-itu601;
+			vsync-active = <1>;
+			hsync-active = <1>;
+			remote-endpoint = <&rn6752_0>;
+            channel = <0>;
+		};
+
+		itu_1: endpoint@1 {
+			remote-endpoint = <&ark7116_0>;
+			channel = <1>;
+		};
+	};
+};
+
+
+
+
+
+&ethernet {
+	status = "okay";
+	phy-handle = <&eth_phy0>;
+	phy-mode = "rgmii";
+
+	//snps,reset-gpio = <&gportd 15 GPIO_ACTIVE_LOW>;
+	//snps,reset-active-low;
+	//snps,reset-delays-us = <0 10000 1000000>;
+
+	mdio {
+		compatible = "snps,dwmac-mdio";
+		#address-cells = <1>;
+		#size-cells = <0>;
+
+		eth_phy0: ethernet-phy@0 {
+			/* Realtek RTL8211F (0x001cc916) */
+			reg = <1>;
+		};
+	};
+};
+
+
+&i2c0 {
+	gt911: touchscreen@5d {
+		compatible = "goodix,gt911";
+		reg = <0x5d>;
+		interrupt-parent = <&gportf>;
+		interrupts = <22 IRQ_TYPE_EDGE_FALLING>;
+		irq-gpios = <&gportf 22 GPIO_ACTIVE_HIGH>;
+		reset-gpios = <&gportf 23 GPIO_ACTIVE_HIGH>;
+		//touchscreen-inverted-x;
+	};
+};
+&gpu{
+shared-mem-size =<0x10000000>;
+};
+
+&can0{
+	status = "disabled";
+};
+
+&can1{
+	status = "disabled";
+};

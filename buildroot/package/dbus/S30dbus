@@ -20,13 +20,6 @@ RETVAL=0
 start() {
     printf "Starting system message bus: "
 
-    dbus-uuidgen --ensure
-    dbus-daemon --system
-    RETVAL=$?
-    echo "done"
-    [ $RETVAL -eq 0 ] && touch /var/lock/subsys/dbus-daemon
-}
-
 stop() {
     printf "Stopping system message bus: "
 

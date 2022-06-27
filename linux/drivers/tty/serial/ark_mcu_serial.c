@@ -40,24 +40,46 @@
 struct mcu_serial_info {
 	int rx_head;
 	int rx_tail;
+	int carback_ready;
 	unsigned char *rx_buf;
 	spinlock_t lock;
 	struct work_struct rx_task;
 };
 
 extern int mcu_serial_send(const unsigned char *buf, int len);
-extern void mcu_serial_register_rev_handler(void (*handler)(int ch), struct work_struct *task);
+extern void mcu_serial_register_rev_handler(void (*handler)(unsigned char ch), struct work_struct *task);
 extern void mcu_serial_unregister_rev_handler(void);
+#ifdef CONFIG_ARK1668E_CARBACK
+ extern void get_mcu_carback_data(unsigned char ch);
+#endif
 
 static struct mcu_serial_info *msinfo;
+#ifdef CONFIG_ARK1668E_CARBACK
+void ark_set_track_ready(void)
+{
+	msinfo->carback_ready = 1;
+}
+EXPORT_SYMBOL(ark_set_track_ready);
 
-static void mcu_serial_get_ch(int ch)
+#endif
+void ark_set_track_noready(void)
+{
+	msinfo->carback_ready = 0;
+}
+EXPORT_SYMBOL(ark_set_track_noready);
+
+static void mcu_serial_get_ch(unsigned char ch)
 {
 	struct mcu_serial_info *info = msinfo;
 	unsigned long flags;
 
 	spin_lock_irqsave(&info->lock, flags);
+	//printk(KERN_ALERT "++++++ mcu_serial_get_ch rev ch = %d\n",ch);
 	info->rx_buf[info->rx_head] = ch;
+#ifdef CONFIG_ARK1668E_CARBACK
+	if(info->carback_ready)
+		get_mcu_carback_data(info->rx_buf[info->rx_head]);
+	#endif
 	info->rx_head = (info->rx_head + 1) & (RX_BUF_SIZE - 1);
 	if (info->rx_head == info->rx_tail) {
 		printk("rev buf is full, lost ch.\n");
@@ -97,12 +119,15 @@ static int ark_mcu_serial_probe(struct platform_device *pdev)
 		return -ENOMEM;
 
 	msinfo = info;
+	info->carback_ready = 0;
 
 	INIT_WORK(&info->rx_task, mcu_serial_rx_task);
 
 	mcu_serial_register_rev_handler(mcu_serial_get_ch, &info->rx_task);
 
 	platform_set_drvdata(pdev, info);
+
+	printk(KERN_ALERT "enable get mcu data\n");
 
 	return 0;	
 }
