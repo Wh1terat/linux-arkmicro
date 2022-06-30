@@ -249,4 +249,6 @@
 #
 #output
 #
-/output/
+/output/*
+!/output/board/ark1668e_c281/buildroot/target/etc/udev/
+!/output/board/ark1668e_c281/buildroot/target/opt/
