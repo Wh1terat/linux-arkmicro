@@ -117,6 +117,7 @@
 		lvds-con = <0x4545>;
 		lvds-con2 = <0xfa000101>;
 		bits-per-pixel = <32>;
+		fb-buffer-nums = <6>;
 		power-control-gpio = <&gportd 0 GPIO_ACTIVE_HIGH>;
 		lcd-wiring-mode = "RGB";
 		lcdcon-backlight;

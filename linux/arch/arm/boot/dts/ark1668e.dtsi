@@ -961,6 +961,7 @@
 			status = "disabled";
 		};
 
+
 		gpu:gpu@e9000000 {
 			compatible = "arm,mali-400", "arm,mali-utgard";
 			reg = <0xe9000000 0x30000
