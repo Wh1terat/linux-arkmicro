@@ -1,0 +1,42 @@
+{
+  "version" : "Common 1.0",
+
+  "logger" : {
+    "text_buffer_entries" : 500000,
+    "data_buffer_size_per_channel" : 500000,
+    "consumers" : [
+      {
+        "name"            : "text to file",
+        "output"          : "%WRITABLE_DIR%/log/cerence_ark_sdk.log",
+        "max_file_size"   : 10240000,
+        "enable_backup_log" : "true",
+        "zones"           : "LOG_FATAL|LOG_ERROR|LOG_WARNING|LOG_CORE_INFO"
+      },
+      {
+        "name"        : "text to stdout",
+        "output"      : "stdout",
+        "not_modules" : "nuance.pal.THREAD",
+        "zones"       : "LOG_ERROR"
+      },
+      {
+        "name": "log_audio_before_asr",
+        "output": "%WRITABLE_DIR%/log/audio/before_asr_%DATE_TIME%.pcm",
+        "max_file_size": 2048000,
+        "max_files_number": 100,
+        "modules": "nuance.asr.VoConHybridNDSAudioSink.vocon",
+        "not_modules": "",
+        "zones": "LOG_DATA"
+      },
+      {
+        "name": "log_audio_before_cloud_asr",
+        "output": "%WRITABLE_DIR%/log/audio/before_cloud_asr_%DATE_TIME%.pcm",
+        "max_file_size": 2048000,
+        "max_files_number": 100,
+        "modules": "nuance.audio.SourcePad.CloudIn",
+        "not_modules": "",
+        "zones": "LOG_DATA"
+      }
+    ]
+  }
+
+}

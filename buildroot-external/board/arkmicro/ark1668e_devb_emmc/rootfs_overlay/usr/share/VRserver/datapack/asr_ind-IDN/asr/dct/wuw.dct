@@ -1,0 +1,18 @@
+[Header]
+
+[SubHeader]
+Language = IDI
+Content = EDCT_CONTENT_BROAD_NARROWS
+Representation = EDCT_REPR_SZZ_STRING
+
+[Data]
+sunroof	//#sun.ro.?of#
+sunroof //#'s^n.R+Uf#
+sunroof //#'s^n.R+uf#
+sunroof //#'sAn.ruf#
+AC	//#A_t&Se#
+AC	//#'e&I_'si#
+AC	//#'e_'si#
+pause	//#pa&U.s$#
+pause	//#'pOz#
+pause	//#'poz#

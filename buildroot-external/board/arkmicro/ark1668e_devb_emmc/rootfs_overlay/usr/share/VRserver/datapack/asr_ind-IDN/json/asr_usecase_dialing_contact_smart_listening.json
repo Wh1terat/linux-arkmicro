@@ -1,0 +1,51 @@
+{
+  "version": "VoConHigh 1.0",
+  "usecase": [
+    {
+      "name": "SCENARIO_DIALING_CONTACT_SMART_LISTENING",
+      "type": "generic",
+      "generic": {
+        "context": [
+          {
+            "uses": "wuw_ctx"
+          },
+          {
+            "name": "dialing_contact_smart_listening_ctx",
+            "type": "static",
+            "static": {
+              "filename": "dialing_contact_smart_listening.fcf",
+              "do_crc_check": "true"
+            },
+            "vocon_parameters": {
+              "LH_CTX_PARAM_TIMEOUT_SPEECH": 8000,
+              "LH_CTX_PARAM_TSILENCE": 200,
+              "LH_CTX_PARAM_TSILENCE_FX": 150,
+              "LH_CTX_PARAM_MAXNBEST": 10,
+              "LH_CTX_PARAM_ACCURACY": 5000,
+              "LH_CTX_PARAM_MAXNBEST_SECONDPASS": 10
+            }
+          },
+          {
+            "uses": "custom_ctx"
+          }
+        ],
+        "acmod": {
+          "filename": "acmod6_6000_mnc_gen_car_f16_v1_0_1.dat"
+        },
+        "vocon_parameters": {
+          "LH_FX_PARAM_START_ENABLE": "LH_TRUE",
+          "LH_FX_PARAM_TSILENCE": 400,
+          "LH_FX_PARAM_MINSPEECH": 150,
+          "LH_FX_PARAM_TIMEOUT_LSILENCE": 0,
+          "LH_FX_PARAM_TIMEOUT_SPEECH": 8000,
+          "LH_FX_PARAM_SENSITIVITY": 30,
+          "LH_FX_PARAM_ABSOLUTE_THRESHOLD": -4000,
+          "LH_FX_PARAM_KNOWN_SPEAKER_CHANGES": "LH_FALSE",
+          "LH_FX_PARAM_EVENT_TIMER": 0,
+          "LH_REC_PARAM_SPEAKER_ADAPTATION" : "LH_REC_SPEAKER_PROFILE_DISABLE",
+          "LH_FX_PARAM_USENNSPEECHDETECTOR": "LH_TRUE"
+        }
+      }
+    }
+  ]
+}

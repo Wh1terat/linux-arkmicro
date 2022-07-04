@@ -1,0 +1,19 @@
+{
+  "version": "VoConHigh 1.0",
+  "context": {
+    "name": "toplevel_vehicle_control",
+    "type": "static",
+    "static": {
+      "filename": "toplevel_vehicle_control.fcf",
+      "do_crc_check": "true"
+    },
+    "vocon_parameters": {
+      "LH_CTX_PARAM_TIMEOUT_SPEECH": 8000,
+      "LH_CTX_PARAM_TSILENCE": 800,
+      "LH_CTX_PARAM_TSILENCE_FX": 500,
+      "LH_CTX_PARAM_MAXNBEST": 10,
+      "LH_CTX_PARAM_ACCURACY": 5000,
+      "LH_CTX_PARAM_MAXNBEST_SECONDPASS": 10
+    }
+  }
+}

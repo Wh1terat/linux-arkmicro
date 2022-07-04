@@ -1,0 +1,1099 @@
+{
+  "version": "VoConHigh 1.0",
+  "context": [
+    {
+      "name": "SLM_CTX/merge=SLM_CTX",
+      "type": "static",
+      "static": {
+        "filename": "slm_others.pcf",
+        "do_crc_check": "false"
+      },
+      "slot_filling": [
+        {
+          "slot": "SLM_others#ACTION_CONTENT",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "ACTION_CONTENT.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#AC_MODE_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "AC_MODE_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#ADDRESS_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "ADDRESS_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#ADDRESS_TYPE_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "ADDRESS_TYPE_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#ALBUM_NM",
+          "context": {
+            "type": "dynamic",
+            "dynamic": {
+              "dynamic_content_consumer": "DCC_MUSIC",
+              "context_name": "slm_album_name"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#RADIO_NR",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "RADIO_NR.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#APP_NM",
+          "context": {
+            "type": "dynamic",
+            "dynamic": {
+              "dynamic_content_consumer": "DCC_APP",
+              "context_name": "slm_app_name"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#ARTIST_NM",
+          "context": {
+            "type": "dynamic",
+            "dynamic": {
+              "dynamic_content_consumer": "DCC_MUSIC",
+              "context_name": "slm_artist_name"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#CAMERA_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "CAMERA_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#CAR_DEVICE_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "CAR_DEVICE_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#CHUNK_NR",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "CHUNK_NR.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#CITY_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "CITY_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#CN_LEVEL_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "CN_LEVEL_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#COLOR_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "COLOR_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#CONTACT_NM",
+          "context": {
+            "type": "dynamic",
+            "dynamic": {
+              "dynamic_content_consumer": "DCC_CONTACT",
+              "context_name": "slm_contact"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#CONTACT_RELATION_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "CONTACT_RELATION_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#COOK_STYLE_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "COOK_STYLE_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#DEFORST_MODE_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "DEFORST_MODE_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#DEVICE_LOCATION_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "DEVICE_LOCATION_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#DEVICE_MODE_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "DEVICE_MODE_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#DOOR_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "DOOR_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#DRIVING_MODE_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "DRIVING_MODE_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#ED_MODE_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "ED_MODE_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#ENVIRONMENT_MODE_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "ENVIRONMENT_MODE_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#FCW_MODE_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "FCW_MODE_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#RADIO_TYPE_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "RADIO_TYPE_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#FRAGRANCE_TYPE_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "FRAGRANCE_TYPE_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#GENERAL_TIME_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "GENERAL_TIME_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#GENRE_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "GENRE_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#NAV_MODE_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "NAV_MODE_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#HELP_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "HELP_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#HOME_APPLIANCE_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "HOME_APPLIANCE_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#HOUSE_NR",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "HOUSE_NR.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#STATUS_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "STATUS_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#HOUSE_ROOM_SPACE_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "HOUSE_ROOM_SPACE_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#HUD_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "HUD_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#IOT_DEVICE_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "IOT_DEVICE_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#LANGUAGE_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "LANGUAGE_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#LEVEL_STEP_NR",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "LEVEL_STEP_NR.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#LIGHT_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "LIGHT_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#LOCATION_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "LOCATION_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#MAP_DIRECTION_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "MAP_DIRECTION_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#MAP_MODE_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "MAP_MODE_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#MESSAGE_TYPE_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "MESSAGE_TYPE_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#MOVIE_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "MOVIE_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#MUSIC_LEADERBOARD_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "MUSIC_LEADERBOARD_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#MUSIC_TYPE_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "MUSIC_TYPE_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#NETRADIO_AUTHOR_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "NETRADIO_AUTHOR_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#NETRADIO_GENRE_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "NETRADIO_GENRE_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#NETRADIO_TITLE_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "NETRADIO_TITLE_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#ORDER_PERIOD_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "ORDER_PERIOD_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#ORDER_STATUS_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "ORDER_STATUS_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#ORDER_TIME_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "ORDER_TIME_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#ORDER_TYPE_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "ORDER_TYPE_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#PHONE_NR",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "PHONE_NR.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#PHONE_TYPE_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "PHONE_TYPE_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#PLAY_MODE_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "PLAY_MODE_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#POI_CATEGORY_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "POI_CATEGORY_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#POI_CONSTRAINT_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "POI_CONSTRAINT_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#POI_CONSTRAINT_TYPE",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "POI_CONSTRAINT_TYPE.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#POSITION_GENERAL",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "POSITION_GENERAL.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#RADAR_ALARM_MODE_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "RADAR_ALARM_MODE_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#RADIO_GENRE_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "RADIO_GENRE_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#RADIO_STATION_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "RADIO_STATION_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#RATE_NR",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "RATE_NR.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#SCREEN_MODE_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "SCREEN_MODE_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#SCREEN_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "SCREEN_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#SEAT_MEM_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "SEAT_MEM_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#SEAT_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "SEAT_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#SEAT_PART_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "SEAT_PART_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#SHOW_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "SHOW_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#SONG_NM",
+          "context": {
+            "type": "dynamic",
+            "dynamic": {
+              "dynamic_content_consumer": "DCC_MUSIC",
+              "context_name": "slm_song_name"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#SOURCE_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "SOURCE_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#STOCKMARKET_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "STOCKMARKET_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#STOCKNAME_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "STOCKNAME_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#SUNROOF_STATUS_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "SUNROOF_STATUS_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#TEAM_TYPE_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "TEAM_TYPE_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#TIME_PERIOD",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "TIME_PERIOD.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#TIME_POINT",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "TIME_POINT.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#TIME_UNIT_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "TIME_UNIT_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#VIDEO_CHANNEL_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "VIDEO_CHANNEL_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#VIDEO_SOURCE_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "VIDEO_SOURCE_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#VOICE_MODE_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "VOICE_MODE_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#VOLUME_SOURCE_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "VOLUME_SOURCE_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#WAKE_UP_WORD",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "WAKE_UP_WORD.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#WAKE_UP_WORD_TYPE",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "WAKE_UP_WORD_TYPE.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#WEATHER_CONDITION_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "WEATHER_CONDITION_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#WIND_MODE_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "WIND_MODE_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#WIND_SHIELD_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "WIND_SHIELD_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#WIPER_MODE_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "WIPER_MODE_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#WIPER_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "WIPER_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#WX_CONTACT_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "WX_CONTACT_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#YELLOW_PAGE_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "YELLOW_PAGE_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#CURTAIN_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "CURTAIN_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#DASHBOARD_MODE_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "DASHBOARD_MODE_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#DRIVING_ASSISTANCE_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "DRIVING_ASSISTANCE_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#HUD_MODE_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "HUD_MODE_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#MEMORY_TYPE_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "MEMORY_TYPE_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#PAGE_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "PAGE_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#STEERINGWHEEL_MODE_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "STEERINGWHEEL_MODE_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#DASHBOARD_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "DASHBOARD_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#SORT_FACTOR_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "SORT_FACTOR_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#MASSAGE_MODE_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "MASSAGE_MODE_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#HOLIDAY_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "HOLIDAY_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#INPUT_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "INPUT_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#SORT_ORDER_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "SORT_ORDER_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#GUI_PAGE_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "GUI_PAGE_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#MEDIA_TYPE_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "MEDIA_TYPE_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#AUDIOBOOK_TAG_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "AUDIOBOOK_TAG_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#AUDIOBOOK_TYPE_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "AUDIOBOOK_TYPE_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#CAMERA_DIRECTION_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "CAMERA_DIRECTION_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#CAR_PART_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "CAR_PART_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#BODY_PART_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "BODY_PART_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#DEGREE_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "DEGREE_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#PLAY_LIST_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "PLAY_LIST_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#PROGRAM_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "PROGRAM_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#CAR_PART_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "CAR_PART_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#DIRECTION_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "DIRECTION_NM.fcf"
+            }
+          }
+        },
+        {
+          "slot": "SLM_others#PARK_MODE_NM",
+          "context": {
+            "type": "static",
+            "static": {
+              "filename": "PARK_MODE_NM.fcf"
+            }
+          }
+        }
+      ],
+      "vocon_parameters": {
+        "LH_CTX_PARAM_TIMEOUT_SPEECH": 8000,
+        "LH_CTX_PARAM_TSILENCE": 800,
+        "LH_CTX_PARAM_TSILENCE_FX": 600,
+        "LH_CTX_PARAM_MAXNBEST": 10,
+        "LH_CTX_PARAM_ACCURACY": 5000,
+        "LH_CTX_PARAM_MAXNBEST_SECONDPASS": 10
+      }
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "version": "Prompter 1.0",
+  "prompter": [
+    {
+      "name": "prompter1",
+      "type": "local",
+      "local": {
+        "tts_engine_lib": "ve_21_3",
+        "voice_data_path": {
+          "uses": "tts_data"
+        },
+        "samples_per_channel": 512
+      }
+    },
+    {
+      "name": "prompter2",
+      "type": "local",
+      "local": {
+        "tts_engine_lib": "ve_21_3",
+        "voice_data_path": {
+          "uses": "tts_data"
+        },
+        "samples_per_channel": 512
+      }
+    }
+  ]
+}

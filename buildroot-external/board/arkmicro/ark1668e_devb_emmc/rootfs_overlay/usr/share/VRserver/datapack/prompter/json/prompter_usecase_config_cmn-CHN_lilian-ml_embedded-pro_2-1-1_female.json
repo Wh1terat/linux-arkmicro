@@ -1,0 +1,35 @@
+{
+  "version": "Prompter 1.0",
+  "usecase": [
+    {
+      "name": "default_cmn-CHN_lilian-ml_embedded-pro_2-1-1_female",
+      "type": "local",
+      "local": {
+        "voice_config": {
+          "uses": "cmn-CHN_lilian-ml_embedded-pro_2-1-1_female"
+        },
+        "enabled_markers": "textunit,bookmark"
+      }
+    },
+    {
+      "name": "sds_cmn-CHN_lilian-ml_embedded-pro_2-1-1_female",
+      "type": "local",
+      "local": {
+        "voice_config": {
+          "uses": "cmn-CHN_lilian-ml_embedded-pro_2-1-1_female"
+        },
+        "enabled_markers": "textunit,bookmark"
+      }
+    }
+  ],
+  "voice_config": [
+    {
+      "name": "cmn-CHN_lilian-ml_embedded-pro_2-1-1_female",
+      "language": "mnc",
+      "voice": "lilian-ml",
+      "vop_version": "2.1.1",
+      "operating_point": "embedded-pro",
+      "waitfactor": 1
+    }
+  ]
+}

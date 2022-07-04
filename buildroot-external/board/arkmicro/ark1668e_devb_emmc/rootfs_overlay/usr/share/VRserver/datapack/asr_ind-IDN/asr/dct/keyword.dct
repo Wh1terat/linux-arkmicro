@@ -1,0 +1,36 @@
+[Header]
+
+[SubHeader]
+Language = IDI
+Content = EDCT_CONTENT_BROAD_NARROWS
+Representation = EDCT_REPR_SZZ_STRING
+
+[Data]
+redial  //#r$.di.jAl#
+redial  //#R+i.'da&Il#
+USB     //#'ju_'es_'bi#
+FD      //#'Ef_'di#
+FD      //#ef_de#
+AUX     //#a&Uks#
+AUX     //#A_u_eks#
+AUX     //#'Aks#
+GPS     //#'d&Zi_'pi_'Es#
+unmute  //#^n.'mjut#
+app     //#ep#
+app     //#A_pe_pe#    
+mode    //#mode#
+sunroof  //#sAn_ruf#
+dashboard //#dAsh.bo.d#
+vent      //#fent#
+beyond    //#bi.jond#
+Ny.       //#n~o.n~A#
+Tn.       //#twAn#
+Witono    //#wi.to.no#
+repeat   //#R+I.'pit#
+random   //#'R+@n.d$m#
+song     //#sonK#
+cancel   //#ken.s$l#
+plus     //#pl$s#
+plus     //#plAs#
+JOOX     //#d&Zuks#
+SPBU     //#'es_'pi_'bi_'ju#

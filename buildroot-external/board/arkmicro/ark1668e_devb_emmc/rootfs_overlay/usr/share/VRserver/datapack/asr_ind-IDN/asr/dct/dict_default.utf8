@@ -1,0 +1,32 @@
+[Header]
+Language = IDI
+Content = EDCT_CONTENT_BROAD_NARROWS
+Representation = EDCT_REPR_SZZ_STRING
+
+[Data]
+A	//#A#
+B	//#be#
+C	//#t&Se#
+D	//#de#
+E	//#e#
+F	//#ef#
+G	//#ge#
+H	//#hA#
+I	//#i#
+J	//#d&Ze#
+K	//#kA#
+L	//#el#
+M	//#em#
+N	//#en#
+O	//#o#
+P	//#pe#
+Q	//#ki#
+R	//#er#
+S	//#es#
+T	//#te#
+U	//#u#
+V	//#fe#
+W	//#we#
+X	//#eks#
+Y	//#je#
+Z	//#zet#

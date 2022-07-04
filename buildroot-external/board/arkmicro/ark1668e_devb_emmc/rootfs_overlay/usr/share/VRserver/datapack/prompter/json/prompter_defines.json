@@ -1,0 +1,1091 @@
+{
+   "VEH01_P01" : {
+      "cmn-CHN" : [ "天窗完全打开。" ],
+      "eng-USA" : [ "Sunroof is fully open." ],
+      "ind-IDN" : [ "Sunroof dalam keadaan terbuka seluruhnya." ]
+   },
+   "VEH01_P02" : {
+      "cmn-CHN" : [ "好的，打开天窗。" ],
+      "eng-USA" : [ "OK, opening sunroof." ],
+      "ind-IDN" : [ "Oke, membuka sunroof." ]
+   },
+   "VEH01_P03" : {
+      "cmn-CHN" : [ "操作失败。 请稍后再试。" ],
+      "eng-USA" : [ "Operation failed. Please try again later." ],
+      "ind-IDN" : [ "Operasi gagal, silakan dicoba lagi." ]
+   },
+   "VEH01_P04" : {
+      "cmn-CHN" : [ "请启动引擎，然后重试。" ],
+      "eng-USA" : [ "Please start the engine and then try again." ],
+      "ind-IDN" : [ "Silakan hidupkan mesin dan coba lagi." ]
+   },
+   "VEH02_P01" : {
+      "cmn-CHN" : [ "天窗已经关闭。" ],
+      "eng-USA" : [ "Sunroof is already closed." ],
+      "ind-IDN" : [ "Sunroof sudah dalam keadaan tertutup." ]
+   },
+   "VEH02_P02" : {
+      "cmn-CHN" : [ "好的，关闭天窗" ],
+      "eng-USA" : [ "OK, closing sunroof" ],
+      "ind-IDN" : [ "Oke, menutup sunroof." ]
+   },
+   "VEH02_P03" : {
+      "cmn-CHN" : [ "操作失败。 请稍后再试。" ],
+      "eng-USA" : [ "Operation failed. Please try again later." ],
+      "ind-IDN" : [ "Operasi gagal, silakan dicoba lagi." ]
+   },
+   "VEH02_P04" : {
+      "cmn-CHN" : [ "请启动引擎，然后重试。" ],
+      "eng-USA" : [ "Please start the engine and then try again." ],
+      "ind-IDN" : [ "Silakan hidupkan mesin dan coba lagi." ]
+   },
+   "VEH03_P01" : {
+      "cmn-CHN" : [ "天窗半开" ],
+      "eng-USA" : [ "Sunroof is half open" ],
+      "ind-IDN" : [ "Sunroof dalam keadaan setengah terbuka." ]
+   },
+   "VEH03_P02" : {
+      "cmn-CHN" : [ "好的，中途打开天窗" ],
+      "eng-USA" : [ "OK, opening the sunroof halfway" ],
+      "ind-IDN" : [ "Oke, membuka sunroof sampai setengah." ]
+   },
+   "VEH03_P03" : {
+      "cmn-CHN" : [ "操作失败。 请稍后再试。" ],
+      "eng-USA" : [ "Operation failed. Please try again later." ],
+      "ind-IDN" : [ "Operasi gagal, silakan dicoba lagi." ]
+   },
+   "VEH03_P04" : {
+      "cmn-CHN" : [ "请启动引擎，然后重试。" ],
+      "eng-USA" : [ "Please start the engine and then try again." ],
+      "ind-IDN" : [ "Silakan hidupkan mesin dan coba lagi." ]
+   },
+   "VEH04_P01" : {
+      "cmn-CHN" : [ "天窗完全打开。" ],
+      "eng-USA" : [ "Sunroof is fully open." ],
+      "ind-IDN" : [ "Sunroof dalam keadaan terbuka seluruhnya." ]
+   },
+   "VEH04_P02" : {
+      "cmn-CHN" : [ "好的，再打开天窗。" ],
+      "eng-USA" : [ "OK, opening the sunroof a bit more." ],
+      "ind-IDN" : [ "Oke, membuka sedikit sunroof." ]
+   },
+   "VEH04_P03" : {
+      "cmn-CHN" : [ "操作失败。 请稍后再试。" ],
+      "eng-USA" : [ "Operation failed. Please try again later." ],
+      "ind-IDN" : [ "Operasi gagal, silakan dicoba lagi." ]
+   },
+   "VEH04_P04" : {
+      "cmn-CHN" : [ "请启动引擎，然后重试。" ],
+      "eng-USA" : [ "Please start the engine and then try again." ],
+      "ind-IDN" : [ "Silakan hidupkan mesin dan coba lagi." ]
+   },
+   "VEH05_P01" : {
+      "cmn-CHN" : [ "天窗已经关闭。" ],
+      "eng-USA" : [ "Sunroof is already closed." ],
+      "ind-IDN" : [ "Sunroof sudah dalam keadaan tertutup." ]
+   },
+   "VEH05_P02" : {
+      "cmn-CHN" : [ "好的，再把天窗关上一点。" ],
+      "eng-USA" : [ "OK, closing the sunroof a bit more." ],
+      "ind-IDN" : [ "Oke, menutup  sedikit sunroof." ]
+   },
+   "VEH05_P03" : {
+      "cmn-CHN" : [ "操作失败。 请稍后再试。" ],
+      "eng-USA" : [ "Operation failed. Please try again later." ],
+      "ind-IDN" : [ "Operasi gagal, silakan dicoba lagi." ]
+   },
+   "VEH05_P04" : {
+      "cmn-CHN" : [ "请启动引擎，然后重试。" ],
+      "eng-USA" : [ "Please start the engine and then try again." ],
+      "ind-IDN" : [ "Silakan hidupkan mesin dan coba lagi." ]
+   },
+   "VEH10_P01" : {
+      "cmn-CHN" : [ "好的，打开所有窗户。" ],
+      "eng-USA" : [ "OK, opening all the windows." ],
+      "ind-IDN" : [ "Oke, membuka semua jendela." ]
+   },
+   "VEH10_P02" : {
+      "cmn-CHN" : [ "好的，打开 <area_description> 窗口。" ],
+      "eng-USA" : [ "OK, opening the <area_description> window." ],
+      "ind-IDN" : [ "Oke, membuka jendela <area_description> ." ]
+   },
+   "VEH10_P03" : {
+      "cmn-CHN" : [ "操作失败。请稍后再试。" ],
+      "eng-USA" : [ "Operation failed. Please try again later." ],
+      "ind-IDN" : [ "Operasi gagal, silakan dicoba lagi." ]
+   },
+   "VEH10_P04" : {
+      "cmn-CHN" : [ "请启动引擎，然后重试。" ],
+      "eng-USA" : [ "Please start the engine and then try again." ],
+      "ind-IDN" : [ "Silakan hidupkan mesin dan coba lagi." ]
+   },
+   "VEH10_P05" : {
+      "cmn-CHN" : [ "所有的窗户都开着。" ],
+      "eng-USA" : [ "All the windows were open." ],
+      "ind-IDN" : [ "Semua jendela dalam keadaan terbuka." ]
+   },
+   "VEH10_P06" : {
+      "cmn-CHN" : [ "<area_description> 窗口已打开。" ],
+      "eng-USA" : [ "The <area_description> window was open." ],
+      "ind-IDN" : [ "Jendela <area_description> dalam keadaan terbuka." ]
+   },
+   "VEH11_P01" : {
+      "cmn-CHN" : [ "好的，关闭所有窗口。" ],
+      "eng-USA" : [ "OK, closing all the windows." ],
+      "ind-IDN" : [ "Oke, menutup semua jendela." ]
+   },
+   "VEH11_P02" : {
+      "cmn-CHN" : [ "好的，关闭 <area_description> 窗口。" ],
+      "eng-USA" : [ "OK, closing the <area_description> window." ],
+      "ind-IDN" : [ "Oke, menutup jendela <area_description>." ]
+   },
+   "VEH11_P03" : {
+      "cmn-CHN" : [ "操作失败。请稍后再试。" ],
+      "eng-USA" : [ "Operation failed. Please try again later." ],
+      "ind-IDN" : [ "Operasi gagal, silakan dicoba lagi." ]
+   },
+   "VEH11_P04" : {
+      "cmn-CHN" : [ "请启动引擎，然后重试。" ],
+      "eng-USA" : [ "Please start the engine and then try again." ],
+      "ind-IDN" : [ "Silakan hidupkan mesin dan coba lagi." ]
+   },
+   "VEH11_P05" : {
+      "cmn-CHN" : [ "所有的窗户都关上了。" ],
+      "eng-USA" : [ "All the windows were closed." ],
+      "ind-IDN" : [ "Semua jendela dalam keadaan tertutup." ]
+   },
+   "VEH11_P06" : {
+      "cmn-CHN" : [ "<area_description> 窗口已关闭。" ],
+      "eng-USA" : [ "The <area_description> window was closed." ],
+      "ind-IDN" : [ "Jendela <area_description> dalam keadaan tertutup." ]
+   },
+   "VEH12_P01" : {
+      "cmn-CHN" : [ "空调已经开了。" ],
+      "eng-USA" : [ "Air conditioning is already on." ],
+      "ind-IDN" : [ "AC dalam keadaan hidup." ]
+   },
+   "VEH12_P02" : {
+      "cmn-CHN" : [ "好的，现在开空调了。" ],
+      "eng-USA" : [ "OK, air conditioning is now on." ],
+      "ind-IDN" : [ "Oke, menghidupkan AC." ]
+   },
+   "VEH12_P03" : {
+      "cmn-CHN" : [ "操作失败。请稍后再试。" ],
+      "eng-USA" : [ "Operation failed. Please try again later." ],
+      "ind-IDN" : [ "Operasi gagal, silakan dicoba lagi." ]
+   },
+   "VEH12_P04" : {
+      "cmn-CHN" : [ "请启动引擎，然后重试。" ],
+      "eng-USA" : [ "Please start the engine and then try again." ],
+      "ind-IDN" : [ "Silakan hidupkan mesin dan coba lagi." ]
+   },
+   "VEH13_P01" : {
+      "cmn-CHN" : [ "空调关了。" ],
+      "eng-USA" : [ "Air conditioning is off." ],
+      "ind-IDN" : [ "AC dalam keadaan mati." ]
+   },
+   "VEH13_P02" : {
+      "cmn-CHN" : [ "好的，现在空调关了。" ],
+      "eng-USA" : [ "OK, air conditioning is now off." ],
+      "ind-IDN" : [ "Oke, mematikan AC." ]
+   },
+   "VEH13_P03" : {
+      "cmn-CHN" : [ "操作失败。请稍后再试。" ],
+      "eng-USA" : [ "Operation failed. Please try again later." ],
+      "ind-IDN" : [ "Operasi gagal, silakan dicoba lagi." ]
+   },
+   "VEH14_P01" : {
+      "cmn-CHN" : [ "OK，温度升高1度" ],
+      "eng-USA" : [ "OK, temperature is raised by 1 degree" ],
+      "ind-IDN" : [ "Oke, menaikkan suhu 1 derajat." ]
+   },
+   "VEH14_P02" : {
+      "cmn-CHN" : [ "操作失败。请稍后再试。" ],
+      "eng-USA" : [ "Operation failed. Please try again later." ],
+      "ind-IDN" : [ "Operasi gagal, silakan dicoba lagi." ]
+   },
+   "VEH14_P03" : {
+      "cmn-CHN" : [ "温度现在设置为最大值 <temperature_max> 度" ],
+      "eng-USA" : [ "The temperature is now set to maximum, <temperature_max> degrees" ],
+      "ind-IDN" : [
+         "Suhu telah mencapai level maksimum, yaitu <temperature_max> derajat."
+      ]
+   },
+   "VEH14_P04" : {
+      "cmn-CHN" : [ "请启动引擎，然后重试。" ],
+      "eng-USA" : [ "Please start the engine and then try again." ],
+      "ind-IDN" : [ "Silakan hidupkan mesin dan coba lagi." ]
+   },
+   "VEH14_P05" : {
+      "cmn-CHN" : [ "OK，温度升高1级。" ],
+      "eng-USA" : [ "OK, temperature is raised by 1 level." ],
+      "ind-IDN" : [ "Oke, menaikkan suhu 1 level." ]
+   },
+   "VEH14_P06" : {
+      "cmn-CHN" : [ "温度现在设置为最大值，级别 <temperature_max_level>。" ],
+      "eng-USA" : [
+         "The temperature is now set to the maximum, level <temperature_max_level>."
+      ],
+      "ind-IDN" : [ "Suhu telah mencapai level maksimum, yaitu level <temperature_max>." ]
+   },
+   "VEH15_P01" : {
+      "cmn-CHN" : [ "好的，温度升高了 <n> 度" ],
+      "eng-USA" : [ "OK, temperature is raised by <n> degrees" ],
+      "ind-IDN" : [ "Oke, menaikkan suhu <n> derajat." ]
+   },
+   "VEH15_P02" : {
+      "cmn-CHN" : [ "操作失败。请稍后再试。" ],
+      "eng-USA" : [ "Operation failed. Please try again later." ],
+      "ind-IDN" : [ "Operasi gagal, silakan dicoba lagi." ]
+   },
+   "VEH15_P03" : {
+      "cmn-CHN" : [ "温度现在设置为最大值 <temperature_max> 度。" ],
+      "eng-USA" : [ "The temperature is now set to maximum, <temperature_max> degrees." ],
+      "ind-IDN" : [
+         "Suhu telah mencapai level maksimum, yaitu <temperature_max> derajat."
+      ]
+   },
+   "VEH15_P04" : {
+      "cmn-CHN" : [ "请启动引擎，然后重试。" ],
+      "eng-USA" : [ "Please start the engine and then try again." ],
+      "ind-IDN" : [ "Silakan hidupkan mesin dan coba lagi." ]
+   },
+   "VEH16_P01" : {
+      "cmn-CHN" : [ "OK，温度降低1度" ],
+      "eng-USA" : [ "OK, temperature is lowered by 1 degree" ],
+      "ind-IDN" : [ "Oke, menurunkan suhu 1 derajat." ]
+   },
+   "VEH16_P02" : {
+      "cmn-CHN" : [ "操作失败。请稍后再试。" ],
+      "eng-USA" : [ "Operation failed. Please try again later." ],
+      "ind-IDN" : [ "Operasi gagal, silakan dicoba lagi." ]
+   },
+   "VEH16_P03" : {
+      "cmn-CHN" : [ "温度现在设置为最低 <temperature_min> 度。" ],
+      "eng-USA" : [ "The temperature is now set to minimum, <temperature_min> degrees." ],
+      "ind-IDN" : [ "Suhu telah mencapai level minimum, yaitu <temperature_min> derajat." ]
+   },
+   "VEH16_P04" : {
+      "cmn-CHN" : [ "请启动引擎，然后重试。" ],
+      "eng-USA" : [ "Please start the engine and then try again." ],
+      "ind-IDN" : [ "Silakan hidupkan mesin dan coba lagi." ]
+   },
+   "VEH16_P05" : {
+      "cmn-CHN" : [ "OK，温度降低1级。" ],
+      "eng-USA" : [ "OK, temperature is lowered by 1 level." ],
+      "ind-IDN" : [ "Oke, menurunkan suhu 1 level." ]
+   },
+   "VEH16_P06" : {
+      "cmn-CHN" : [ "温度现在设置为最小值，级别 <temperature_min_level>。" ],
+      "eng-USA" : [
+         "The temperature is now set to the minimum, level <temperature_min_level>."
+      ],
+      "ind-IDN" : [ "Suhu telah mencapai level minimum, yaitu level <temperature_min>." ]
+   },
+   "VEH17_P01" : {
+      "cmn-CHN" : [ "好的，温度降低了 <n> 度。" ],
+      "eng-USA" : [ "OK, temperature is lowered by <n> degrees." ],
+      "ind-IDN" : [ "Oke, menurunkan suhu <n> derajat." ]
+   },
+   "VEH17_P02" : {
+      "cmn-CHN" : [ "操作失败。请稍后再试。" ],
+      "eng-USA" : [ "Operation failed. Please try again later." ],
+      "ind-IDN" : [ "Operasi gagal, silakan dicoba lagi." ]
+   },
+   "VEH17_P03" : {
+      "cmn-CHN" : [ "温度现在设置为最低 <temperature_min> 度。" ],
+      "eng-USA" : [ "The temperature is now set to minimum, <temperature_min> degrees." ],
+      "ind-IDN" : [ "Suhu telah mencapai level minimum, yaitu <temperature_min> derajat." ]
+   },
+   "VEH17_P04" : {
+      "cmn-CHN" : [ "请启动引擎，然后重试。" ],
+      "eng-USA" : [ "Please start the engine and then try again." ],
+      "ind-IDN" : [ "Silakan hidupkan mesin dan coba lagi." ]
+   },
+   "VEH18_P01" : {
+      "cmn-CHN" : [ "好的，温度设置为 <n> 度。" ],
+      "eng-USA" : [ "OK, the temperature is set to <n> degrees." ],
+      "ind-IDN" : [ "Oke, mengatur suhu ke <n> derajat." ]
+   },
+   "VEH18_P02" : {
+      "cmn-CHN" : [ "超出范围。设置为最大值，<temperature_max> 度。" ],
+      "eng-USA" : [ "Out of range. Setting to maximun, <temperature_max> degrees." ],
+      "ind-IDN" : [
+         "Suhu di luar jangkauan, mengatur ke suhu maksimum, yaitu <n> derajat."
+      ]
+   },
+   "VEH18_P03" : {
+      "cmn-CHN" : [ "超出范围。设置为最小，<温度_分钟>度。" ],
+      "eng-USA" : [ "Out of range. Setting to minimun, <temperature_min> degrees." ],
+      "ind-IDN" : [
+         "Suhu di luar jangkauan, mengatur ke suhu minimum, yaitu <n> derajat."
+      ]
+   },
+   "VEH18_P04" : {
+      "cmn-CHN" : [ "操作失败。请稍后再试。" ],
+      "eng-USA" : [ "Operation failed. Please try again later." ],
+      "ind-IDN" : [ "Operasi gagal, silakan dicoba lagi." ]
+   },
+   "VEH18_P05" : {
+      "cmn-CHN" : [ "请启动引擎，然后重试。" ],
+      "eng-USA" : [ "Please start the engine and then try again." ],
+      "ind-IDN" : [ "Silakan hidupkan mesin dan coba lagi." ]
+   },
+   "VEH18_P06" : {
+      "cmn-CHN" : [ "温度已经 <n> 度。" ],
+      "eng-USA" : [ "The temperature is <n> degrees already." ],
+      "ind-IDN" : [ "Suhu sudah berada di <n> derajat." ]
+   },
+   "VEH19_P01" : {
+      "cmn-CHN" : [ "温度现在设置为最大值。" ],
+      "eng-USA" : [ "Temperature is now set to maximum." ],
+      "ind-IDN" : [ "Mengatur ke suhu maksimum." ]
+   },
+   "VEH19_P02" : {
+      "cmn-CHN" : [ "操作失败。请稍后再试。" ],
+      "eng-USA" : [ "Operation failed. Please try again later." ],
+      "ind-IDN" : [ "Operasi gagal, silakan dicoba lagi." ]
+   },
+   "VEH19_P03" : {
+      "cmn-CHN" : [ "请启动引擎，然后重试。" ],
+      "eng-USA" : [ "Please start the engine and then try again." ],
+      "ind-IDN" : [ "Silakan hidupkan mesin dan coba lagi." ]
+   },
+   "VEH19_P04" : {
+      "cmn-CHN" : [ "温度已经是最高了。" ],
+      "eng-USA" : [ "The temperature is already the maximum." ],
+      "ind-IDN" : [ "Suhu telah mencapai level maksimum." ]
+   },
+   "VEH20_P01" : {
+      "cmn-CHN" : [ "温度现在设置为最低。" ],
+      "eng-USA" : [ "Temperature is now set to minimum." ],
+      "ind-IDN" : [ "Mengatur ke suhu minimum." ]
+   },
+   "VEH20_P02" : {
+      "cmn-CHN" : [ "操作失败。请稍后再试。" ],
+      "eng-USA" : [ "Operation failed. Please try again later." ],
+      "ind-IDN" : [ "Operasi gagal, silakan dicoba lagi." ]
+   },
+   "VEH20_P03" : {
+      "cmn-CHN" : [ "请启动引擎，然后重试。" ],
+      "eng-USA" : [ "Please start the engine and then try again." ],
+      "ind-IDN" : [ "Silakan hidupkan mesin dan coba lagi." ]
+   },
+   "VEH20_P04" : {
+      "cmn-CHN" : [ "温度已经是最低了。" ],
+      "eng-USA" : [ "The temperature is already the minimum." ],
+      "ind-IDN" : [ "Suhu telah mencapai level minimum." ]
+   },
+   "VEH21_P01" : {
+      "cmn-CHN" : [ "OK，风扇音量增加1级。" ],
+      "eng-USA" : [ "OK, fan volume is increased by 1 level." ],
+      "ind-IDN" : [ "Oke, menaikkan kecepatan AC 1 level." ]
+   },
+   "VEH21_P02" : {
+      "cmn-CHN" : [ "操作失败。请稍后再试。" ],
+      "eng-USA" : [ "Operation failed. Please try again later." ],
+      "ind-IDN" : [ "Operasi gagal, silakan dicoba lagi." ]
+   },
+   "VEH21_P03" : {
+      "cmn-CHN" : [ "风扇音量现在设置为最大。" ],
+      "eng-USA" : [ "Fan volume is now set to maximum." ],
+      "ind-IDN" : [ "AC sudah paling kencang." ]
+   },
+   "VEH21_P04" : {
+      "cmn-CHN" : [ "请启动引擎，然后重试。" ],
+      "eng-USA" : [ "Please start the engine and then try again." ],
+      "ind-IDN" : [ "Silakan hidupkan mesin dan coba lagi." ]
+   },
+   "VEH22_P01" : {
+      "cmn-CHN" : [ "OK，风扇音量降低1级。" ],
+      "eng-USA" : [ "OK, fan volume is decreased by 1 level." ],
+      "ind-IDN" : [ "Oke, menurunkan kecepatan AC 1 level." ]
+   },
+   "VEH22_P02" : {
+      "cmn-CHN" : [ "操作失败。请稍后再试。" ],
+      "eng-USA" : [ "Operation failed. Please try again later." ],
+      "ind-IDN" : [ "Operasi gagal, silakan dicoba lagi." ]
+   },
+   "VEH22_P03" : {
+      "cmn-CHN" : [ "风扇音量现在设置为最小。" ],
+      "eng-USA" : [ "Fan volume is now set to minimum." ],
+      "ind-IDN" : [ "AC sudah paling kecil." ]
+   },
+   "VEH22_P04" : {
+      "cmn-CHN" : [ "请启动引擎，然后重试。" ],
+      "eng-USA" : [ "Please start the engine and then try again." ],
+      "ind-IDN" : [ "Silakan hidupkan mesin dan coba lagi." ]
+   },
+   "VEH23_P01" : {
+      "cmn-CHN" : [ "好的，风扇音量设置为最大。" ],
+      "eng-USA" : [ "OK, fan volume is set to maximum." ],
+      "ind-IDN" : [ "Oke, menaikkan kecepatan AC ke level maksimum." ]
+   },
+   "VEH23_P02" : {
+      "cmn-CHN" : [ "操作失败。请稍后再试。" ],
+      "eng-USA" : [ "Operation failed. Please try again later." ],
+      "ind-IDN" : [ "Operasi gagal, silakan dicoba lagi." ]
+   },
+   "VEH23_P03" : {
+      "cmn-CHN" : [ "请启动引擎，然后重试。" ],
+      "eng-USA" : [ "Please start the engine and then try again." ],
+      "ind-IDN" : [ "Silakan hidupkan mesin dan coba lagi." ]
+   },
+   "VEH23_P04" : {
+      "cmn-CHN" : [ "风扇风量已经是最大。" ],
+      "eng-USA" : [ "Fan volume is already the maximum." ],
+      "ind-IDN" : [ "Kecepatan AC telah mencapai level maksimum." ]
+   },
+   "VEH24_P01" : {
+      "cmn-CHN" : [ "好的，风扇音量设置为最小。" ],
+      "eng-USA" : [ "OK, fan volume is set to minimum." ],
+      "ind-IDN" : [ "Oke, menurunkan kecepatan AC ke level minimum." ]
+   },
+   "VEH24_P02" : {
+      "cmn-CHN" : [ "操作失败。请稍后再试。" ],
+      "eng-USA" : [ "Operation failed. Please try again later." ],
+      "ind-IDN" : [ "Operasi gagal, silakan dicoba lagi." ]
+   },
+   "VEH24_P03" : {
+      "cmn-CHN" : [ "请启动引擎，然后重试。" ],
+      "eng-USA" : [ "Please start the engine and then try again." ],
+      "ind-IDN" : [ "Silakan hidupkan mesin dan coba lagi." ]
+   },
+   "VEH24_P04" : {
+      "cmn-CHN" : [ "风扇音量已经是最小了。" ],
+      "eng-USA" : [ "Fan volume is already the minimum." ],
+      "ind-IDN" : [ "Kecepatan AC telah mencapai level minimum." ]
+   },
+   "VEH25_P01" : {
+      "cmn-CHN" : [ "好的，风扇音量设置为 <n> 级。" ],
+      "eng-USA" : [ "OK, fan volume is set to level <n>." ],
+      "ind-IDN" : [ "Oke, mengatur kecepatan AC ke level <n>." ]
+   },
+   "VEH25_P02" : {
+      "cmn-CHN" : [ "超出范围。设置为最大值，级别 <n_max>。" ],
+      "eng-USA" : [ "Out of range. Setting to maximum, level <n_max>." ],
+      "ind-IDN" : [ "Terlalu kencang, mengatur ke level maksimum, yaitu level <n>." ]
+   },
+   "VEH25_P03" : {
+      "cmn-CHN" : [ "超出范围。设置为最小值，级别 <n_min>。" ],
+      "eng-USA" : [ "Out of range. Setting to minimum, level <n_min>." ],
+      "ind-IDN" : [ "Terlalu kecil, mengatur ke level minimum, yaitu level <n>." ]
+   },
+   "VEH25_P04" : {
+      "cmn-CHN" : [ "操作失败。请稍后再试。" ],
+      "eng-USA" : [ "Operation failed. Please try again later." ],
+      "ind-IDN" : [ "Operasi gagal, silakan dicoba lagi." ]
+   },
+   "VEH25_P05" : {
+      "cmn-CHN" : [ "请启动引擎，然后重试。" ],
+      "eng-USA" : [ "Please start the engine and then try again." ],
+      "ind-IDN" : [ "Silakan hidupkan mesin dan coba lagi." ]
+   },
+   "VEH25_P06" : {
+      "cmn-CHN" : [ "风扇音量已达到 <n> 级。" ],
+      "eng-USA" : [ "The fan volume is level <n> already. " ],
+      "ind-IDN" : [ "Kecepatan AC sudah berada di level <n>." ]
+   },
+   "VEH26_P01" : {
+      "cmn-CHN" : [ "<fan_mode> 已打开。" ],
+      "eng-USA" : [ "<fan_mode> is on." ],
+      "ind-IDN" : [ "<fan_mode> dalam keadaan aktif." ]
+   },
+   "VEH26_P02" : {
+      "cmn-CHN" : [ "好的，<fan_mode> 已设置。" ],
+      "eng-USA" : [ "OK, <fan_mode> is set." ],
+      "ind-IDN" : [ "Oke, mengatur ke mode <fan_mode>." ]
+   },
+   "VEH26_P03" : {
+      "cmn-CHN" : [ "操作失败。请稍后再试。" ],
+      "eng-USA" : [ "Operation failed. Please try again later." ],
+      "ind-IDN" : [ "Operasi gagal, silakan dicoba lagi." ]
+   },
+   "VEH26_P04" : {
+      "cmn-CHN" : [ "请启动引擎，然后重试。" ],
+      "eng-USA" : [ "Please start the engine and then try again." ],
+      "ind-IDN" : [ "Silakan hidupkan mesin dan coba lagi." ]
+   },
+   "VEH27_P01" : {
+      "cmn-CHN" : [ "OK，温度升高1度。" ],
+      "eng-USA" : [ "OK, temperature is raised by 1 degree." ],
+      "ind-IDN" : [ "Oke, menaikkan suhu 1 derajat." ]
+   },
+   "VEH27_P02" : {
+      "cmn-CHN" : [ "操作失败。请稍后再试。" ],
+      "eng-USA" : [ "Operation failed. Please try again later." ],
+      "ind-IDN" : [ "Operasi gagal, silakan dicoba lagi." ]
+   },
+   "VEH27_P03" : {
+      "cmn-CHN" : [ "温度现在设置为最大值 <temperature_max> 度。" ],
+      "eng-USA" : [
+         "The temperature is now set to the maximum, <temperature_max> degrees."
+      ],
+      "ind-IDN" : [
+         "Suhu telah mencapai level maksimum, yaitu <temperature_max> derajat."
+      ]
+   },
+   "VEH27_P04" : {
+      "cmn-CHN" : [ "请启动引擎，然后重试。" ],
+      "eng-USA" : [ "Please start the engine and then try again." ],
+      "ind-IDN" : [ "Silakan hidupkan mesin dan coba lagi." ]
+   },
+   "VEH27_P05" : {
+      "cmn-CHN" : [ "OK，温度升高1级。" ],
+      "eng-USA" : [ "OK, temperature is raised by 1 level." ],
+      "ind-IDN" : [ "Oke, menaikkan suhu 1 level." ]
+   },
+   "VEH27_P06" : {
+      "cmn-CHN" : [ "温度现在设置为最大值，级别 <temperature_max_level>。" ],
+      "eng-USA" : [
+         "The temperature is now set to the maximum, level <temperature_max_level>."
+      ],
+      "ind-IDN" : [ "Suhu telah mencapai level maksimum, yaitu level <temperature_max>." ]
+   },
+   "VEH28_P01" : {
+      "cmn-CHN" : [ "OK，温度降低1度。" ],
+      "eng-USA" : [ "OK, temperature is lowered by 1 degree." ],
+      "ind-IDN" : [ "Oke, menurunkan suhu 1 derajat." ]
+   },
+   "VEH28_P02" : {
+      "cmn-CHN" : [ "操作失败。请稍后再试。" ],
+      "eng-USA" : [ "Operation failed. Please try again later." ],
+      "ind-IDN" : [ "Operasi gagal, silakan dicoba lagi." ]
+   },
+   "VEH28_P03" : {
+      "cmn-CHN" : [ "温度现在设置为最低 <temperature_min> 度。" ],
+      "eng-USA" : [
+         "The temperature is now set to the minimum, <temperature_min> degrees."
+      ],
+      "ind-IDN" : [ "Suhu telah mencapai level minimum, yaitu <temperature_min> derajat." ]
+   },
+   "VEH28_P04" : {
+      "cmn-CHN" : [ "请启动引擎，然后重试。" ],
+      "eng-USA" : [ "Please start the engine and then try again." ],
+      "ind-IDN" : [ "Silakan hidupkan mesin dan coba lagi." ]
+   },
+   "VEH28_P05" : {
+      "cmn-CHN" : [ "OK，温度降低1级。" ],
+      "eng-USA" : [ "OK, temperature is lowered by 1 level." ],
+      "ind-IDN" : [ "Oke, menurunkan suhu 1 level." ]
+   },
+   "VEH28_P06" : {
+      "cmn-CHN" : [ "温度现在设置为最小值，级别 <temperature_min_level>。" ],
+      "eng-USA" : [
+         "The temperature is now set to the minimum, level <temperature_min_level>."
+      ],
+      "ind-IDN" : [ "Suhu telah mencapai level minimum, yaitu level <temperature_min>." ]
+   },
+   "VEH29_P01" : {
+      "cmn-CHN" : [ "空气再循环已开启。" ],
+      "eng-USA" : [ "Air recirculation is on." ],
+      "ind-IDN" : [ "Resirkulasi udara sedang aktif." ]
+   },
+   "VEH29_P02" : {
+      "cmn-CHN" : [ "好的，空气再循环已打开。" ],
+      "eng-USA" : [ "OK, air recirculation is on." ],
+      "ind-IDN" : [ "Oke, mengaktifkan resirkulasi udara." ]
+   },
+   "VEH29_P03" : {
+      "cmn-CHN" : [ "操作失败。请稍后再试。" ],
+      "eng-USA" : [ "Operation failed. Please try again later." ],
+      "ind-IDN" : [ "Operasi gagal, silakan dicoba lagi." ]
+   },
+   "VEH29_P04" : {
+      "cmn-CHN" : [ "请启动引擎，然后重试。" ],
+      "eng-USA" : [ "Please start the engine and then try again." ],
+      "ind-IDN" : [ "Silakan hidupkan mesin dan coba lagi." ]
+   },
+   "VEH30_P01" : {
+      "cmn-CHN" : [ "新鲜空气入口已打开。" ],
+      "eng-USA" : [ "Fresh air intake is on." ],
+      "ind-IDN" : [ "Intake udara segar sedang aktif." ]
+   },
+   "VEH30_P02" : {
+      "cmn-CHN" : [ "好的，新鲜空气进气已打开。" ],
+      "eng-USA" : [ "OK, fresh air intake is on." ],
+      "ind-IDN" : [ "Oke, mengaktifkan intake udara segar." ]
+   },
+   "VEH30_P03" : {
+      "cmn-CHN" : [ "操作失败。请稍后再试。" ],
+      "eng-USA" : [ "Operation failed. Please try again later." ],
+      "ind-IDN" : [ "Operasi gagal, silakan dicoba lagi." ]
+   },
+   "VEH30_P04" : {
+      "cmn-CHN" : [ "请启动引擎，然后重试。" ],
+      "eng-USA" : [ "Please start the engine and then try again." ],
+      "ind-IDN" : [ "Silakan hidupkan mesin dan coba lagi." ]
+   },
+   "VEH31_P01" : {
+      "cmn-CHN" : [ "天窗已经倾斜。" ],
+      "eng-USA" : [ "Sunroof is already tilted." ],
+      "ind-IDN" : [ "Sunroof dalam keadaan miring." ]
+   },
+   "VEH31_P02" : {
+      "cmn-CHN" : [ "好的，倾斜天窗。" ],
+      "eng-USA" : [ "OK, tilting the sunroof." ],
+      "ind-IDN" : [ "Oke, memiringkan sunroof." ]
+   },
+   "VEH31_P03" : {
+      "cmn-CHN" : [ "操作失败。请稍后再试。" ],
+      "eng-USA" : [ "Operation failed. Please try again later." ],
+      "ind-IDN" : [ "Operasi gagal, silakan dicoba lagi." ]
+   },
+   "VEH32_P01" : {
+      "cmn-CHN" : [ "天窗没有倾斜。" ],
+      "eng-USA" : [ "Sunroof is not tilted." ],
+      "ind-IDN" : [ "Sunroof tidak dalam keadaan miring." ]
+   },
+   "VEH32_P02" : {
+      "cmn-CHN" : [ "OK，取消天窗倾斜。" ],
+      "eng-USA" : [ "OK, cancel the sunroof tilting." ],
+      "ind-IDN" : [ "Oke, batal memiringkan sunroof." ]
+   },
+   "VEH32_P03" : {
+      "cmn-CHN" : [ "操作失败。请稍后再试。" ],
+      "eng-USA" : [ "Operation failed. Please try again later." ],
+      "ind-IDN" : [ "Operasi gagal, silakan dicoba lagi." ]
+   },
+   "VEH33_P01" : {
+      "cmn-CHN" : [ "好的，温度级别设置为 <n>。" ],
+      "eng-USA" : [ "OK, the temperature level is set to <n>." ],
+      "ind-IDN" : [ "Oke, mengatur suhu menjadi level <n>." ]
+   },
+   "VEH33_P02" : {
+      "cmn-CHN" : [
+         "超出范围。设置为最大值，级别 <temperature_max_level>。"
+      ],
+      "eng-USA" : [ "Out of range. Setting to maximum, level <temperature_max_level>." ],
+      "ind-IDN" : [ "Suhu di luar jangkauan, mengatur ke suhu maksimum, yaitu level <n>." ]
+   },
+   "VEH33_P03" : {
+      "cmn-CHN" : [
+         "超出范围。设置为最小值，级别 <temperature_min_level>。"
+      ],
+      "eng-USA" : [ "Out of range. Setting to minimum, level <temperature_min_level>." ],
+      "ind-IDN" : [ "Suhu di luar jangkauan, mengatur ke suhu minimum, yaitu level <n>." ]
+   },
+   "VEH33_P04" : {
+      "cmn-CHN" : [ "操作失败。请稍后再试。" ],
+      "eng-USA" : [ "Operation failed. Please try again later." ],
+      "ind-IDN" : [ "Operasi gagal, silakan dicoba lagi." ]
+   },
+   "VEH33_P05" : {
+      "cmn-CHN" : [ "请启动引擎，然后重试。" ],
+      "eng-USA" : [ "Please start the engine and then try again." ],
+      "ind-IDN" : [ "Silakan hidupkan mesin dan coba lagi." ]
+   },
+   "VEH33_P06" : {
+      "cmn-CHN" : [ "温度已经达到 <n> 级。" ],
+      "eng-USA" : [ "The temperature is level <n> already." ],
+      "ind-IDN" : [ "Suhu sudah berada di level <n>." ]
+   },
+   "VEH34_P01" : {
+      "cmn-CHN" : [ "好的，温度升高了 <n> 级。" ],
+      "eng-USA" : [ "OK, the temperature is raised by <n> levels." ],
+      "ind-IDN" : [ "Oke, menaikkan suhu <n> level." ]
+   },
+   "VEH34_P02" : {
+      "cmn-CHN" : [ "操作失败。请稍后再试。" ],
+      "eng-USA" : [ "Operation failed. Please try again later." ],
+      "ind-IDN" : [ "Operasi gagal, silakan dicoba lagi." ]
+   },
+   "VEH34_P03" : {
+      "cmn-CHN" : [ "温度现在设置为最大值，级别 <temperature_max_level>。" ],
+      "eng-USA" : [
+         "The temperature is now set to the maximum, level <temperature_max_level>."
+      ],
+      "ind-IDN" : [ "Suhu telah mencapai level maksimum, yaitu level <temperature_max>." ]
+   },
+   "VEH34_P04" : {
+      "cmn-CHN" : [ "请启动引擎，然后重试。" ],
+      "eng-USA" : [ "Please start the engine and then try again." ],
+      "ind-IDN" : [ "Silakan hidupkan mesin dan coba lagi." ]
+   },
+   "VEH35_P01" : {
+      "cmn-CHN" : [ "好的，温度降低了 <n> 级。" ],
+      "eng-USA" : [ "OK, temperature is lowered by <n> levels." ],
+      "ind-IDN" : [ "Oke, menurunkan suhu <n> level." ]
+   },
+   "VEH35_P02" : {
+      "cmn-CHN" : [ "操作失败。请稍后再试。" ],
+      "eng-USA" : [ "Operation failed. Please try again later." ],
+      "ind-IDN" : [ "Operasi gagal, silakan dicoba lagi." ]
+   },
+   "VEH35_P03" : {
+      "cmn-CHN" : [ "温度现在设置为最小值，级别 <temperature_min_level>。" ],
+      "eng-USA" : [
+         "The temperature is now set to the minimum, level <temperature_min_level>."
+      ],
+      "ind-IDN" : [ "Suhu telah mencapai level minimum, yaitu level <temperature_min>." ]
+   },
+   "VEH35_P04" : {
+      "cmn-CHN" : [ "请启动引擎，然后重试。" ],
+      "eng-USA" : [ "Please start the engine and then try again." ],
+      "ind-IDN" : [ "Silakan hidupkan mesin dan coba lagi." ]
+   },
+   "VEH36_P01" : {
+      "cmn-CHN" : [ "请启动引擎，然后重试。" ],
+      "eng-USA" : [ "Please start the engine and then try again." ],
+      "ind-IDN" : [ "Silakan hidupkan mesin dan coba lagi." ]
+   },
+   "VEH36_P02" : {
+      "cmn-CHN" : [ "好的，打开雨刷。" ],
+      "eng-USA" : [ "OK, open the wipers." ],
+      "ind-IDN" : [ "Oke, menghidupkan wiper." ]
+   },
+   "VEH36_P03" : {
+      "cmn-CHN" : [ "操作失败。请稍后再试。" ],
+      "eng-USA" : [ "Operation failed. Please try again later." ],
+      "ind-IDN" : [ "Operasi gagal, silakan dicoba lagi." ]
+   },
+   "VEH36_P04" : {
+      "cmn-CHN" : [ "雨刮器开启。" ],
+      "eng-USA" : [ "Wiper is on." ],
+      "ind-IDN" : [ "Wiper telah di aktifkan." ]
+   },
+   "VEH37_P01" : {
+      "cmn-CHN" : [ "请启动引擎，然后重试。" ],
+      "eng-USA" : [ "Please start the engine and then try again." ],
+      "ind-IDN" : [ "Silakan hidupkan mesin dan coba lagi." ]
+   },
+   "VEH37_P02" : {
+      "cmn-CHN" : [ "当前状态不支持语音控制​​。请手动操作。" ],
+      "eng-USA" : [
+         "Voice control is not supported in current status. Please operate manually."
+      ],
+      "ind-IDN" : [
+         "Kontrol suara tidak dapan dijalankan dengan status saat ini. Silakan di operasikan secara manual."
+      ]
+   },
+   "VEH37_P03" : {
+      "cmn-CHN" : [ "雨刮器关闭。" ],
+      "eng-USA" : [ "Wiper is off." ],
+      "ind-IDN" : [ "Wiper sedang tidak aktif." ]
+   },
+   "VEH37_P04" : {
+      "cmn-CHN" : [ "好的，关闭雨刷。" ],
+      "eng-USA" : [ "OK, close the wipers." ],
+      "ind-IDN" : [ "Oke, mematikan wiper." ]
+   },
+   "VEH37_P05" : {
+      "cmn-CHN" : [ "操作失败。请稍后再试。" ],
+      "eng-USA" : [ "Operation failed. Please try again later." ],
+      "ind-IDN" : [ "Operasi gagal, silakan dicoba lagi." ]
+   },
+   "VEH38_P01" : {
+      "cmn-CHN" : [ "请启动引擎，然后重试。" ],
+      "eng-USA" : [ "Please start the engine and then try again." ],
+      "ind-IDN" : [ "Silakan hidupkan mesin dan coba lagi." ]
+   },
+   "VEH38_P02" : {
+      "cmn-CHN" : [ "当前状态不支持语音控制​​。请手动操作。" ],
+      "eng-USA" : [
+         "Voice control is not supported in current status. Please operate manually."
+      ],
+      "ind-IDN" : [
+         "Kontrol suara tidak dapan dijalankan dengan status saat ini. Silakan di operasikan secara manual."
+      ]
+   },
+   "VEH38_P03" : {
+      "cmn-CHN" : [ "快速模式已开启。" ],
+      "eng-USA" : [ "Fast mode is on." ],
+      "ind-IDN" : [ "Mode cepat telah di aktifkan." ]
+   },
+   "VEH38_P04" : {
+      "cmn-CHN" : [ "好的，将雨刮器设置为快速模式。" ],
+      "eng-USA" : [ "OK, set wipers to fast mode." ],
+      "ind-IDN" : [ "Oke, mengatur wiper ke mode cepat." ]
+   },
+   "VEH38_P05" : {
+      "cmn-CHN" : [ "操作失败。请稍后再试。" ],
+      "eng-USA" : [ "Operation failed. Please try again later." ],
+      "ind-IDN" : [ "Operasi gagal, silakan dicoba lagi." ]
+   },
+   "VEH39_P01" : {
+      "cmn-CHN" : [ "请启动引擎，然后重试。" ],
+      "eng-USA" : [ "Please start the engine and then try again." ],
+      "ind-IDN" : [ "Silakan hidupkan mesin dan coba lagi." ]
+   },
+   "VEH39_P02" : {
+      "cmn-CHN" : [ "当前状态不支持语音控制​​。请手动操作。" ],
+      "eng-USA" : [
+         "Voice control is not supported in current status. Please operate manually."
+      ],
+      "ind-IDN" : [
+         "Kontrol suara tidak dapan dijalankan dengan status saat ini. Silakan di operasikan secara manual."
+      ]
+   },
+   "VEH39_P03" : {
+      "cmn-CHN" : [ "慢速模式已开启。" ],
+      "eng-USA" : [ "Slow mode is on." ],
+      "ind-IDN" : [ "Mode lambat telah di aktifkan." ]
+   },
+   "VEH39_P04" : {
+      "cmn-CHN" : [ "好的，将雨刮器设置为慢速模式。" ],
+      "eng-USA" : [ "OK, set wipers to slow mode." ],
+      "ind-IDN" : [ "Oke, mengatur wiper ke mode lambat." ]
+   },
+   "VEH39_P05" : {
+      "cmn-CHN" : [ "操作失败。请稍后再试。" ],
+      "eng-USA" : [ "Operation failed. Please try again later." ],
+      "ind-IDN" : [ "Operasi gagal, silakan dicoba lagi." ]
+   },
+   "VEH40_P01" : {
+      "cmn-CHN" : [ "请启动引擎，然后重试。" ],
+      "eng-USA" : [ "Please start the engine and then try again." ],
+      "ind-IDN" : [ "Silakan hidupkan mesin dan coba lagi." ]
+   },
+   "VEH40_P03" : {
+      "cmn-CHN" : [ "请手动打开间歇模式，然后重试。" ],
+      "eng-USA" : [ "Please turn on Intermittent mode manually and then try again." ],
+      "ind-IDN" : [ "Silahkan aktifkan mode intermittent secara manual dan coba lagi." ]
+   },
+   "VEH40_P04" : {
+      "cmn-CHN" : [ "好的，提高雨刮器速度。" ],
+      "eng-USA" : [ "OK, increase the wiper speed." ],
+      "ind-IDN" : [ "Oke, menaikkan kecepatan wiper." ]
+   },
+   "VEH40_P05" : {
+      "cmn-CHN" : [ "雨刮器速度已达到最高水平。" ],
+      "eng-USA" : [ "Wiper speed is already at the maximum level." ],
+      "ind-IDN" : [ "Kecepatan wiper sudah pada tingkat maksimum." ]
+   },
+   "VEH40_P06" : {
+      "cmn-CHN" : [ "操作失败。请稍后再试。" ],
+      "eng-USA" : [ "Operation failed. Please try again later." ],
+      "ind-IDN" : [ "Operasi gagal, silakan dicoba lagi." ]
+   },
+   "VEH41_P01" : {
+      "cmn-CHN" : [ "请启动引擎，然后重试。" ],
+      "eng-USA" : [ "Please start the engine and then try again." ],
+      "ind-IDN" : [ "Silakan hidupkan mesin dan coba lagi." ]
+   },
+   "VEH41_P03" : {
+      "cmn-CHN" : [ "请手动打开间歇模式，然后重试。" ],
+      "eng-USA" : [ "Please turn on Intermittent mode manually and then try again." ],
+      "ind-IDN" : [ "Silahkan aktifkan mode intermittent secara manual dan coba lagi." ]
+   },
+   "VEH41_P04" : {
+      "cmn-CHN" : [ "好的，降低雨刮器速度。" ],
+      "eng-USA" : [ "OK, decrease the wiper speed." ],
+      "ind-IDN" : [ "Oke, menurunkan kecepatan wiper." ]
+   },
+   "VEH41_P05" : {
+      "cmn-CHN" : [ "刮水器速度已经处于最低水平。" ],
+      "eng-USA" : [ "Wiper speed is already at the minimum level." ],
+      "ind-IDN" : [ "Kecepatan wiper sudah pada tingkat minimum." ]
+   },
+   "VEH41_P06" : {
+      "cmn-CHN" : [ "操作失败。请稍后再试。" ],
+      "eng-USA" : [ "Operation failed. Please try again later." ],
+      "ind-IDN" : [ "Operasi gagal, silakan dicoba lagi." ]
+   },
+   "VEH42_P01" : {
+      "cmn-CHN" : [ "请启动引擎，然后重试。" ],
+      "eng-USA" : [ "Please start the engine and then try again." ],
+      "ind-IDN" : [ "Silakan hidupkan mesin dan coba lagi." ]
+   },
+   "VEH42_P02" : {
+      "cmn-CHN" : [ "好的，设置为星空模式。让我们享受天空。" ],
+      "eng-USA" : [ "OK, setting to starry mode. Let’s enjoy the sky." ],
+      "ind-IDN" : [ "Oke, atur ke mode bintang.  Mari memandang indahnya langit." ]
+   },
+   "VEH42_P03" : {
+      "cmn-CHN" : [ "操作失败。 请稍后再试。" ],
+      "eng-USA" : [ "Operation failed. Please try again later." ],
+      "ind-IDN" : [ "Operasi gagal. Silakan dicoba lagi." ]
+   },
+   "VEH42_P04" : {
+      "cmn-CHN" : [ "天窗已经完全打开。 让我们享受天空。" ],
+      "eng-USA" : [ "Sunroof is already full opened. Let’s enjoy the sky." ],
+      "ind-IDN" : [ "Sunroof sudah dibuka penuh. Mari memandang indahnya langit." ]
+   },
+   "VEH43_P01" : {
+      "cmn-CHN" : [ "请启动引擎，然后重试。" ],
+      "eng-USA" : [ "Please start the engine and then try again." ],
+      "ind-IDN" : [ "Silakan hidupkan mesin dan coba lagi." ]
+   },
+   "VEH43_P02" : {
+      "cmn-CHN" : [ "好的，关闭星空模式。" ],
+      "eng-USA" : [ "OK, turning off starry mode." ],
+      "ind-IDN" : [ "Oke, mematikan mode bintang." ]
+   },
+   "VEH43_P03" : {
+      "cmn-CHN" : [ "操作失败。 请稍后再试。" ],
+      "eng-USA" : [ "Operation failed. Please try again later." ],
+      "ind-IDN" : [ "Operasi gagal. Silakan dicoba lagi." ]
+   },
+   "VEH43_P04" : {
+      "cmn-CHN" : [ "星空模式已关闭。" ],
+      "eng-USA" : [ "Starry mode is off." ],
+      "ind-IDN" : [ "Mode bintang sedang tidak aktif." ]
+   },
+   "VEH44_P02" : {
+      "cmn-CHN" : [ "好的，设置为下雨模式。" ],
+      "eng-USA" : [ "OK, setting to raining mode." ],
+      "ind-IDN" : [ "Oke, atur ke mode hujan." ]
+   },
+   "VEH44_P03" : {
+      "cmn-CHN" : [ "操作失败。 请稍后再试。" ],
+      "eng-USA" : [ "Operation failed. Please try again later." ],
+      "ind-IDN" : [ "Operasi gagal. Silakan dicoba lagi." ]
+   },
+   "VEH44_P04" : {
+      "cmn-CHN" : [ "请启动引擎，然后重试。" ],
+      "eng-USA" : [ "Please start the engine and then try again." ],
+      "ind-IDN" : [ "Silakan hidupkan mesin dan coba lagi." ]
+   },
+   "VEH46_P02" : {
+      "cmn-CHN" : [ "好的，设置为新鲜模式。" ],
+      "eng-USA" : [ "OK, setting to fresh mode." ],
+      "ind-IDN" : [ "Oke, atur ke mode udara segar." ]
+   },
+   "VEH46_P03" : {
+      "cmn-CHN" : [ "操作失败。 请稍后再试。" ],
+      "eng-USA" : [ "Operation failed. Please try again later." ],
+      "ind-IDN" : [ "Operasi gagal. Silakan dicoba lagi." ]
+   },
+   "VEH46_P04" : {
+      "cmn-CHN" : [ "请启动引擎，然后重试。" ],
+      "eng-USA" : [ "Please start the engine and then try again." ],
+      "ind-IDN" : [ "Silakan hidupkan mesin dan coba lagi." ]
+   },
+   "VEH47_P02" : {
+      "cmn-CHN" : [ "好的，关闭新鲜模式。" ],
+      "eng-USA" : [ "OK, turning off fresh mode." ],
+      "ind-IDN" : [ "Oke, mematikan mode udara segar." ]
+   },
+   "VEH47_P03" : {
+      "cmn-CHN" : [ "操作失败。 请稍后再试。" ],
+      "eng-USA" : [ "Operation failed. Please try again later." ],
+      "ind-IDN" : [ "Operasi gagal. Silakan dicoba lagi." ]
+   },
+   "VEH47_P04" : {
+      "cmn-CHN" : [ "请启动引擎，然后重试。" ],
+      "eng-USA" : [ "Please start the engine and then try again." ],
+      "ind-IDN" : [ "Silakan hidupkan mesin dan coba lagi." ]
+   },
+   "VEH48_P02" : {
+      "cmn-CHN" : [ "好的，设置为制冷模式。" ],
+      "eng-USA" : [ "OK, setting to cooling mode." ],
+      "ind-IDN" : [ "Oke, atur ke mode pendingin." ]
+   },
+   "VEH48_P03" : {
+      "cmn-CHN" : [ "操作失败。 请稍后再试。" ],
+      "eng-USA" : [ "Operation failed. Please try again later." ],
+      "ind-IDN" : [ "Operasi gagal. Silakan dicoba lagi." ]
+   },
+   "VEH48_P04" : {
+      "cmn-CHN" : [ "请启动引擎，然后重试。" ],
+      "eng-USA" : [ "Please start the engine and then try again." ],
+      "ind-IDN" : [ "Silakan hidupkan mesin dan coba lagi." ]
+   },
+   "VEH52_P01" : {
+      "cmn-CHN" : [ "好的，半开所有的窗户。" ],
+      "eng-USA" : [ "OK, half opening all the windows." ],
+      "ind-IDN" : [ "Oke, membuka setengah semua jendela." ]
+   },
+   "VEH52_P02" : {
+      "cmn-CHN" : [ "好的，将 <area_description> 窗口打开一半。" ],
+      "eng-USA" : [ "OK, half opening the <area_description> window." ],
+      "ind-IDN" : [ "Oke, membuka setengah jendela <area_description>." ]
+   },
+   "VEH52_P03" : {
+      "cmn-CHN" : [ "操作失败。 请稍后再试。" ],
+      "eng-USA" : [ "Operation failed. Please try again later." ],
+      "ind-IDN" : [ "Operasi gagal. Silakan dicoba lagi." ]
+   },
+   "VEH52_P04" : {
+      "cmn-CHN" : [ "请启动引擎，然后重试。" ],
+      "eng-USA" : [ "Please start the engine and then try again." ],
+      "ind-IDN" : [ "Silakan hidupkan mesin dan coba lagi." ]
+   },
+   "VEH52_P05" : {
+      "cmn-CHN" : [ "所有的窗户都半开着。" ],
+      "eng-USA" : [ "All the windows were half open." ],
+      "ind-IDN" : [ "Semua jendela dalam keadaan terbuka setengah." ]
+   },
+   "VEH52_P06" : {
+      "cmn-CHN" : [ "<area_description> 窗口半开。" ],
+      "eng-USA" : [ "The <area_description> window was half open." ],
+      "ind-IDN" : [ "Jendela <area_description> dalam keadaan terbuka setengah." ]
+   },
+   "VEH53_P01" : {
+      "cmn-CHN" : [ "好的，把所有的窗户关上一半。" ],
+      "eng-USA" : [ "OK, half closing all the windows." ],
+      "ind-IDN" : [ "Oke, menutup setengah semua jendela." ]
+   },
+   "VEH53_P02" : {
+      "cmn-CHN" : [
+         "好的，将 <area_description> 窗口关闭一半。",
+         "好的，把所有的窗户都打开一点。",
+         "好的，稍微打开 <area_description> 窗口。",
+         "好的，把所有的窗户关上一点。",
+         "好的，稍微关闭 <area_description> 窗口。",
+         "好的，完全打开所有窗口。",
+         "好的，完全打开 <area_description> 窗口。",
+         "好的，完全关闭所有窗口。",
+         "好的，完全关闭 <area_description> 窗口。"
+      ],
+      "eng-USA" : [
+         "OK, half closing the <area_description> window.",
+         "OK, opening all the windows by a little.",
+         "OK, opening the <area_description>  window by a little.",
+         "OK, closing all the windows by a little.",
+         "OK, closing the <area_description>  window by a little.",
+         "OK, fully opening all windows.",
+         "OK, fully opening the <area_description> window.",
+         "OK, fully closing all windows.",
+         "OK, fully closing the <area_description> window."
+      ],
+      "ind-IDN" : [
+         "Oke, menutup setengah jendela <area_description>.",
+         "Oke, membuka sedikit semua jendela.",
+         "Oke, membuka sedikit jendela <area_description> .",
+         "Oke, menutup sedikit semua jendela.",
+         "Oke, menutup sedikit jendela <area_description> .",
+         "Oke, membuka semua jendela seluruhnya.",
+         "Oke, membuka jendela  <area_description> seluruhnya.",
+         "Oke, menutup semua jendela seluruhnya.",
+         "Oke, menutup jendela  <area_description> seluruhnya."
+      ]
+   },
+   "VEH53_P03" : {
+      "cmn-CHN" : [ "操作失败。 请稍后再试。" ],
+      "eng-USA" : [ "Operation failed. Please try again later." ],
+      "ind-IDN" : [ "Operasi gagal. Silakan dicoba lagi." ]
+   },
+   "VEH53_P04" : {
+      "cmn-CHN" : [ "请启动引擎，然后重试。" ],
+      "eng-USA" : [ "Please start the engine and then try again." ],
+      "ind-IDN" : [ "Silakan hidupkan mesin dan coba lagi." ]
+   },
+   "VEH53_P05" : {
+      "cmn-CHN" : [ "所有的窗户都半关着。" ],
+      "eng-USA" : [ "All the windows were half closed." ],
+      "ind-IDN" : [ "Semua jendela dalam keadaan tertutup setengah." ]
+   },
+   "VEH53_P06" : {
+      "cmn-CHN" : [ "<area_description> 窗口半关闭。" ],
+      "eng-USA" : [ "The <area_description> window was half closed." ],
+      "ind-IDN" : [ "Jendela <area_description> dalam keadaan tertutup setengah." ]
+   },
+   "VEH54_P01" : {
+      "cmn-CHN" : [ "交流鼓风机已关闭。" ],
+      "eng-USA" : [ "AC blower is off." ],
+      "ind-IDN" : [ "Kipas AC sedang tidak aktif." ]
+   },
+   "VEH54_P02" : {
+      "cmn-CHN" : [ "好的，关闭交流鼓风机。" ],
+      "eng-USA" : [ "OK, turning off AC blower." ],
+      "ind-IDN" : [ "Oke, mematikan kipas AC." ]
+   },
+   "VEH54_P03" : {
+      "cmn-CHN" : [ "操作失败。 请稍后再试。" ],
+      "eng-USA" : [ "Operation failed. Please try again later." ],
+      "ind-IDN" : [ "Operasi gagal. Silakan dicoba lagi." ]
+   },
+   "version" : "Prompter 1.0"
+}
+

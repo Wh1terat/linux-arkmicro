@@ -1,0 +1,308 @@
+{
+  "version": "VoConHigh 1.0",
+  "dynamic_content_consumer": [
+    {
+      "name": "DCC_CUSTOM_MAIN_WUW",
+      "content": [
+        {
+          "type": "string",
+          "name": "MainWuw_Ortho"
+        },
+        {
+          "type": "integer64",
+          "name": "EntryName_ID"
+        }
+      ],
+      "type": "local",
+      "local": {
+        "lexicon": {
+          "uses": "clc_mnc"
+        },
+        "context": {
+          "name": "custom_main_wuw_ctx",
+          "acmod": "acmod6_6000_mnc_cfmoto_wuw_f16_v1_0_0.dat",
+          "link": [
+            {
+              "type": "content",
+              "content": {
+                "clc_category": "normal",
+                "name": "MainWuw_Ortho"
+              }
+            }
+          ]
+        },
+        "persistContexts": false
+      }
+    },
+    {
+      "name": "DCC_CUSTOM_SHORTCUT_WUW",
+      "content": [
+        {
+          "type": "string",
+          "name": "ShortcutWuw_Ortho"
+        },
+        {
+          "type": "integer64",
+          "name": "EntryName_ID"
+        }
+      ],
+      "type": "local",
+      "local": {
+        "lexicon": {
+          "uses": "clc_mnc"
+        },
+        "context": {
+          "name": "custom_shortcut_wuw_ctx",
+          "acmod": "acmod6_6000_mnc_cfmoto_wuw_f16_v1_0_0.dat",
+          "link": [
+            {
+              "type": "content",
+              "content": {
+                "clc_category": "normal",
+                "name": "ShortcutWuw_Ortho"
+              }
+            }
+          ]
+        },
+        "persistContexts": false
+      }
+    },
+    {
+      "name": "DCC_ASR_CUSTOM_MAIN_WUW",
+      "content": [
+        {
+          "type": "string",
+          "name": "MainWuwAsr_Ortho"
+        },
+        {
+          "type": "integer64",
+          "name": "EntryName_ID"
+        }
+      ],
+      "type": "local",
+      "local": {
+        "lexicon": {
+          "uses": "clc_mnc"
+        },
+        "context": {
+          "name": "asr_custom_main_wuw_ctx",
+          "acmod": "acmod6_6000_mnc_gen_car_f16_v1_0_1.dat",
+          "link": [
+            {
+              "type": "content",
+              "content": {
+                "clc_category": "normal",
+                "name": "MainWuwAsr_Ortho"
+              }
+            }
+          ]
+        },
+        "persistContexts": false
+      }
+    },
+    {
+      "name": "DCC_CUSTOM_ENTRY",
+      "content": [
+        {
+          "type": "string",
+          "name": "EntryName_Ortho"
+        },
+        {
+          "type": "integer64",
+          "name": "EntryName_ID"
+        }
+      ],
+      "type": "local",
+      "local": {
+        "lexicon": {
+          "uses": "clc_mnc"
+        },
+        "context": {
+          "name": "dcc_custom_entry_ctx",
+          "acmod": "acmod6_6000_mnc_gen_car_f16_v1_0_1.dat",
+          "link": [
+            {
+              "type": "content",
+              "content": {
+                "clc_category": "normal",
+                "name": "EntryName_Ortho"
+              }
+            }
+          ]
+        },
+        "persistContexts": false
+      }
+    },
+    {
+      "name": "DCC_CONTACT",
+      "content": [
+        {
+          "type": "string",
+          "name": "ContactName_Ortho"
+        },
+        {
+          "type": "integer64",
+          "name": "ContactName_ID"
+        }
+      ],
+      "type": "local",
+      "local": {
+        "lexicon": {
+          "uses": "clc_mnc"
+        },
+        "persist_contexts": "true",
+        "context": {
+          "name": "slm_contact",
+          "acmod": "acmod6_6000_mnc_gen_car_f16_v1_0_1.dat",
+          "link": [
+            {
+              "type": "content",
+              "content": {
+                "clc_category": "normal",
+                "name": "ContactName_Ortho"
+              }
+            }
+          ]
+        },
+        "persistContexts": false
+      }
+    },
+    {
+      "name": "DCC_MUSIC",
+      "content": [
+        {
+          "type": "string",
+          "name": "Title_Ortho"
+        },
+        {
+          "type": "string",
+          "name": "Artist_Ortho"
+        },
+        {
+          "type": "string",
+          "name": "Album_Ortho"
+        },
+        {
+          "type": "integer64",
+          "name": "Title_ID"
+        },
+        {
+          "type": "integer64",
+          "name": "Artist_ID"
+        },
+        {
+          "type": "integer64",
+          "name": "Album_ID"
+        }
+      ],
+      "type": "local",
+      "local": {
+        "lexicon": {
+          "uses": "clc_mnc"
+        },
+        "persist_contexts": "true",
+        "context": [
+          {
+            "name": "slm_song_name",
+            "acmod": "acmod6_6000_mnc_gen_car_f16_v1_0_1.dat",
+            "link": [
+              {
+                "type": "content",
+                "content": {
+                  "clc_category": "normal",
+                  "name": "Title_Ortho"
+                }
+              }
+            ]
+          },
+          {
+            "name": "slm_artist_name",
+            "acmod": "acmod6_6000_mnc_gen_car_f16_v1_0_1.dat",
+            "link": [
+              {
+                "type": "content",
+                "content": {
+                  "clc_category": "normal",
+                  "name": "Artist_Ortho"
+                }
+              }
+            ]
+          },
+          {
+            "name": "slm_album_name",
+            "acmod": "acmod6_6000_mnc_gen_car_f16_v1_0_1.dat",
+            "link": [
+              {
+                "type": "content",
+                "content": {
+                  "clc_category": "normal",
+                  "name": "Album_Ortho"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "DCC_APP",
+      "content": [
+        {
+        "type": "string",
+        "name": "AppName_Ortho"
+        },
+        {
+          "type": "integer64",
+          "name": "AppName_ID"
+        }
+      ],
+      "type": "local",
+      "local": {
+        "lexicon": {
+          "uses": "clc_mnc"
+        },
+        "persist_contexts": "true",
+        "context": {
+          "name": "slm_app_name",
+          "acmod": "acmod6_6000_mnc_gen_car_f16_v1_0_1.dat",
+          "link": [
+            {
+              "type": "content",
+              "content": {
+                "clc_category": "normal",
+                "name": "AppName_Ortho"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "DCC_NVSL_UTT",
+      "content": {
+        "type": "string",
+        "name": "NvslUtt_Ortho"
+      },
+      "type": "local",
+      "local": {
+        "lexicon": {
+          "uses": "clc_mnc"
+        },
+        "context": {
+          "name": "nvsl_utt",
+          "acmod": "acmod6_6000_mnc_gen_car_f16_v1_0_1.dat",
+          "link": [
+            {
+              "type": "content",
+              "content": {
+                "clc_category": "normal",
+                "name": "NvslUtt_Ortho"
+              }
+            }
+          ]
+        },
+        "persistContexts": false
+      }
+    }
+  ]
+}

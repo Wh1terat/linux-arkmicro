@@ -1,0 +1,29 @@
+{
+  "version": "VoConHigh 1.0",
+  "context": {
+    "name": "toplevel_dial_ctx",
+    "type": "static",
+    "static": {
+      "filename": "toplevel_dial.fcf",
+      "do_crc_check": "true"
+    },
+    "slot_filling": {
+      "slot": "GRAMMAR_PHONE#CONTACT_FULL_NM",
+      "context": {
+        "type": "dynamic",
+        "dynamic": {
+          "dynamic_content_consumer": "DCC_CONTACT",
+          "context_name": "slm_contact"
+        }
+      }
+    },
+    "vocon_parameters": {
+      "LH_CTX_PARAM_TIMEOUT_SPEECH": 8000,
+      "LH_CTX_PARAM_TSILENCE": 800,
+      "LH_CTX_PARAM_TSILENCE_FX": 500,
+      "LH_CTX_PARAM_MAXNBEST": 10,
+      "LH_CTX_PARAM_ACCURACY": 5000,
+      "LH_CTX_PARAM_MAXNBEST_SECONDPASS": 10
+    }
+  }
+}
