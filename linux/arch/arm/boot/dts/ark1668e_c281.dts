@@ -117,7 +117,7 @@
 		lvds-con = <0x4545>;
 		lvds-con2 = <0xfa000101>;
 		bits-per-pixel = <32>;
-		fb-buffer-nums = <6>;
+		fb-buffer-nums = <3>;
 		power-control-gpio = <&gportd 0 GPIO_ACTIVE_HIGH>;
 		lcd-wiring-mode = "RGB";
 		lcdcon-backlight;
@@ -234,7 +234,7 @@
 	};
 };
 &gpu{
-shared-mem-size =<0x10000000>;
+shared-mem-size =<0x18000000>;
 };
 
 &can0{
