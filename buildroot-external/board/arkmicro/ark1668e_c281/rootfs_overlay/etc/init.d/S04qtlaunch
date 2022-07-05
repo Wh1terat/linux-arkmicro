@@ -1,0 +1,10 @@
+export QTDIR=/usr
+export LD_LIBRARY_PATH=$QTDIR/lib:$LD_LIBRARY_PATH
+export MALI_NOCLEAR=1
+export MALI_MAX_WINDOW_BUFFERS=3
+chmod 777 /usr/bin/TYW_AWTK/C281_1668E_DASHBOARD
+/usr/bin/TYW_H264/H264_Server &
+chmod 777 /etc/appDaemon.sh
+/etc/appDaemon.sh &
+
+spdlog &

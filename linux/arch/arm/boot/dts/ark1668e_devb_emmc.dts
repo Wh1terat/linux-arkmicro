@@ -184,7 +184,7 @@
 	display0: display@0 {
 		interface-type = "DLVDS";
 		lvds-con = <0x4545>;
-		lvds-con2 = <0xfa200141>;
+		lvds-con2 = <0xfa000101>;
 		bits-per-pixel = <32>;
 		fb-buffer-nums = <3>;
 		power-control-gpio = <&gportd 0 GPIO_ACTIVE_HIGH>;
@@ -198,15 +198,15 @@
 		display-timings {
 			native-mode = <&timing0>;
 			timing0: timing0 {
-				clock-frequency = <120000000>;
-				hactive = <1920>;
-				vactive = <720>;
-				hback-porch = <300>;
-				hfront-porch = <240>;
-				vback-porch = <80>;
-				vfront-porch = <80>;
-				hsync-len = <36>;
-				vsync-len = <18>;
+				clock-frequency = <40000000>;
+				hactive = <1280>;
+				vactive = <480>;
+				hback-porch = <20>;
+				hfront-porch = <45>;
+				vback-porch = <5>;
+				vfront-porch = <10>;
+				hsync-len = <5>;
+				vsync-len = <6>;
 				hsync-active = <1>;
 				vsync-active = <1>;
 				de-active = <0>;

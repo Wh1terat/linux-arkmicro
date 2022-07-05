@@ -244,8 +244,11 @@
 #buildroot-external
 #
 /buildroot-external/toolchain/
-
+/buildroot-external/board/arkmicro/ark1668e_c281/rootfs_overlay/usr/
+/buildroot-external/board/arkmicro/ark1668e_c281/rootfs_overlay
 #
 #output
 #
-/output/
+/output/*
+!/output/board/ark1668e_c281/buildroot/target/etc/udev/
+!/output/board/ark1668e_c281/buildroot/target/opt/

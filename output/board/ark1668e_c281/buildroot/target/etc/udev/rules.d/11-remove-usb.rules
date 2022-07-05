@@ -1,0 +1,4 @@
+ACTION!="remove",GOTO="farsight"
+SUBSYSTEM!="block",GOTO="farsight"
+KERNEL=="sd[a-z][0-9]",RUN+="/opt/usb/umountusb.sh"
+LABEL="farsight"
