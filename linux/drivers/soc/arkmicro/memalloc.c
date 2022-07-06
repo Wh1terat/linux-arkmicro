@@ -89,9 +89,9 @@ static int allocate_large_block(struct device *dev, struct memalloc_block **pp_b
 		return -ENOMEM;
 	}
 
-	dev_dbg(dev, "large alloc ok: VA=%p PA=0x%llx SZ=%d (requested %d)\n",
+/*	dev_dbg(dev, "large alloc ok: VA=%p PA=0x%llx SZ=%d (requested %d)\n",
 			p->virt_addr, (unsigned long long)p->dma_handle, p->size, *p_size);
-
+*/
 	*p_size = p->size;
 	*pp_block = p;
 	return 0;
@@ -99,7 +99,7 @@ static int allocate_large_block(struct device *dev, struct memalloc_block **pp_b
 
 static int free_large_block(struct device *dev, struct memalloc_block *p)
 {
-	dev_dbg(dev, "large free: VA=%p\n", p->virt_addr);
+/*	dev_dbg(dev, "large free: VA=%p\n", p->virt_addr); */
 	dma_free_coherent(dev, p->size, p->virt_addr, p->dma_handle);
 	kfree(p);
 	return 0;
