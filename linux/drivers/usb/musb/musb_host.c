@@ -409,19 +409,11 @@ static u16 musb_h_flush_rxfifo(struct musb_hw_ep *hw_ep, u16 csr)
 	 * ignore dma (various models),
 	 * leave toggle alone (may not have been saved yet)
 	 */
-#if NICHOLAS_ADD
-	csr |= MUSB_RXCSR_FLUSHFIFO;
-	musb_writew(hw_ep->regs, MUSB_RXCSR, csr);
-	csr &= ~(MUSB_RXCSR_H_REQPKT
-		| MUSB_RXCSR_H_AUTOREQ
-		| MUSB_RXCSR_AUTOCLEAR
-		| MUSB_RXCSR_RXPKTRDY);
-#else
 	csr |= MUSB_RXCSR_FLUSHFIFO | MUSB_RXCSR_RXPKTRDY;
 	csr &= ~(MUSB_RXCSR_H_REQPKT
 		| MUSB_RXCSR_H_AUTOREQ
 		| MUSB_RXCSR_AUTOCLEAR);
-#endif
+
 	/* write 2x to allow double buffering */
 	musb_writew(hw_ep->regs, MUSB_RXCSR, csr);
 	musb_writew(hw_ep->regs, MUSB_RXCSR, csr);
