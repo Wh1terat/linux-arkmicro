@@ -1,0 +1,89 @@
+{
+  "version": "CloudServices 1.0",
+  "cloud_services": [
+    {
+      "type": "http",
+      "name": "CLOUD_CREDENTIAL",
+      "url": {
+        "vh_callback": {
+          "name": "vh_cloud_url",
+          "type": "string",
+          "default": "https://ark-test-cmnchn-cn-ncs.cerenceapi.cn:443/NmspServlet/"
+        }
+      },
+      "ssl_certificate_bundle": "../cert/ca-bundle.crt",
+      "app_id": "CRNC_DRAGON_ARK_PRODUCT",
+      "app_key": "f4c115b033acc82228e7a6ea4ec6d7329f7e9876e464d24f709b3de0ae65addd26117ecf2f58b2b8a0a89656a4233613b0f45d91e0503bb64469aaf628ff1cec",
+      "app_name": "dragon ark lite sample app",
+      "app_version": "1",
+      "app_language": "cmn-CHN",
+      "connection_timeout": 5,
+      "idle_session_timeout": 10,
+      "carrier": "carrier",
+      "device_model": "ARK_PRODUCT_INTERNAL_DEVICE_MODEL",
+      "uid": {
+        "vh_callback": {
+          "name": "vh_cloud_uid",
+          "type": "string",
+          "default": "ARK_PRODUCT_INTERNAL_UID"
+        }
+      },
+      "input_audio_format": {
+        "name": "AudioFormat",
+        "container": "CONTAINER_OGG",
+        "encoding": "ENCODING_OPUS",
+        "sample_rate": 16000,
+        "samples_per_channel": 960,
+        "channel_count": 1
+      },
+      "output_audio_format": {
+        "encoding": "ENCODING_OPUS",
+        "sample_rate": 16000,
+        "samples_per_channel": 1920,
+        "channel_count": 1
+      }
+    },
+    {
+      "type": "http",
+      "name": "CLOUD_CREDENTIAL_APPSERVERDATA",
+      "url": {
+        "vh_callback": {
+          "name": "vh_cloud_url",
+          "type": "string",
+          "default": "https://ark-test-cmnchn-cn-ncs.cerenceapi.cn:443/NmspServlet/"
+        }
+      },
+      "ssl_certificate_bundle": "../cert/ca-bundle.crt",
+      "app_id": "CRNC_DRAGON_ARK_PRODUCT",
+      "app_key": "f4c115b033acc82228e7a6ea4ec6d7329f7e9876e464d24f709b3de0ae65addd26117ecf2f58b2b8a0a89656a4233613b0f45d91e0503bb64469aaf628ff1cec",
+      "app_name": "dragon ark lite sample app",
+      "app_version": "1",
+      "app_language": "cmn-CHN",
+      "connection_timeout": 5,
+      "idle_session_timeout": 10,
+      "carrier": "carrier",
+      "device_model": "ARK_PRODUCT_INTERNAL_DEVICE_MODEL",
+      "uid": {
+        "vh_callback": {
+          "name": "vh_cloud_uid",
+          "type": "string",
+          "default": "ARK_PRODUCT_INTERNAL_UID"
+        }
+      },
+      "input_audio_format": {
+        "name": "AudioFormat",
+        "container": "CONTAINER_OGG",
+        "encoding": "ENCODING_OPUS",
+        "sample_rate": 16000,
+        "samples_per_channel": 960,
+        "channel_count": 1
+      },
+      "output_audio_format": {
+        "encoding": "ENCODING_OPUS",
+        "sample_rate": 16000,
+        "samples_per_channel": 1920,
+        "channel_count": 1
+      }
+    }
+  ]
+}

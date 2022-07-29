@@ -1,0 +1,28 @@
+{
+    "version": "VoConHigh 1.0",
+    "context": {
+      "name": "custom_ctx",
+      "type": "static",
+      "static": {
+        "filename": "custom_asr.fcf"
+      },
+      "slot_filling": {
+        "slot": "CUSTOM#Custom_Entry_Command",
+        "context": {
+          "type": "dynamic",
+          "dynamic": {
+            "dynamic_content_consumer": "DCC_CUSTOM_ENTRY",
+            "context_name": "dcc_custom_entry_ctx"
+          }
+        }
+      },
+      "vocon_parameters": {
+        "LH_CTX_PARAM_TIMEOUT_SPEECH": 8000,
+        "LH_CTX_PARAM_TSILENCE": 800,
+        "LH_CTX_PARAM_TSILENCE_FX": 600,
+        "LH_CTX_PARAM_MAXNBEST": 10,
+        "LH_CTX_PARAM_ACCURACY": 4000,
+        "LH_CTX_PARAM_MAXNBEST_SECONDPASS": 10
+      }
+    }
+  }

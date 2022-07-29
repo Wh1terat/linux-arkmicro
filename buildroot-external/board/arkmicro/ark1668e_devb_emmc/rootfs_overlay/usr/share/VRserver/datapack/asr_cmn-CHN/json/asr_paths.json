@@ -1,0 +1,46 @@
+{
+  "version": "VoConHigh 1.0",
+  "asr_paths": {
+    "acmod": "../asr/acmod",
+    "asr": "../../asr_common/asr_data",
+    "context": [
+      "../asr/ctx/slm",
+      "../asr/ctx/grammar"
+    ],
+    "clc": "../asr/clc",
+    "users": "%WRITABLE_DIR%/users",
+    "context_cache": "%WRITABLE_DIR%/context_cache",
+    "lexcache": "%WRITABLE_DIR%/lexcache",
+    "dictionary": ["../asr/dct"]
+  },
+  "lexicon": {
+    "name": "clc_mnc",
+    "clc": {
+      "filename": "clc_mnc_mpthreevadml_v6_5_003003.dat",
+      "dictionary": [{
+        "filename": "wuw.dcb"
+      }]
+    },
+    "lexcache": {
+      "persist": true,
+      "cache_word_size": 60000
+    }
+  },
+  "recognizer": [
+    {
+      "name": "vocon",
+      "thread_pool": {
+        "dcc_creation": {
+          "max_number": 8,
+          "name": "DCC_CRE_"
+        },
+        "dcc_data_preparation": {
+          "normal_priority": {
+            "max_number": 8,
+            "name": "DCC_PRE_"
+          }
+        }
+      }
+    }
+  ]
+}

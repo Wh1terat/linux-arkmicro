@@ -1,0 +1,382 @@
+{
+  "asr_wuw": {
+    "wuw_dynamic_threshold": {
+      "enable_dynamic_threshold": true,
+      "dynamic_threshold_range": 600,
+      "dynamic_threshold_timeout": 30000
+    },
+    "wuw_sds": {
+      "word_threshold_default": 3000,
+      "tag_threshold_default": 4500,
+      "phrases": [
+        {
+          "orthography": "你好五菱",
+          "word_threshold": 3000,
+          "tag_threshold": 5400
+        }
+      ]
+    },
+    "wuw_customized": {
+      "word_threshold_default": 3000,
+      "tag_threshold_default": 4500
+    },
+    "wuw_shortcut": {
+      "word_threshold_default": 3000,
+      "tag_threshold_default": 4500,
+      "allowed_phrases": [
+        {
+          "orthography": "上一个",
+          "word_threshold": 3000,
+          "tag_threshold": 5950,
+          "intents": [
+            {
+              "domain": "general",
+              "name": "generic:na",
+              "slots": [
+                {
+                  "name": "which",
+                  "value": "previous"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "orthography": "上一首",
+          "word_threshold": 3000,
+          "tag_threshold": 5650,
+          "intents": [
+            {
+              "domain": "music",
+              "name": "mediamusic:na:song",
+              "slots": [
+                {
+                  "name": "which",
+                  "value": "previous"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "orthography": "上一条",
+          "word_threshold": 3000,
+          "tag_threshold": 5550,
+          "intents": [
+            {
+              "domain": "general",
+              "name": "generic:na",
+              "slots": [
+                {
+                  "name": "which",
+                  "value": "previous"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "orthography": "下一个",
+          "word_threshold": 3000,
+          "tag_threshold": 6250,
+          "intents": [
+            {
+              "domain": "general",
+              "name": "generic:na",
+              "slots": [
+                {
+                  "name": "which",
+                  "value": "next"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "orthography": "下一首",
+          "word_threshold": 3000,
+          "tag_threshold": 5550,
+          "intents": [
+            {
+              "domain": "music",
+              "name": "mediamusic:na:song",
+              "slots": [
+                {
+                  "name": "which",
+                  "value": "next"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "orthography": "下一条",
+          "word_threshold": 3000,
+          "tag_threshold": 5950,
+          "intents": [
+            {
+              "domain": "generic",
+              "name": "generic:na",
+              "slots": [
+                {
+                  "name": "which",
+                  "value": "next"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "orthography": "暂停播放",
+          "word_threshold": 3500,
+          "tag_threshold": 5200,
+          "intents": [
+            {
+              "domain": "media_general",
+              "name": "media:pause",
+              "slots": []
+            }
+          ]
+        },
+        {
+          "orthography": "继续播放",
+          "word_threshold": 3500,
+          "tag_threshold": 5500,
+          "intents": [
+            {
+              "domain": "media_general",
+              "name": "media:resume",
+              "slots": []
+            }
+          ]
+        },
+        {
+          "orthography": "关闭音乐",
+          "word_threshold": 3500,
+          "tag_threshold": 5800,
+          "intents": [
+            {
+              "domain": "web_app",
+              "name": "web_app:close:app",
+              "slots": [
+                {
+                  "name": "app",
+                  "value": "music"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "orthography": "单曲循环",
+          "word_threshold": 3500,
+          "tag_threshold": 5400,
+          "intents": [
+            {
+              "domain": "music",
+              "name": "mediamusic:turn_on_repeat:song",
+              "slots": []
+            }
+          ]
+        },
+        {
+          "orthography": "顺序播放",
+          "word_threshold": 3500,
+          "tag_threshold": 5200,
+          "intents": [
+            {
+              "domain": "music",
+              "name": "mediamusic:playall",
+              "slots": []
+            }
+          ]
+        },
+        {
+          "orthography": "随机播放",
+          "word_threshold": 3500,
+          "tag_threshold": 5500,
+          "intents": [
+            {
+              "domain": "music",
+              "name": "mediamusic:shuffle",
+              "slots": []
+            }
+          ]
+        },
+        {
+          "orthography": "声音大一点",
+          "word_threshold": 3000,
+          "tag_threshold": 5500,
+          "intents": [
+            {
+              "domain": "command_and_control",
+              "name": "settings_and_control:increase:volume",
+              "slots": []
+            }
+          ]
+        },
+        {
+          "orthography": "增大音量",
+          "word_threshold": 3500,
+          "tag_threshold": 5200,
+          "intents": [
+            {
+              "domain": "command_and_control",
+              "name": "settings_and_control:increase:volume",
+              "slots": []
+            }
+          ]
+        },
+        {
+          "orthography": "声音小一点",
+          "word_threshold": 3000,
+          "tag_threshold": 5400,
+          "intents": [
+            {
+              "domain": "command_and_control",
+              "name": "settings_and_control:decrease:volume",
+              "slots": []
+            }
+          ]
+        },
+        {
+          "orthography": "减小音量",
+          "word_threshold": 3000,
+          "tag_threshold": 4900,
+          "intents": [
+            {
+              "domain": "command_and_control",
+              "name": "settings_and_control:decrease:volume",
+              "slots": []
+            }
+          ]
+        },
+        {
+          "orthography": "还有多远",
+          "word_threshold": 3500,
+          "tag_threshold": 5400,
+          "intents": [
+            {
+              "domain": "ude",
+              "name": "ude:get_distance",
+              "slots": []
+            }
+          ]
+        },
+        {
+          "orthography": "还要多久",
+          "word_threshold": 3500,
+          "tag_threshold": 5200,
+          "intents": [
+            {
+              "domain": "ude",
+              "name": "ude:get_duration",
+              "slots": []
+            }
+          ]
+        },
+        {
+          "orthography": "打开导航",
+          "word_threshold": 3500,
+          "tag_threshold": 5500,
+          "intents": [
+            {
+              "domain": "ude",
+              "name": "ude:get_map",
+              "slots": []
+            }
+          ]
+        },
+        {
+          "orthography": "缩小地图",
+          "word_threshold": 3000,
+          "tag_threshold": 4800,
+          "intents": [
+            {
+              "domain": "ude",
+              "name": "locations:decrease:zoom",
+              "slots": []
+            }
+          ]
+        },
+        {
+          "orthography": "放大地图",
+          "word_threshold": 3000,
+          "tag_threshold": 4950,
+          "intents": [
+            {
+              "domain": "ude",
+              "name": "locations:increase:zoom",
+              "slots": []
+            }
+          ]
+        },
+        {
+          "orthography": "打开路况",
+          "word_threshold": 3500,
+          "tag_threshold": 5200,
+          "intents": [
+            {
+              "domain": "ude",
+              "name": "locations:enable:notifications",
+              "slots": []
+            }
+          ]
+        },
+        {
+          "orthography": "关闭路况",
+          "word_threshold": 3500,
+          "tag_threshold": 5400,
+          "intents": [
+            {
+              "domain": "ude",
+              "name": "locations:disable:notifications",
+              "slots": []
+            }
+          ]
+        },
+        {
+          "orthography": "关闭导航",
+          "word_threshold": 3500,
+          "tag_threshold": 5400,
+          "intents": [
+            {
+              "domain": "web_app",
+              "name": "web_app:close:app",
+              "slots": [
+                {
+                  "name": "app",
+                  "value": "navigation"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "orthography": "抓拍视频",
+          "word_threshold": 3000,
+          "tag_threshold": 4750,
+          "intents": [
+            {
+              "domain": "command_and_control",
+              "name": "camera:record",
+              "slots": []
+            }
+          ]
+        },
+        {
+          "orthography": "我要拍照",
+          "word_threshold": 3500,
+          "tag_threshold": 5400,
+          "intents": [
+            {
+              "domain": "command_and_control",
+              "name": "camera:take_picture",
+              "slots": []
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

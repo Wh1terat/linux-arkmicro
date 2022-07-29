@@ -1,4 +1,116 @@
 {
+   "APP01_P01" : {
+      "cmn-CHN" : [ "好的，启动 <app_name>。" ],
+      "eng-USA" : [ "OK, launch <app_name>." ],
+      "ind-IDN" : [ "Oke, membuka halaman <app_name>." ],
+      "slot_name" : [ "<app_name>" ]
+   },
+   "APP01_P02" : {
+      "cmn-CHN" : [ "抱歉，无法打开 <app_name>。" ],
+      "eng-USA" : [ "Sorry, failed to open <app_name>." ],
+      "ind-IDN" : [ "Maaf, gagal membuka halaman <app_name>." ],
+      "slot_name" : [ "<app_name>" ]
+   },
+   "APP01_P03" : {
+      "cmn-CHN" : [ "<app_name> 已打开。" ],
+      "eng-USA" : [ "<app_name> is open." ],
+      "ind-IDN" : [ "<app_name> telah dibuka." ],
+      "slot_name" : [ "<app_name>" ]
+   },
+   "APP02_P01" : {
+      "cmn-CHN" : [ "好的，回到主屏幕。" ],
+      "eng-USA" : [ "Sure, go back to home screen." ],
+      "ind-IDN" : [ "Baik, kembali ke layar utama." ]
+   },
+   "APP02_P02" : {
+      "cmn-CHN" : [ "<app_name> 页面已关闭。" ],
+      "eng-USA" : [ "<app_name> page is off." ],
+      "ind-IDN" : [ "Halaman <app_name> telah dinon-aktifkan." ],
+      "slot_name" : [ "<app_name>" ]
+   },
+   "TUNER01_P01" : {
+      "cmn-CHN" : [ "好的，打开收音机。" ],
+      "eng-USA" : [ "OK, turning on the radio." ],
+      "ind-IDN" : [ "Oke, menyalakan radio." ]
+   },
+   "TUNER01_P02" : {
+      "cmn-CHN" : [ "收音机已打开。" ],
+      "eng-USA" : [ "Radio is open." ],
+      "ind-IDN" : [ "Radio dalam keadaan aktif." ]
+   },
+   "TUNER02_P01" : {
+      "cmn-CHN" : [ "好的，关闭收音机。" ],
+      "eng-USA" : [ "OK, turning off the radio." ],
+      "ind-IDN" : [ "Oke, mematikan radio." ]
+   },
+   "TUNER02_P02" : {
+      "cmn-CHN" : [ "收音机已关闭。" ],
+      "eng-USA" : [ "Radio is off." ],
+      "ind-IDN" : [ "Radio dalam keadaan tidak aktif." ]
+   },
+   "TUNER03_P01" : {
+      "cmn-CHN" : [ "好的，正在调到 FM 广播。" ],
+      "eng-USA" : [ "OK, tuning to FM broadcast." ],
+      "ind-IDN" : [ "Oke, menyetel ke siaran FM." ]
+   },
+   "TUNER03_P02" : {
+      "cmn-CHN" : [ "您正在收听 FM 广播。" ],
+      "eng-USA" : [ "You are listening to FM broadcast." ],
+      "ind-IDN" : [ "Anda sedang mendengar siaran FM." ]
+   },
+   "TUNER04_P01" : {
+      "cmn-CHN" : [ "好的，正在调到 AM 广播。" ],
+      "eng-USA" : [ "OK, tuning to AM broadcast." ],
+      "ind-IDN" : [ "Oke, menyetel ke siaran AM." ]
+   },
+   "TUNER04_P02" : {
+      "cmn-CHN" : [ "您正在收听 AM 广播。" ],
+      "eng-USA" : [ "You are listening to AM broadcast." ],
+      "ind-IDN" : [ "Anda sedang mendengar siaran AM." ]
+   },
+   "TUNER05_P01" : {
+      "cmn-CHN" : [ "好的，正在调整 FM <tts:str_freq>。" ],
+      "eng-USA" : [ "OK, tuning FM <tts:str_freq>." ],
+      "ind-IDN" : [ "Oke, menyetel ke <tts:str_freq> FM." ],
+      "slot_name" : [ "<tts:str_freq>" ]
+   },
+   "TUNER05_P02" : {
+      "cmn-CHN" : [ "该频率上没有电台。" ],
+      "eng-USA" : [ "There is no station on that frequency." ],
+      "ind-IDN" : [ "Tidak ada stasiun radio di frekuensi itu." ]
+   },
+   "TUNER05_P03" : {
+      "cmn-CHN" : [ "您正在收听 FM <tts:str_freq>。" ],
+      "eng-USA" : [ "You are listening to FM <tts:str_freq>." ],
+      "ind-IDN" : [ "Anda sedang mendengar <tts:str_freq> FM." ],
+      "slot_name" : [ "<tts:str_freq>" ]
+   },
+   "TUNER06_P01" : {
+      "cmn-CHN" : [ "好的，正在调整 AM <tts:str_freq>。" ],
+      "eng-USA" : [ "OK, tuning AM <tts:str_freq>." ],
+      "ind-IDN" : [ "Oke, menyetel ke <tts:str_freq> AM." ]
+   },
+   "TUNER06_P02" : {
+      "cmn-CHN" : [ "该频率上没有电台。" ],
+      "eng-USA" : [ "There is no station on that frequency." ],
+      "ind-IDN" : [ "Tidak ada stasiun radio di frekuensi itu." ]
+   },
+   "TUNER06_P03" : {
+      "cmn-CHN" : [ "您正在收听 AM <tts:str_freq>。" ],
+      "eng-USA" : [ "You are listening to AM <tts:str_freq>." ],
+      "ind-IDN" : [ "Anda sedang mendengar <tts:str_freq> AM." ],
+      "slot_name" : [ "<tts:str_freq>" ]
+   },
+   "TUNER07_P01" : {
+      "cmn-CHN" : [ "好的，正在调节上一台。" ],
+      "eng-USA" : [ "OK, radio is seeking down." ],
+      "ind-IDN" : [ "Oke, sedang mencari stasiun radio sebelumnya." ]
+   },
+   "TUNER08_P01" : {
+      "cmn-CHN" : [ "好的，正在调节下一台。" ],
+      "eng-USA" : [ "OK, radio is seeking up." ],
+      "ind-IDN" : [ "Oke, sedang mencari stasiun radio berikutnya." ]
+   },
    "VEH01_P01" : {
       "cmn-CHN" : [ "天窗完全打开。" ],
       "eng-USA" : [ "Sunroof is fully open." ],
@@ -107,7 +219,8 @@
    "VEH10_P02" : {
       "cmn-CHN" : [ "好的，打开 <area_description> 窗口。" ],
       "eng-USA" : [ "OK, opening the <area_description> window." ],
-      "ind-IDN" : [ "Oke, membuka jendela <area_description> ." ]
+      "ind-IDN" : [ "Oke, membuka jendela <area_description> ." ],
+      "slot_name" : [ "<area_description>" ]
    },
    "VEH10_P03" : {
       "cmn-CHN" : [ "操作失败。请稍后再试。" ],
@@ -127,7 +240,8 @@
    "VEH10_P06" : {
       "cmn-CHN" : [ "<area_description> 窗口已打开。" ],
       "eng-USA" : [ "The <area_description> window was open." ],
-      "ind-IDN" : [ "Jendela <area_description> dalam keadaan terbuka." ]
+      "ind-IDN" : [ "Jendela <area_description> dalam keadaan terbuka." ],
+      "slot_name" : [ "<area_description>" ]
    },
    "VEH11_P01" : {
       "cmn-CHN" : [ "好的，关闭所有窗口。" ],
@@ -137,7 +251,8 @@
    "VEH11_P02" : {
       "cmn-CHN" : [ "好的，关闭 <area_description> 窗口。" ],
       "eng-USA" : [ "OK, closing the <area_description> window." ],
-      "ind-IDN" : [ "Oke, menutup jendela <area_description>." ]
+      "ind-IDN" : [ "Oke, menutup jendela <area_description>." ],
+      "slot_name" : [ "<area_description>" ]
    },
    "VEH11_P03" : {
       "cmn-CHN" : [ "操作失败。请稍后再试。" ],
@@ -157,7 +272,8 @@
    "VEH11_P06" : {
       "cmn-CHN" : [ "<area_description> 窗口已关闭。" ],
       "eng-USA" : [ "The <area_description> window was closed." ],
-      "ind-IDN" : [ "Jendela <area_description> dalam keadaan tertutup." ]
+      "ind-IDN" : [ "Jendela <area_description> dalam keadaan tertutup." ],
+      "slot_name" : [ "<area_description>" ]
    },
    "VEH12_P01" : {
       "cmn-CHN" : [ "空调已经开了。" ],
@@ -209,7 +325,8 @@
       "eng-USA" : [ "The temperature is now set to maximum, <temperature_max> degrees" ],
       "ind-IDN" : [
          "Suhu telah mencapai level maksimum, yaitu <temperature_max> derajat."
-      ]
+      ],
+      "slot_name" : [ "<temperature_max>" ]
    },
    "VEH14_P04" : {
       "cmn-CHN" : [ "请启动引擎，然后重试。" ],
@@ -231,7 +348,8 @@
    "VEH15_P01" : {
       "cmn-CHN" : [ "好的，温度升高了 <n> 度" ],
       "eng-USA" : [ "OK, temperature is raised by <n> degrees" ],
-      "ind-IDN" : [ "Oke, menaikkan suhu <n> derajat." ]
+      "ind-IDN" : [ "Oke, menaikkan suhu <n> derajat." ],
+      "slot_name" : [ "<n>" ]
    },
    "VEH15_P02" : {
       "cmn-CHN" : [ "操作失败。请稍后再试。" ],
@@ -263,7 +381,8 @@
    "VEH16_P03" : {
       "cmn-CHN" : [ "温度现在设置为最低 <temperature_min> 度。" ],
       "eng-USA" : [ "The temperature is now set to minimum, <temperature_min> degrees." ],
-      "ind-IDN" : [ "Suhu telah mencapai level minimum, yaitu <temperature_min> derajat." ]
+      "ind-IDN" : [ "Suhu telah mencapai level minimum, yaitu <temperature_min> derajat." ],
+      "slot_name" : [ "<temperature_min>" ]
    },
    "VEH16_P04" : {
       "cmn-CHN" : [ "请启动引擎，然后重试。" ],
@@ -334,7 +453,8 @@
    "VEH18_P06" : {
       "cmn-CHN" : [ "温度已经 <n> 度。" ],
       "eng-USA" : [ "The temperature is <n> degrees already." ],
-      "ind-IDN" : [ "Suhu sudah berada di <n> derajat." ]
+      "ind-IDN" : [ "Suhu sudah berada di <n> derajat." ],
+      "slot_name" : [ "<n>" ]
    },
    "VEH19_P01" : {
       "cmn-CHN" : [ "温度现在设置为最大值。" ],
@@ -464,12 +584,14 @@
    "VEH25_P02" : {
       "cmn-CHN" : [ "超出范围。设置为最大值，级别 <n_max>。" ],
       "eng-USA" : [ "Out of range. Setting to maximum, level <n_max>." ],
-      "ind-IDN" : [ "Terlalu kencang, mengatur ke level maksimum, yaitu level <n>." ]
+      "ind-IDN" : [ "Terlalu kencang, mengatur ke level maksimum, yaitu level <n>." ],
+      "slot_name" : [ "<n_max>" ]
    },
    "VEH25_P03" : {
       "cmn-CHN" : [ "超出范围。设置为最小值，级别 <n_min>。" ],
       "eng-USA" : [ "Out of range. Setting to minimum, level <n_min>." ],
-      "ind-IDN" : [ "Terlalu kecil, mengatur ke level minimum, yaitu level <n>." ]
+      "ind-IDN" : [ "Terlalu kecil, mengatur ke level minimum, yaitu level <n>." ],
+      "slot_name" : [ "<n_min>" ]
    },
    "VEH25_P04" : {
       "cmn-CHN" : [ "操作失败。请稍后再试。" ],
@@ -484,17 +606,20 @@
    "VEH25_P06" : {
       "cmn-CHN" : [ "风扇音量已达到 <n> 级。" ],
       "eng-USA" : [ "The fan volume is level <n> already. " ],
-      "ind-IDN" : [ "Kecepatan AC sudah berada di level <n>." ]
+      "ind-IDN" : [ "Kecepatan AC sudah berada di level <n>." ],
+      "slot_name" : [ "<n>" ]
    },
    "VEH26_P01" : {
       "cmn-CHN" : [ "<fan_mode> 已打开。" ],
       "eng-USA" : [ "<fan_mode> is on." ],
-      "ind-IDN" : [ "<fan_mode> dalam keadaan aktif." ]
+      "ind-IDN" : [ "<fan_mode> dalam keadaan aktif." ],
+      "slot_name" : [ "<fan_mode>" ]
    },
    "VEH26_P02" : {
       "cmn-CHN" : [ "好的，<fan_mode> 已设置。" ],
       "eng-USA" : [ "OK, <fan_mode> is set." ],
-      "ind-IDN" : [ "Oke, mengatur ke mode <fan_mode>." ]
+      "ind-IDN" : [ "Oke, mengatur ke mode <fan_mode>." ],
+      "slot_name" : [ "<fan_mode>" ]
    },
    "VEH26_P03" : {
       "cmn-CHN" : [ "操作失败。请稍后再试。" ],
@@ -523,7 +648,8 @@
       ],
       "ind-IDN" : [
          "Suhu telah mencapai level maksimum, yaitu <temperature_max> derajat."
-      ]
+      ],
+      "slot_name" : [ "<temperature_max>" ]
    },
    "VEH27_P04" : {
       "cmn-CHN" : [ "请启动引擎，然后重试。" ],
@@ -557,7 +683,8 @@
       "eng-USA" : [
          "The temperature is now set to the minimum, <temperature_min> degrees."
       ],
-      "ind-IDN" : [ "Suhu telah mencapai level minimum, yaitu <temperature_min> derajat." ]
+      "ind-IDN" : [ "Suhu telah mencapai level minimum, yaitu <temperature_min> derajat." ],
+      "slot_name" : [ "<temperature_min>" ]
    },
    "VEH28_P04" : {
       "cmn-CHN" : [ "请启动引擎，然后重试。" ],
@@ -649,21 +776,24 @@
    "VEH33_P01" : {
       "cmn-CHN" : [ "好的，温度级别设置为 <n>。" ],
       "eng-USA" : [ "OK, the temperature level is set to <n>." ],
-      "ind-IDN" : [ "Oke, mengatur suhu menjadi level <n>." ]
+      "ind-IDN" : [ "Oke, mengatur suhu menjadi level <n>." ],
+      "slot_name" : [ "<n>" ]
    },
    "VEH33_P02" : {
       "cmn-CHN" : [
          "超出范围。设置为最大值，级别 <temperature_max_level>。"
       ],
       "eng-USA" : [ "Out of range. Setting to maximum, level <temperature_max_level>." ],
-      "ind-IDN" : [ "Suhu di luar jangkauan, mengatur ke suhu maksimum, yaitu level <n>." ]
+      "ind-IDN" : [ "Suhu di luar jangkauan, mengatur ke suhu maksimum, yaitu level <n>." ],
+      "slot_name" : [ "<temperature_max_level>" ]
    },
    "VEH33_P03" : {
       "cmn-CHN" : [
          "超出范围。设置为最小值，级别 <temperature_min_level>。"
       ],
       "eng-USA" : [ "Out of range. Setting to minimum, level <temperature_min_level>." ],
-      "ind-IDN" : [ "Suhu di luar jangkauan, mengatur ke suhu minimum, yaitu level <n>." ]
+      "ind-IDN" : [ "Suhu di luar jangkauan, mengatur ke suhu minimum, yaitu level <n>." ],
+      "slot_name" : [ "<temperature_min_level>" ]
    },
    "VEH33_P04" : {
       "cmn-CHN" : [ "操作失败。请稍后再试。" ],
@@ -678,12 +808,14 @@
    "VEH33_P06" : {
       "cmn-CHN" : [ "温度已经达到 <n> 级。" ],
       "eng-USA" : [ "The temperature is level <n> already." ],
-      "ind-IDN" : [ "Suhu sudah berada di level <n>." ]
+      "ind-IDN" : [ "Suhu sudah berada di level <n>." ],
+      "slot_name" : [ "<n>" ]
    },
    "VEH34_P01" : {
       "cmn-CHN" : [ "好的，温度升高了 <n> 级。" ],
       "eng-USA" : [ "OK, the temperature is raised by <n> levels." ],
-      "ind-IDN" : [ "Oke, menaikkan suhu <n> level." ]
+      "ind-IDN" : [ "Oke, menaikkan suhu <n> level." ],
+      "slot_name" : [ "<n>" ]
    },
    "VEH34_P02" : {
       "cmn-CHN" : [ "操作失败。请稍后再试。" ],
@@ -695,7 +827,8 @@
       "eng-USA" : [
          "The temperature is now set to the maximum, level <temperature_max_level>."
       ],
-      "ind-IDN" : [ "Suhu telah mencapai level maksimum, yaitu level <temperature_max>." ]
+      "ind-IDN" : [ "Suhu telah mencapai level maksimum, yaitu level <temperature_max>." ],
+      "slot_name" : [ "<temperature_max_level>" ]
    },
    "VEH34_P04" : {
       "cmn-CHN" : [ "请启动引擎，然后重试。" ],
@@ -705,7 +838,8 @@
    "VEH35_P01" : {
       "cmn-CHN" : [ "好的，温度降低了 <n> 级。" ],
       "eng-USA" : [ "OK, temperature is lowered by <n> levels." ],
-      "ind-IDN" : [ "Oke, menurunkan suhu <n> level." ]
+      "ind-IDN" : [ "Oke, menurunkan suhu <n> level." ],
+      "slot_name" : [ "<n>" ]
    },
    "VEH35_P02" : {
       "cmn-CHN" : [ "操作失败。请稍后再试。" ],
@@ -717,7 +851,8 @@
       "eng-USA" : [
          "The temperature is now set to the minimum, level <temperature_min_level>."
       ],
-      "ind-IDN" : [ "Suhu telah mencapai level minimum, yaitu level <temperature_min>." ]
+      "ind-IDN" : [ "Suhu telah mencapai level minimum, yaitu level <temperature_min>." ],
+      "slot_name" : [ "<temperature_min_level>" ]
    },
    "VEH35_P04" : {
       "cmn-CHN" : [ "请启动引擎，然后重试。" ],
@@ -989,7 +1124,8 @@
    "VEH52_P02" : {
       "cmn-CHN" : [ "好的，将 <area_description> 窗口打开一半。" ],
       "eng-USA" : [ "OK, half opening the <area_description> window." ],
-      "ind-IDN" : [ "Oke, membuka setengah jendela <area_description>." ]
+      "ind-IDN" : [ "Oke, membuka setengah jendela <area_description>." ],
+      "slot_name" : [ "<area_description>" ]
    },
    "VEH52_P03" : {
       "cmn-CHN" : [ "操作失败。 请稍后再试。" ],
@@ -1009,7 +1145,8 @@
    "VEH52_P06" : {
       "cmn-CHN" : [ "<area_description> 窗口半开。" ],
       "eng-USA" : [ "The <area_description> window was half open." ],
-      "ind-IDN" : [ "Jendela <area_description> dalam keadaan terbuka setengah." ]
+      "ind-IDN" : [ "Jendela <area_description> dalam keadaan terbuka setengah." ],
+      "slot_name" : [ "<area_description>" ]
    },
    "VEH53_P01" : {
       "cmn-CHN" : [ "好的，把所有的窗户关上一半。" ],
@@ -1049,7 +1186,8 @@
          "Oke, membuka jendela  <area_description> seluruhnya.",
          "Oke, menutup semua jendela seluruhnya.",
          "Oke, menutup jendela  <area_description> seluruhnya."
-      ]
+      ],
+      "slot_name" : [ "<area_description>" ]
    },
    "VEH53_P03" : {
       "cmn-CHN" : [ "操作失败。 请稍后再试。" ],
@@ -1069,7 +1207,8 @@
    "VEH53_P06" : {
       "cmn-CHN" : [ "<area_description> 窗口半关闭。" ],
       "eng-USA" : [ "The <area_description> window was half closed." ],
-      "ind-IDN" : [ "Jendela <area_description> dalam keadaan tertutup setengah." ]
+      "ind-IDN" : [ "Jendela <area_description> dalam keadaan tertutup setengah." ],
+      "slot_name" : [ "<area_description>" ]
    },
    "VEH54_P01" : {
       "cmn-CHN" : [ "交流鼓风机已关闭。" ],
@@ -1086,6 +1225,6 @@
       "eng-USA" : [ "Operation failed. Please try again later." ],
       "ind-IDN" : [ "Operasi gagal. Silakan dicoba lagi." ]
    },
-   "version" : "Prompter 1.0"
+   "version" : "Prompter 1.2"
 }
 

@@ -1,0 +1,29 @@
+{
+  "version": "VoConHigh 1.0",
+  "context": {
+    "name": "wuw_ctx",
+    "type": "static",
+    "static": {
+      "filename": "wuw.fcf",
+      "do_crc_check": "true"
+    },
+    "slot_filling": {
+      "slot": "WUW#wuw_customized",
+      "context": {
+        "type": "dynamic",
+        "dynamic": {
+          "dynamic_content_consumer": "DCC_ASR_CUSTOM_MAIN_WUW",
+          "context_name": "asr_custom_main_wuw_ctx"
+        }
+      }
+    },
+    "vocon_parameters": {
+      "LH_CTX_PARAM_TIMEOUT_SPEECH": 4000,
+      "LH_CTX_PARAM_TSILENCE": 50,
+      "LH_CTX_PARAM_TSILENCE_FX": 200,
+      "LH_CTX_PARAM_MAXNBEST": 1,
+      "LH_CTX_PARAM_ACCURACY": 5000,
+      "LH_CTX_PARAM_MAXNBEST_SECONDPASS": 10
+    }
+  }
+}

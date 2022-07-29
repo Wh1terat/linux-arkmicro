@@ -1,0 +1,44 @@
+{
+  "version": "VoConHigh 1.0",
+  "usecase": [
+    {
+      "name": "SCENARIO_VAD_DETECTION_ONLY",
+      "type": "generic",
+      "generic": {
+        "context": [
+          {
+            "name": "vad_ctx",
+            "type": "static",
+            "static": {
+              "filename": "vad_detection_only.fcf",
+              "do_crc_check": "true"
+            },
+            "vocon_parameters": {
+              "LH_CTX_PARAM_TIMEOUT_SPEECH": 10000,
+              "LH_CTX_PARAM_TSILENCE_FX": 1000,
+              "LH_CTX_PARAM_MAXNBEST": 1,
+              "LH_CTX_PARAM_ACCURACY": 5000,
+              "LH_CTX_PARAM_MAXNBEST_SECONDPASS": 1
+            }
+          }
+        ],
+        "acmod": {
+          "filename": "acmod6_6000_mnc_gen_car_f16_v1_0_1.dat"
+        },
+        "vocon_parameters": {
+          "LH_FX_PARAM_START_ENABLE": "LH_TRUE",
+          "LH_FX_PARAM_TSILENCE": 1000,
+          "LH_FX_PARAM_MINSPEECH": 150,
+          "LH_FX_PARAM_TIMEOUT_LSILENCE": 0,
+          "LH_FX_PARAM_TIMEOUT_SPEECH": 10000,
+          "LH_FX_PARAM_SENSITIVITY": 30,
+          "LH_FX_PARAM_ABSOLUTE_THRESHOLD": -4000,
+          "LH_FX_PARAM_KNOWN_SPEAKER_CHANGES": "LH_FALSE",
+          "LH_FX_PARAM_EVENT_TIMER": 0,
+          "LH_FX_PARAM_USENNSPEECHDETECTOR": "LH_TRUE",
+          "LH_REC_PARAM_SPEAKER_ADAPTATION" : "LH_REC_SPEAKER_PROFILE_DISABLE"
+        }
+      }
+    }
+  ]
+}
