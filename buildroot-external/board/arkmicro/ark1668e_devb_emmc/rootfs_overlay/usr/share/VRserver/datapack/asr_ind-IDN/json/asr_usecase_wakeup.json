@@ -14,6 +14,16 @@
           },
           "slot_filling": [
             {
+              "slot": "WUW#wuw_barge_in_commands_slot",
+              "context": {
+			          "type": "static",
+			          "static": {
+			            "filename": "wuw_barge_in_commands.fcf",
+			            "do_crc_check": "true"
+			          }
+              }
+            },
+            {
               "slot": "WUW#wuw_customized",
               "context": {
                 "type": "dynamic",

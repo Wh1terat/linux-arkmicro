@@ -49,9 +49,9 @@ WARNING: unmet direct dependencies detected for I2C_EDID
   HOSTCC  tools/image-host.o
   HOSTCC  tools/dumpimage.o
   HOSTCC  tools/mkimage.o
-  HOSTLD  tools/mkenvimage
   CHK     include/config.h
   CFG     u-boot.cfg
+  HOSTLD  tools/mkenvimage
   HOSTLD  tools/dumpimage
   HOSTLD  tools/mkimage
   CC      cmd/version.o
@@ -71,6 +71,10 @@ rm lib/efi_loader/helloworld_efi.so lib/efi_loader/helloworld.o
   OBJCOPY u-boot-nodtb.bin
   SYM     u-boot.sym
 make[3]: “arch/arm/dts/ark1668e_devb_emmc.dtb”已是最新。
+  CAT     u-boot-dtb.bin
+  COPY    u-boot.bin
+  MKIMAGE u-boot.img
+  MKIMAGE u-boot-dtb.img
   CC      spl/common/spl/spl.o
   CC      spl/lib/display_options.o
   LD      spl/common/spl/built-in.o
@@ -78,10 +82,6 @@ make[3]: “arch/arm/dts/ark1668e_devb_emmc.dtb”已是最新。
   LD      spl/u-boot-spl
   OBJCOPY spl/u-boot-spl-nodtb.bin
   COPY    spl/u-boot-spl.bin
-  CAT     u-boot-dtb.bin
-  COPY    u-boot.bin
-  MKIMAGE u-boot.img
-  MKIMAGE u-boot-dtb.img
   CFGCHK  u-boot.cfg
 make[1]: 离开目录“/home/wdz/workspace/E230R_NO_UI/ark1668e/output/board/ark1668e_devb_emmc/u-boot”
 make[1]: 进入目录“/home/wdz/workspace/E230R_NO_UI/ark1668e/output/board/ark1668e_devb_emmc/u-boot”
@@ -106,102 +106,9 @@ scripts/kconfig/conf  --syncconfig Kconfig
   Using /home/wdz/workspace/E230R_NO_UI/ark1668e/linux as source for kernel
   CALL    /home/wdz/workspace/E230R_NO_UI/ark1668e/linux/scripts/checksyscalls.sh
   CHK     include/generated/compile.h
-  CC      drivers/gpu/arm/mali/linux/mali_osk_atomics.o
-  CC      drivers/gpu/arm/mali/linux/mali_osk_irq.o
-  CC      drivers/gpu/arm/mali/linux/mali_osk_wq.o
-  CC      drivers/gpu/arm/mali/linux/mali_osk_locks.o
-  CC      drivers/gpu/arm/mali/linux/mali_osk_wait_queue.o
-  CC      drivers/gpu/arm/mali/linux/mali_osk_low_level_mem.o
-  CC      drivers/gpu/arm/mali/linux/mali_osk_math.o
-  CC      drivers/gpu/arm/mali/linux/mali_osk_memory.o
-  CC      drivers/gpu/arm/mali/linux/mali_osk_misc.o
-  CC      drivers/gpu/arm/mali/linux/mali_osk_mali.o
-  CC      drivers/gpu/arm/mali/linux/mali_osk_notification.o
-  CC      drivers/gpu/arm/mali/linux/mali_osk_time.o
-  CC      drivers/gpu/arm/mali/linux/mali_osk_timers.o
-  CC      drivers/gpu/arm/mali/linux/mali_memory.o
-  CC      drivers/gpu/arm/mali/linux/mali_memory_os_alloc.o
-  CC      drivers/gpu/arm/mali/linux/mali_memory_external.o
-  CC      drivers/gpu/arm/mali/linux/mali_memory_block_alloc.o
-  CC      drivers/gpu/arm/mali/linux/mali_ukk_mem.o
-  CC      drivers/gpu/arm/mali/linux/mali_ukk_gp.o
-  CC      drivers/gpu/arm/mali/linux/mali_ukk_pp.o
-  CC      drivers/gpu/arm/mali/linux/mali_ukk_core.o
-  CC      drivers/gpu/arm/mali/linux/mali_ukk_soft_job.o
-  CC      drivers/gpu/arm/mali/linux/mali_ukk_timeline.o
-  CC      drivers/gpu/arm/mali/common/mali_kernel_core.o
-  CC      drivers/gpu/arm/mali/linux/mali_kernel_linux.o
-  CC      drivers/gpu/arm/mali/common/mali_kernel_descriptor_mapping.o
-  CC      drivers/gpu/arm/mali/common/mali_session.o
-  CC      drivers/gpu/arm/mali/linux/mali_device_pause_resume.o
-/home/wdz/workspace/E230R_NO_UI/ark1668e/linux/drivers/gpu/arm/mali/common/mali_kernel_core.c:915:28: 警告： ‘mali_init_hw_reset’ defined but not used [-Wunused-function]
- static _mali_osk_errcode_t mali_init_hw_reset(void)
-                            ^~~~~~~~~~~~~~~~~~
-/home/wdz/workspace/E230R_NO_UI/ark1668e/linux/drivers/gpu/arm/mali/common/mali_kernel_core.c:189:13: 警告： ‘mali_resource_count’ defined but not used [-Wunused-function]
- static void mali_resource_count(u32 *pp_count, u32 *l2_count)
-             ^~~~~~~~~~~~~~~~~~~
-  CC      drivers/gpu/arm/mali/common/mali_kernel_vsync.o
-  CC      drivers/gpu/arm/mali/linux/mali_ukk_vsync.o
-  CC      drivers/gpu/arm/mali/linux/mali_kernel_sysfs.o
-  CC      drivers/gpu/arm/mali/common/mali_mmu.o
-  CC      drivers/gpu/arm/mali/common/mali_mmu_page_directory.o
-  CC      drivers/gpu/arm/mali/common/mali_mem_validation.o
-  CC      drivers/gpu/arm/mali/common/mali_hw_core.o
-  CC      drivers/gpu/arm/mali/common/mali_gp.o
-  CC      drivers/gpu/arm/mali/common/mali_pp.o
-  CC      drivers/gpu/arm/mali/common/mali_pp_job.o
-  CC      drivers/gpu/arm/mali/common/mali_gp_job.o
-  CC      drivers/gpu/arm/mali/common/mali_soft_job.o
-  CC      drivers/gpu/arm/mali/common/mali_scheduler.o
-  CC      drivers/gpu/arm/mali/common/mali_gp_scheduler.o
-  CC      drivers/gpu/arm/mali/common/mali_pp_scheduler.o
-  CC      drivers/gpu/arm/mali/common/mali_group.o
-  CC      drivers/gpu/arm/mali/common/mali_dlbu.o
-  CC      drivers/gpu/arm/mali/common/mali_broadcast.o
-  CC      drivers/gpu/arm/mali/common/mali_pm.o
-  CC      drivers/gpu/arm/mali/common/mali_pmu.o
-  CC      drivers/gpu/arm/mali/common/mali_user_settings_db.o
-  CC      drivers/gpu/arm/mali/common/mali_kernel_utilization.o
-  CC      drivers/gpu/arm/mali/common/mali_l2_cache.o
-  CC      drivers/gpu/arm/mali/common/mali_dma.o
-  CC      drivers/gpu/arm/mali/common/mali_timeline.o
-  CC      drivers/gpu/arm/mali/common/mali_timeline_fence_wait.o
-  CC      drivers/gpu/arm/mali/common/mali_timeline_sync_fence.o
-  CC      drivers/gpu/arm/mali/common/mali_spinlock_reentrant.o
-  CC      drivers/gpu/arm/mali/common/mali_pm_domain.o
-  CC      drivers/gpu/arm/mali/linux/mali_osk_pm.o
-  CC      drivers/gpu/arm/mali/linux/mali_pmu_power_up_down.o
-  CC      drivers/gpu/arm/mali/__malidrv_build_info.o
-  CC      drivers/gpu/arm/mali/platform/arm/arm.o
-  CC      drivers/gpu/arm/mali/platform/arm/arm_core_scaling.o
-  CC      drivers/gpu/arm/mali/linux/mali_memory_dma_buf.o
-/home/wdz/workspace/E230R_NO_UI/ark1668e/linux/drivers/gpu/arm/mali/platform/arm/arm.c:327:12: 警告： ‘mali_read_phys’ defined but not used [-Wunused-function]
- static u32 mali_read_phys(u32 phys_addr)
-            ^~~~~~~~~~~~~~
-  AR      drivers/gpu/arm/mali/built-in.a
-  AR      drivers/gpu/built-in.a
-  AR      drivers/built-in.a
-  GEN     .version
-  CHK     include/generated/compile.h
-  UPD     include/generated/compile.h
-  CC      init/version.o
-  AR      init/built-in.a
-  AR      built-in.a
-  LD      vmlinux.o
-  MODPOST vmlinux.o
-  KSYM    .tmp_kallsyms1.o
-  KSYM    .tmp_kallsyms2.o
-  LD      vmlinux
-  SORTEX  vmlinux
-  SYSMAP  System.map
-  OBJCOPY arch/arm/boot/Image
+  Kernel: arch/arm/boot/Image is ready
   Building modules, stage 2.
   MODPOST 3 modules
-  Kernel: arch/arm/boot/Image is ready
-  LZO     arch/arm/boot/compressed/piggy_data
-  AS      arch/arm/boot/compressed/piggy.o
-  LD      arch/arm/boot/compressed/vmlinux
-  OBJCOPY arch/arm/boot/zImage
   Kernel: arch/arm/boot/zImage is ready
 make[1]: 离开目录“/home/wdz/workspace/E230R_NO_UI/ark1668e/output/board/ark1668e_devb_emmc/linux”
   GEN     /home/wdz/workspace/E230R_NO_UI/ark1668e/output/board/ark1668e_devb_emmc/buildroot/Makefile
@@ -257,7 +164,7 @@ test -d /home/wdz/workspace/E230R_NO_UI/ark1668e/output/board/ark1668e_devb_emmc
 mkdir -p /home/wdz/workspace/E230R_NO_UI/ark1668e/output/board/ark1668e_devb_emmc/buildroot/target/etc
 ( \
 	echo "NAME=Buildroot"; \
-	echo "VERSION=-g47587230e-dirty"; \
+	echo "VERSION=-g7ef27baec-dirty"; \
 	echo "ID=buildroot"; \
 	echo "VERSION_ID=2021.02.2"; \
 	echo "PRETTY_NAME=\"Buildroot 2021.02.2\"" \
@@ -300,7 +207,7 @@ mke2fs 1.45.6 (20-Mar-2020)
 Creating regular file /home/wdz/workspace/E230R_NO_UI/ark1668e/output/board/ark1668e_devb_emmc/buildroot/images/rootfs.ext2
 64-bit filesystem support is not enabled.  The larger fields afforded by this feature enable full-strength checksumming.  Pass -O 64bit to rectify.
 Creating filesystem with 307200 1k blocks and 76912 inodes
-Filesystem UUID: e59b3c7c-25ea-402d-a838-f85eabb7e9bf
+Filesystem UUID: 339a5acd-9cb2-42f9-bee3-924cffdec85a
 Superblock backups stored on blocks: 
 	8193, 24577, 40961, 57345, 73729, 204801, 221185
 

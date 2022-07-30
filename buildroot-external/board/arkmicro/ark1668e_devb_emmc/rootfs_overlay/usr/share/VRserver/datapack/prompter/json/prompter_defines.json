@@ -28,6 +28,111 @@
       "ind-IDN" : [ "Halaman <app_name> telah dinon-aktifkan." ],
       "slot_name" : [ "<app_name>" ]
    },
+   "GLOBAL03_P01" : {
+      "cmn-CHN" : [ "语音系统不工作。 稍后再试。" ],
+      "eng-USA" : [ "Voice system is not working. Try it later." ],
+      "ind-IDN" : [ "Sistem suara tidak bekerja. Coba lagi nanti." ]
+   },
+   "GLOBAL03_P02" : {
+      "cmn-CHN" : [ "你好。" ],
+      "eng-USA" : [ "Hello." ],
+      "ind-IDN" : [ "Halo." ]
+   },
+   "GLOBAL04_P01" : {
+      "cmn-CHN" : [ "语音系统不工作。 稍后再试。" ],
+      "eng-USA" : [ "Voice system is not working. Try it later." ],
+      "ind-IDN" : [ "Sistem suara tidak bekerja. Coba lagi nanti." ]
+   },
+   "GLOBAL06_P01" : {
+      "cmn-CHN" : [ "好的。" ],
+      "eng-USA" : [ "OK." ],
+      "ind-IDN" : [ "Oke." ]
+   },
+   "GLOBAL07_P01" : {
+      "cmn-CHN" : [ "请再说一遍？" ],
+      "eng-USA" : [ "I beg your pardon?" ],
+      "ind-IDN" : [ "Maaf, bisa diulang?" ]
+   },
+   "GLOBAL07_P02" : {
+      "cmn-CHN" : [ "我不确定我是否理解。 请再试一次。" ],
+      "eng-USA" : [ "I'm not sure I understand. Try again please." ],
+      "ind-IDN" : [ "Saya tidak mengerti, bisa diulang lagi." ]
+   },
+   "GLOBAL07_P03" : {
+      "cmn-CHN" : [ "我很困惑。 让我们稍后再试一次。" ],
+      "eng-USA" : [ "I'm confused. Let's try again later." ],
+      "ind-IDN" : [ "Saya bingung, silakan dicoba lagi." ]
+   },
+   "GLOBAL08_P01" : {
+      "cmn-CHN" : [ "请再说一遍？" ],
+      "eng-USA" : [ "I beg your pardon?" ],
+      "ind-IDN" : [ "Maaf, bisa diulang?" ]
+   },
+   "GLOBAL08_P02" : {
+      "cmn-CHN" : [ "我不确定我是否理解。 请再试一次。" ],
+      "eng-USA" : [ "I'm not sure I understand. Try again please." ],
+      "ind-IDN" : [ "Saya tidak paham. Coba diulang lagi." ]
+   },
+   "GLOBAL08_P03" : {
+      "cmn-CHN" : [ "我很困惑。 让我们稍后再试一次。" ],
+      "eng-USA" : [ "I'm confused. Let's try again later." ],
+      "ind-IDN" : [ "Saya bingung, silakan dicoba lagi." ]
+   },
+   "GLOBAL09_P01" : {
+      "cmn-CHN" : [ "电话服务出了点问题。 请稍后再试。" ],
+      "eng-USA" : [ "There's something wrong in phone service. Try it later please." ],
+      "ind-IDN" : [ "Layanan telepon bermasalah. Silakan dicoba lagi." ]
+   },
+   "GLOBAL09_P02" : {
+      "cmn-CHN" : [ "导航有问题。 请稍后再试。" ],
+      "eng-USA" : [ "There's something wrong in navigation. Try it later please." ],
+      "ind-IDN" : [ "Navigasi bermasalah. Silakan dicoba lagi." ]
+   },
+   "GLOBAL09_P03" : {
+      "cmn-CHN" : [ "媒体服务出了点问题。 请稍后再试。" ],
+      "eng-USA" : [ "There's something wrong in media service. Try it later please." ],
+      "ind-IDN" : [ "Layanan media bermasalah. Silakan dicoba lagi." ]
+   },
+   "GLOBAL10_P01" : {
+      "cmn-CHN" : [
+         "抱歉，您的汽车不支持此功能。",
+         "抱歉，不支持此功能。",
+         "抱歉，您的汽车不支持此功能。"
+      ],
+      "eng-USA" : [
+         "Sorry, this function is not supported in your car.",
+         "Sorry, this function is not supported.",
+         "Sorry, your car does not support this feature."
+      ],
+      "ind-IDN" : [
+         "Maaf, mobil Anda tidak mendukung fungsi ini.",
+         "Maaf, fungsi ini tidak tersedia.",
+         "Maaf, mobil Anda tidak mendukung fitur ini."
+      ]
+   },
+   "GLOBAL10_P02" : {
+      "cmn-CHN" : [
+         "抱歉，您的车没有天窗。",
+         "抱歉，这辆车没有天窗。",
+         "抱歉，你的车没有天窗。"
+      ],
+      "eng-USA" : [
+         "Sorry, your car does not have sunroof.",
+         "Sorry, this car doesn't have sunroof.",
+         "Sorry, there's no sunroof in your car."
+      ],
+      "ind-IDN" : [
+         "Maaf, mobil Anda tidak dilengkapi sunroof.",
+         "Maaf, mobil ini tidak memiliki sunroof.",
+         "Maaf, mobil Anda tidak memiliki sunroof."
+      ]
+   },
+   "GLOBAL11_P01" : {
+      "cmn-CHN" : [ "<prompt>" ],
+      "eng-USA" : [ "<prompt>" ],
+      "ind-IDN" : [ "<prompt>" ],
+      "slot_name" : [ "<prompt>" ]
+   },
    "TUNER01_P01" : {
       "cmn-CHN" : [ "好的，打开收音机。" ],
       "eng-USA" : [ "OK, turning on the radio." ],

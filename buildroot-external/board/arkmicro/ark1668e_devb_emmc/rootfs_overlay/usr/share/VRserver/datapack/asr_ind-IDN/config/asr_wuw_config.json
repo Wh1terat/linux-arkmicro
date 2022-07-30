@@ -13,6 +13,76 @@
           "orthography": "HaloWuling",
           "word_threshold": 3000,
           "tag_threshold": 5400
+        },
+        {
+          "orthography": "sirkulasidalam",
+          "word_threshold": 3000,
+          "tag_threshold": 5400
+        },
+        {
+          "orthography": "sirkulasiluar",
+          "word_threshold": 3000,
+          "tag_threshold": 5400
+        },
+        {
+          "orthography": "hidupkanAC",
+          "word_threshold": 3000,
+          "tag_threshold": 5400
+        },
+        {
+          "orthography": "matikanAC",
+          "word_threshold": 3000,
+          "tag_threshold": 5400
+        },
+        {
+          "orthography": "tutupjendela",
+          "word_threshold": 3000,
+          "tag_threshold": 5400
+        },
+        {
+          "orthography": "tutupsunroof",
+          "word_threshold": 3000,
+          "tag_threshold": 5400
+        },
+        {
+          "orthography": "lagusebelumnya",
+          "word_threshold": 3000,
+          "tag_threshold": 5400
+        },
+        {
+          "orthography": "laguberikutnya",
+          "word_threshold": 3000,
+          "tag_threshold": 5400
+        },
+        {
+          "orthography": "pausemusik",
+          "word_threshold": 3000,
+          "tag_threshold": 5400
+        },
+        {
+          "orthography": "putarmusik",
+          "word_threshold": 3000,
+          "tag_threshold": 5400
+        },
+        {
+          "orthography": "besarkansuara",
+          "word_threshold": 3000,
+          "tag_threshold": 5400
+        },
+        {
+          "orthography": "kecilkansuara",
+          "word_threshold": 3000,
+          "tag_threshold": 5400
+        },
+        {
+          "orthography": "Saluransebelumnya",
+          "word_threshold": 3000,
+          "tag_threshold": 5400
+        },
+        {
+          "orthography": "Saluranberikutnya",
+          "word_threshold": 3000,
+          "tag_threshold": 5400
         }
       ]
     },
