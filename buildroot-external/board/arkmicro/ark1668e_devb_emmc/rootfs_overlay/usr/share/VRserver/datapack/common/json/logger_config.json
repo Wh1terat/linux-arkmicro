@@ -17,24 +17,6 @@
         "output"      : "stdout",
         "not_modules" : "nuance.pal.THREAD",
         "zones"       : "LOG_ERROR"
-      },
-      {
-        "name": "log_audio_before_asr",
-        "output": "%WRITABLE_DIR%/log/audio/before_asr_%DATE_TIME%.pcm",
-        "max_file_size": 2048000,
-        "max_files_number": 100,
-        "modules": "nuance.asr.VoConHybridNDSAudioSink.vocon",
-        "not_modules": "",
-        "zones": "LOG_DATA"
-      },
-      {
-        "name": "log_audio_before_cloud_asr",
-        "output": "%WRITABLE_DIR%/log/audio/before_cloud_asr_%DATE_TIME%.pcm",
-        "max_file_size": 2048000,
-        "max_files_number": 100,
-        "modules": "nuance.audio.SourcePad.CloudIn",
-        "not_modules": "",
-        "zones": "LOG_DATA"
       }
     ]
   }

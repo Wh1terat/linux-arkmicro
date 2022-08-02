@@ -133,6 +133,398 @@
       "ind-IDN" : [ "<prompt>" ],
       "slot_name" : [ "<prompt>" ]
    },
+   "MUSIC01_P01" : {
+      "cmn-CHN" : [ "抱歉，没有找到任何曲目。" ],
+      "eng-USA" : [ "Sorry, no track has been found." ],
+      "ind-IDN" : [ "Maaf, tidak ada lagu yang ditemukan." ]
+   },
+   "MUSIC02_P01" : {
+      "cmn-CHN" : [ "您正在播放 <music_source> 中的曲目。" ],
+      "eng-USA" : [ "You are playing tracks in <music_source>." ],
+      "ind-IDN" : [ "anda memutar lagu di <music_source>." ]
+   },
+   "MUSIC02_P02" : {
+      "cmn-CHN" : [ "当然，正在播放 <music_source> 中的曲目。" ],
+      "eng-USA" : [ "Sure, playing tracks in <music_source>." ],
+      "ind-IDN" : [ "Ok, memutar lagu di <music_source>." ]
+   },
+   "MUSIC02_P03" : {
+      "cmn-CHN" : [ "抱歉，在 <music_source> 中找不到曲目。" ],
+      "eng-USA" : [ "Sorry, no track has been found in <music_source>." ],
+      "ind-IDN" : [ "Maaf, tidak ada lagu yang ditemukan di <music_source>." ]
+   },
+   "MUSIC02_P04" : {
+      "cmn-CHN" : [ "<music_source> 音乐不可用。" ],
+      "eng-USA" : [ "<music_source> music is not available." ],
+      "ind-IDN" : [ "Lagu di <music_source> tidak tersedia." ]
+   },
+   "MUSIC03_P01" : {
+      "cmn-CHN" : [ "当前曲目是 <song_title>。" ],
+      "eng-USA" : [ "The current track is <song_title>." ],
+      "ind-IDN" : [ "Lagu yang sekarang diputar adalah <song_title>." ]
+   },
+   "MUSIC03_P02" : {
+      "cmn-CHN" : [
+         "我找不到名为 <song_title> 的歌曲。让我们试试这个。"
+      ],
+      "eng-USA" : [
+         "I couldn't find the song called <song_title>. Let's try this instead."
+      ],
+      "ind-IDN" : [
+         "Saya tidak dapat menemukan lagu dengan judul <song_title>. Mari kita coba yang lain."
+      ]
+   },
+   "MUSIC03_P03" : {
+      "cmn-CHN" : [ "对不起，它只支持VIP用户。让我们试试别的。" ],
+      "eng-USA" : [ "Sorry, it's only supported for VIP user. Let's try something else." ],
+      "ind-IDN" : [
+         "Maaf, ini hanya didukung untuk pengguna VIP. Mari kita coba yang lain."
+      ]
+   },
+   "MUSIC04_P01" : {
+      "cmn-CHN" : [ "您正在播放 <artist> 的曲目。" ],
+      "eng-USA" : [ "You are playing tracks by <artist>." ],
+      "ind-IDN" : [ "Anda memutar lagu dari <artist>." ]
+   },
+   "MUSIC04_P02" : {
+      "cmn-CHN" : [
+         "抱歉，我找不到 <artist> 的任何内容。我给你玩点别的。"
+      ],
+      "eng-USA" : [
+         "Sorry, I can't find anything by <artist>. I'll play you something else."
+      ],
+      "ind-IDN" : [
+         "Maaf, saya tidak dapat menemukan apapun dari <artist>. Saya akan memainkan lagu lain untuk anda."
+      ]
+   },
+   "MUSIC04_P03" : {
+      "cmn-CHN" : [ "对不起，它只支持VIP用户。让我们试试别的。" ],
+      "eng-USA" : [ "Sorry, it's only supported for VIP user. Let's try something else." ],
+      "ind-IDN" : [
+         "Maaf, ini hanya didukung untuk pengguna VIP. Mari kita coba yang lain."
+      ]
+   },
+   "MUSIC05_P01" : {
+      "cmn-CHN" : [ "当前曲目是 <artist> 的 <song_title>。" ],
+      "eng-USA" : [ "The current track is <song_title> by <artist>." ],
+      "ind-IDN" : [ "Lagu ini berjudul <song_title> dari <artist>." ]
+   },
+   "MUSIC05_P02" : {
+      "cmn-CHN" : [
+         "我找不到 <artist> 的名为 <song_title> 的歌曲。这是别的东西。"
+      ],
+      "eng-USA" : [
+         "I wasn't able to find a song called <song_title> by <artist>. Here is something else."
+      ],
+      "ind-IDN" : [
+         "Saya tidak dapat menemukan lagu dengan judul <song_title> dari <artist>. Mari kita coba yang lain."
+      ]
+   },
+   "MUSIC05_P03" : {
+      "cmn-CHN" : [ "我只找到了 <another_artist> 的歌曲 <song_title>。" ],
+      "eng-USA" : [ "I only found the song, <song_title>, by <another_artist>. " ],
+      "ind-IDN" : [
+         "Saya hanya dapat menemukan lagu, <song_title>, dari <another_artist>."
+      ]
+   },
+   "MUSIC05_P04" : {
+      "cmn-CHN" : [ "我找不到那首歌，但这是 <artist> 的另一首。" ],
+      "eng-USA" : [ "I couldn't find that song, but here's another one by <artist>." ],
+      "ind-IDN" : [
+         "Saya tidak dapat menemukan lagu itu, tapi ini lagu yang lain dari <artist>."
+      ]
+   },
+   "MUSIC05_P05" : {
+      "cmn-CHN" : [ "对不起，它只支持VIP用户。让我们试试别的。" ],
+      "eng-USA" : [ "Sorry, it's only supported for VIP user. Let's try something else." ],
+      "ind-IDN" : [
+         "Maaf, ini hanya didukung untuk pengguna VIP. Mari kita coba yang lain."
+      ]
+   },
+   "MUSIC08_P01" : {
+      "cmn-CHN" : [ "音乐已关闭。" ],
+      "eng-USA" : [ "Music is off." ],
+      "ind-IDN" : [ "Musik dimatikan" ]
+   },
+   "MUSIC09_P01" : {
+      "cmn-CHN" : [ "<playmode> 模式已开启。" ],
+      "eng-USA" : [ "<playmode> mode is on." ],
+      "ind-IDN" : [ "Mode <playmode> dinyalakan." ]
+   },
+   "MUSIC09_P02" : {
+      "cmn-CHN" : [ "当然，<playmode>。" ],
+      "eng-USA" : [ "Sure, <playmode>." ],
+      "ind-IDN" : [ "Ok, <playmode>." ]
+   },
+   "MUSIC09_P03" : {
+      "cmn-CHN" : [ "抱歉，您无法更改当前音乐源的播放模式。" ],
+      "eng-USA" : [ "Sorry, you can't change play mode in current music source." ],
+      "ind-IDN" : [ "Maaf, anda tidak dapat mengubah mode putar untuk lagu ini." ]
+   },
+   "MUSIC10_P01" : {
+      "cmn-CHN" : [ "没有曲目正在播放。" ],
+      "eng-USA" : [ "No track is playing." ],
+      "ind-IDN" : [ "Tidak ada lagu yang dimainkan." ]
+   },
+   "MUSIC10_P02" : {
+      "cmn-CHN" : [ "抱歉，当前媒体源不支持语音轨道控制。" ],
+      "eng-USA" : [
+         "Sorry, voice track control is not supported in current media source."
+      ],
+      "ind-IDN" : [ "Maaf, pengendali suara tidak di dukung untuk lagu ini." ]
+   },
+   "MUSIC10_P03" : {
+      "cmn-CHN" : [ "对不起，它只支持VIP用户。" ],
+      "eng-USA" : [ "Sorry, it's only supported for VIP user." ],
+      "ind-IDN" : [ "Maaf, ini hanya didukung untuk pengguna VIP." ]
+   },
+   "MUSIC10_P04" : {
+      "cmn-CHN" : [ "抱歉，目前不支持。" ],
+      "eng-USA" : [ "Sorry, it's not supported currently." ],
+      "ind-IDN" : [ "Maaf, saat ini belum didukung. " ]
+   },
+   "MUSIC11_P01" : {
+      "cmn-CHN" : [ "没有曲目正在播放。" ],
+      "eng-USA" : [ "No track is playing." ],
+      "ind-IDN" : [ "Tidak ada lagu yang dimainkan." ]
+   },
+   "MUSIC11_P02" : {
+      "cmn-CHN" : [ "抱歉，当前媒体源不支持语音轨道控制。" ],
+      "eng-USA" : [
+         "Sorry, voice track control is not supported in current media source."
+      ],
+      "ind-IDN" : [ "Maaf, pengendali lagu via suara tidak didukung pemutar lagu ini." ]
+   },
+   "MUSIC11_P03" : {
+      "cmn-CHN" : [ "对不起，它只支持VIP用户。" ],
+      "eng-USA" : [ "Sorry, it's only supported for VIP user." ],
+      "ind-IDN" : [ "Maaf, ini hanya didukung untuk pengguna VIP." ]
+   },
+   "MUSIC11_P04" : {
+      "cmn-CHN" : [ "抱歉，目前不支持。" ],
+      "eng-USA" : [ "Sorry, it's not supported currently." ],
+      "ind-IDN" : [ "Maaf, saat ini belum didukung. " ]
+   },
+   "MUSIC12_P01" : {
+      "cmn-CHN" : [ "没有曲目正在播放。" ],
+      "eng-USA" : [ "No track is playing." ],
+      "ind-IDN" : [ "Tidak ada lagu yang dimainkan." ]
+   },
+   "MUSIC12_P02" : {
+      "cmn-CHN" : [ "当然，将此曲目添加到您的收藏夹。" ],
+      "eng-USA" : [ "Sure, add this track to your favorites." ],
+      "ind-IDN" : [ "Ok, menambahkan lagu ini ke favorit anda." ]
+   },
+   "MUSIC12_P03" : {
+      "cmn-CHN" : [ "此曲目已在您的收藏夹中。" ],
+      "eng-USA" : [ "This track is already in your favorites." ],
+      "ind-IDN" : [ "Lagu ini sudah dalam favorit anda." ]
+   },
+   "MUSIC12_P04" : {
+      "cmn-CHN" : [ "抱歉，收藏夹功能在当前媒体源中不可用。" ],
+      "eng-USA" : [ "Sorry, favorites function is not available in current media source." ],
+      "ind-IDN" : [ "Maaf, fungsi favorit tidak tersedia di pemutar lagu ini. " ]
+   },
+   "MUSIC12_P05" : {
+      "cmn-CHN" : [ "请先连接您的 USB 或手机。" ],
+      "eng-USA" : [ "Please connect your USB or handphone first." ],
+      "ind-IDN" : [ "Tolong sambungkan USB atau handphone anda terlebih dahulu. " ]
+   },
+   "MUSIC12_P06" : {
+      "cmn-CHN" : [ "对不起，它只支持VIP用户。" ],
+      "eng-USA" : [ "Sorry, it's only supported for VIP user." ],
+      "ind-IDN" : [ "Maaf, ini hanya didukung untuk pengguna VIP." ]
+   },
+   "MUSIC13_P01" : {
+      "cmn-CHN" : [ "没有曲目正在播放。" ],
+      "eng-USA" : [ "No track is playing." ],
+      "ind-IDN" : [ "Maaf, saat ini belum didukung. " ]
+   },
+   "MUSIC13_P02" : {
+      "cmn-CHN" : [ "当然，从您的收藏夹中删除此曲目。" ],
+      "eng-USA" : [ "Sure, remove this track from your favorites." ],
+      "ind-IDN" : [ "Ok, hapus lagu ini dari favorit anda. " ]
+   },
+   "MUSIC13_P03" : {
+      "cmn-CHN" : [ "此曲目不在您的收藏夹中。" ],
+      "eng-USA" : [ "This track is not in your favorites." ],
+      "ind-IDN" : [ "Lagu ini tidak dalam favorit anda. " ]
+   },
+   "MUSIC13_P04" : {
+      "cmn-CHN" : [ "抱歉，收藏夹功能在当前媒体源中不可用。" ],
+      "eng-USA" : [ "Sorry, favorites function is not available in current media source." ],
+      "ind-IDN" : [ "Maaf, fungsi favorit tidak tersedia di pemutar lagu ini. " ]
+   },
+   "MUSIC13_P05" : {
+      "cmn-CHN" : [ "请先连接您的 USB 或手机。" ],
+      "eng-USA" : [ "Please connect your USB or handphone first." ],
+      "ind-IDN" : [ "Tolong sambungkan USB atau handphone anda terlebih dahulu. " ]
+   },
+   "MUSIC13_P06" : {
+      "cmn-CHN" : [ "对不起，它只支持VIP用户。" ],
+      "eng-USA" : [ "Sorry, it's only supported for VIP user." ],
+      "ind-IDN" : [ "Maaf, ini hanya didukung untuk pengguna VIP." ]
+   },
+   "MUSIC14_P01" : {
+      "cmn-CHN" : [ "您正在播放来自 <Billboard> 的曲目。" ],
+      "eng-USA" : [ "You are playing tracks from <Billboard>." ],
+      "ind-IDN" : [ "anda memutar lagu dari <Billboard>." ]
+   },
+   "MUSIC14_P02" : {
+      "cmn-CHN" : [
+         "抱歉，我找不到 <Billboard> 的任何曲目。我给你玩点别的。"
+      ],
+      "eng-USA" : [
+         "Sorry, I can't find any tracks from <Billboard>. I'll play you something else."
+      ],
+      "ind-IDN" : [
+         "Maaf, saya tidak dapat menemukan lagu dari <Billboard>. Saya akan memutarkan lagu lain untuk anda."
+      ]
+   },
+   "MUSIC15_P01" : {
+      "cmn-CHN" : [
+         "抱歉，我找不到任何 <genre> 音乐。我给你玩点别的。"
+      ],
+      "eng-USA" : [
+         "Sorry, I can't find any <genre> music. I'll play you something else."
+      ],
+      "ind-IDN" : [
+         "Maaf, saya tidak dapat menemukan musik <genre>. Saya akan memutarkan lagu lain untuk anda."
+      ]
+   },
+   "MUSIC16_P01" : {
+      "cmn-CHN" : [
+         "抱歉，我找不到任何 <specific_language> 音乐。我给你玩点别的。"
+      ],
+      "eng-USA" : [
+         "Sorry, I can't find any <specific_language> music. I'll play you something else."
+      ],
+      "ind-IDN" : [
+         "Maaf, saya tidak dapat menemukan musik <specific_language>. Saya akan memutarkan lagu lain untuk anda."
+      ]
+   },
+   "MUSIC17_P01" : {
+      "cmn-CHN" : [
+         "抱歉，网络好像有问题。",
+         "我遇到了问题，网络似乎已关闭。",
+         "网络断了。在它回来之前我不能帮你。"
+      ],
+      "eng-USA" : [
+         "Sorry, it seems like there's something wrong with the network.",
+         "I'm having trouble, the network seems to be down.",
+         "The network is down. I can't help you until it's back."
+      ],
+      "ind-IDN" : [
+         "Maaf, mengalami gangguan pada jaringan. ",
+         "Saya mengalami gangguan jaringan",
+         "Jaringan terganggu. Saya tidak dapat membantu sampai tersambung kembali"
+      ]
+   },
+   "MUSIC18_P01" : {
+      "cmn-CHN" : [ "抱歉，没有找到任何曲目。" ],
+      "eng-USA" : [ "Sorry, no track has been found." ],
+      "ind-IDN" : [ "Maaf, tidak ada lagu yang ditemukan" ]
+   },
+   "MUSIC19_P01" : {
+      "cmn-CHN" : [ "请先登录。", "抱歉，您需要先登录。" ],
+      "eng-USA" : [ "Please login first.", "Sorry, you need to login first." ],
+      "ind-IDN" : [
+         "Mohon login terlebih dahulu",
+         "Maaf, kamu harus login terlebih dahulu"
+      ]
+   },
+   "MUSIC20_P01" : {
+      "cmn-CHN" : [
+         "没有网络连接，请稍后再试。",
+         "没有网络连接，请稍后再试。"
+      ],
+      "eng-USA" : [
+         "There is no internet connection, try again later.",
+         "No internet connection, please try again later."
+      ],
+      "ind-IDN" : [
+         "Tidak ada koneksi internet, coba lagi nanti.",
+         "Tidak ada koneksi internet, silakan coba lagi nanti."
+      ]
+   },
+   "SYS01_P01" : {
+      "cmn-CHN" : [ "音量不能再高了。" ],
+      "eng-USA" : [ "Volume can't be higher anymore." ],
+      "ind-IDN" : [ "Volume tidak dapat diperbesar lagi." ]
+   },
+   "SYS02_P01" : {
+      "cmn-CHN" : [ "音量不能再低了。" ],
+      "eng-USA" : [ "Volume can't be lower anymore." ],
+      "ind-IDN" : [ "Volume tidak dapat diperkecil lagi." ]
+   },
+   "SYS03_P01" : {
+      "cmn-CHN" : [ "静音。" ],
+      "eng-USA" : [ "Muted." ],
+      "ind-IDN" : [ "Sedang dalam mode diam." ]
+   },
+   "SYS04_P01" : {
+      "cmn-CHN" : [ "它没有静音。" ],
+      "eng-USA" : [ "It's not muted." ],
+      "ind-IDN" : [ "Mode diam dibatalkan." ]
+   },
+   "SYS05_P01" : {
+      "cmn-CHN" : [ "当然，打开蓝牙。" ],
+      "eng-USA" : [ "Sure, turn on bluetooth." ],
+      "ind-IDN" : [ "Baik, mengaktifkan bluetooth." ]
+   },
+   "SYS05_P02" : {
+      "cmn-CHN" : [ "蓝牙已开启。" ],
+      "eng-USA" : [ "Bluetooth is on." ],
+      "ind-IDN" : [ "Bluetooth sedang aktif." ]
+   },
+   "SYS06_P01" : {
+      "cmn-CHN" : [ "当然，关闭蓝牙。" ],
+      "eng-USA" : [ "Sure, turn off bluetooth." ],
+      "ind-IDN" : [ "Baik, mematikan bluotooth." ]
+   },
+   "SYS06_P02" : {
+      "cmn-CHN" : [ "蓝牙已关闭。" ],
+      "eng-USA" : [ "Bluetooth is off." ],
+      "ind-IDN" : [ "Bluetooth sedang tidak aktif." ]
+   },
+   "SYS08_P01" : {
+      "cmn-CHN" : [ "<day> 是 <date>。" ],
+      "eng-USA" : [ "<day> is <date>." ],
+      "ind-IDN" : [ "<day> tanggal <date>." ],
+      "slot_name" : [ "<day>\n<date>" ]
+   },
+   "SYS09_P01" : {
+      "cmn-CHN" : [ "现在是<time>。" ],
+      "eng-USA" : [ "It's <time>." ],
+      "ind-IDN" : [ "Sekarang pukul <time>." ],
+      "slot_name" : [ "<time>" ]
+   },
+   "SYS10_P01" : {
+      "cmn-CHN" : [ "音量现在增加到最大。" ],
+      "eng-USA" : [ "Volume is now increased to the maximum." ],
+      "ind-IDN" : [ "Volume diperkeras ke level maksimum." ]
+   },
+   "SYS10_P02" : {
+      "cmn-CHN" : [ "它已经很响亮了。" ],
+      "eng-USA" : [ "It is already as loud as it gets." ],
+      "ind-IDN" : [ "Volume dalam keadaan paling keras." ]
+   },
+   "SYS11_P01" : {
+      "cmn-CHN" : [ "音量现在降至最低。" ],
+      "eng-USA" : [ "Volume is now reduced to the minimum." ],
+      "ind-IDN" : [ "Volume diperkecil ke level minimum." ]
+   },
+   "SYS11_P02" : {
+      "cmn-CHN" : [ "音量已经是最低的了。" ],
+      "eng-USA" : [ "The volume is already the lowest." ],
+      "ind-IDN" : [ "Volume dalam keadaan paling kecil." ]
+   },
+   "SYS12_P01" : {
+      "cmn-CHN" : [ "<day> 是 <weekday>。" ],
+      "eng-USA" : [ "<day> is <weekday>." ],
+      "ind-IDN" : [ "<day>hari<weekday>." ],
+      "slot_name" : [ "<weekday>" ]
+   },
    "TUNER01_P01" : {
       "cmn-CHN" : [ "好的，打开收音机。" ],
       "eng-USA" : [ "OK, turning on the radio." ],
@@ -215,6 +607,197 @@
       "cmn-CHN" : [ "好的，正在调节下一台。" ],
       "eng-USA" : [ "OK, radio is seeking up." ],
       "ind-IDN" : [ "Oke, sedang mencari stasiun radio berikutnya." ]
+   },
+   "VAD01_P01" : {
+      "cmn-CHN" : [ "你想打电话给哪一个？" ],
+      "eng-USA" : [ "Which one would you like to call?" ],
+      "ind-IDN" : [ "Yang mana yang ingin Anda hubungi?" ]
+   },
+   "VAD01_P02" : {
+      "cmn-CHN" : [ "您想致电 <contact_name> 吗？" ],
+      "eng-USA" : [ "Would you like to call <contact_name>?" ],
+      "ind-IDN" : [ "Apakah Anda ingin menghubungi <contact_name>?" ],
+      "slot_name" : [ "<contact_name>" ]
+   },
+   "VAD01_P03" : {
+      "cmn-CHN" : [ "我找不到那个。你想给谁打电话？" ],
+      "eng-USA" : [ "I can't find that one. Who would you like to call?" ],
+      "ind-IDN" : [ "Saya tidak dapat menemukannya, siapa yang ingin Anda hubungi?" ]
+   },
+   "VAD01_P04" : {
+      "cmn-CHN" : [ "你想给谁打电话？" ],
+      "eng-USA" : [ "Who would you like to call?" ],
+      "ind-IDN" : [ "Siapa yang ingin Anda hubungi?" ]
+   },
+   "VAD01_P05" : {
+      "cmn-CHN" : [ "有好几个号码，你想打哪一个？" ],
+      "eng-USA" : [ "There are several numbers, which one would you like to call?" ],
+      "ind-IDN" : [
+         "Orang ini memiliki beberapa nomor, yang mana yang ingin Anda hubungi?"
+      ]
+   },
+   "VAD01_P06" : {
+      "cmn-CHN" : [ "好的，正在呼叫 <contact_name>。" ],
+      "eng-USA" : [ "OK, calling <contact_name>." ],
+      "ind-IDN" : [ "Oke, menghubungi <contact_name>." ]
+   },
+   "VAD02_P01" : {
+      "cmn-CHN" : [ "<VAD_number_chunk>, <800ms Pause> 你想打电话吗？" ],
+      "eng-USA" : [ "<VAD_number_chunk>, <800ms Pause> would you like to call?" ],
+      "ind-IDN" : [ "Apakah Anda ingin menghubungi <VAD_number_chunk>?" ],
+      "slot_name" : [ "<VAD_number_chunk>" ]
+   },
+   "VAD02_P02" : {
+      "cmn-CHN" : [ "好的，打电话。" ],
+      "eng-USA" : [ "OK, calling." ],
+      "ind-IDN" : [ "Oke, sedang menghubungi." ]
+   },
+   "VAD02_P03" : {
+      "cmn-CHN" : [ "好的，已取消。" ],
+      "eng-USA" : [ "OK, canceled." ],
+      "ind-IDN" : [ "Oke, telepon dibatalkan." ]
+   },
+   "VAD02_P04" : {
+      "cmn-CHN" : [ "请再说一遍？" ],
+      "eng-USA" : [ "I beg your pardon?" ],
+      "ind-IDN" : [ "Maaf, bisa diulang?" ]
+   },
+   "VAD02_P05" : {
+      "cmn-CHN" : [ "我不确定我是否理解。请再试一次。" ],
+      "eng-USA" : [ "I'm not sure I understand. Try again please." ],
+      "ind-IDN" : [ "Saya tidak mengerti, bisa diulang lagi?" ]
+   },
+   "VAD02_P06" : {
+      "cmn-CHN" : [ "我很困惑。让我们稍后再试一次。" ],
+      "eng-USA" : [ "I'm confused. Let's try again later." ],
+      "ind-IDN" : [ "Saya bingung, silakan dicoba lagi." ]
+   },
+   "VAD03_P01" : {
+      "cmn-CHN" : [ "你想给谁打电话？" ],
+      "eng-USA" : [ "Who would you like to call?" ],
+      "ind-IDN" : [ "Siapa yang ingin Anda hubungi?" ]
+   },
+   "VAD04_P01" : {
+      "cmn-CHN" : [ "好的，正在重拨。" ],
+      "eng-USA" : [ "OK, redialing." ],
+      "ind-IDN" : [ "Oke, sedang memanggil ulang." ]
+   },
+   "VAD04_P02" : {
+      "cmn-CHN" : [ "手术失败。请再试一次。" ],
+      "eng-USA" : [ "Operation failed. Please try again." ],
+      "ind-IDN" : [ "Operasi gagal, silakan dicoba lagi." ]
+   },
+   "VAD05_P01" : {
+      "cmn-CHN" : [ "好的，回拨。" ],
+      "eng-USA" : [ "OK, calling back." ],
+      "ind-IDN" : [ "Oke, sedang menelepon balik." ]
+   },
+   "VAD05_P02" : {
+      "cmn-CHN" : [ "手术失败。请再试一次。" ],
+      "eng-USA" : [ "Operation failed. Please try again." ],
+      "ind-IDN" : [ "Operasi gagal, silakan dicoba lagi." ]
+   },
+   "VAD06_P01" : {
+      "cmn-CHN" : [ "好的，这是你的通讯录。" ],
+      "eng-USA" : [ "OK, here's your contact book." ],
+      "ind-IDN" : [ "Oke, ini daftar kontak Anda." ]
+   },
+   "VAD06_P02" : {
+      "cmn-CHN" : [ "通讯录已打开。" ],
+      "eng-USA" : [ "Contact book is open." ],
+      "ind-IDN" : [ "Daftar kontak sudah dibuka." ]
+   },
+   "VAD07_P01" : {
+      "cmn-CHN" : [ "好的，这是您的通话记录。" ],
+      "eng-USA" : [ "OK, here's your call history." ],
+      "ind-IDN" : [ "Oke, ini riwayat panggilan Anda." ]
+   },
+   "VAD07_P02" : {
+      "cmn-CHN" : [ "通话记录已打开。" ],
+      "eng-USA" : [ "Call history is open." ],
+      "ind-IDN" : [ "Daftar riwayat panggilan sudah dibuka." ]
+   },
+   "VAD08_P01" : {
+      "cmn-CHN" : [ "请再说一遍？" ],
+      "eng-USA" : [ "I beg your pardon?" ],
+      "ind-IDN" : [ "Maaf, bisa diulang?" ]
+   },
+   "VAD08_P02" : {
+      "cmn-CHN" : [ "我不确定我是否理解。请再试一次。" ],
+      "eng-USA" : [ "I'm not sure I understand. Try again please." ],
+      "ind-IDN" : [ "Saya tidak mengerti, bisa diulang lagi?" ]
+   },
+   "VAD08_P03" : {
+      "cmn-CHN" : [ "我很困惑。请稍后再试。" ],
+      "eng-USA" : [ "I'm confused. Please try again later." ],
+      "ind-IDN" : [ "Saya bingung, silakan dicoba lagi." ]
+   },
+   "VAD09_P01" : {
+      "cmn-CHN" : [ "我找不到那个。你想打电话给哪一个？" ],
+      "eng-USA" : [ "I can't find that one. Which one would you like to call?" ],
+      "ind-IDN" : [ "Saya tidak dapat menemukannya, yang mana yang ingin Anda hubungi?" ]
+   },
+   "VAD09_P02" : {
+      "cmn-CHN" : [ "你想给谁打电话？" ],
+      "eng-USA" : [ "Who would you like to call?" ],
+      "ind-IDN" : [ "Siapa yang ingin Anda hubungi?" ]
+   },
+   "VAD09_P03" : {
+      "cmn-CHN" : [ "请再说一遍？" ],
+      "eng-USA" : [ "I beg your pardon?" ],
+      "ind-IDN" : [ "Maaf, bisa diulang?" ]
+   },
+   "VAD09_P04" : {
+      "cmn-CHN" : [ "我不确定我是否理解。请再试一次。" ],
+      "eng-USA" : [ "I'm not sure I understand. Try again please." ],
+      "ind-IDN" : [ "Saya tidak mengerti, bisa diulang lagi?" ]
+   },
+   "VAD09_P05" : {
+      "cmn-CHN" : [ "我很困惑。让我们稍后再试一次。" ],
+      "eng-USA" : [ "I'm confused. Let's try again later." ],
+      "ind-IDN" : [ "Saya bingung, silakan dicoba lagi." ]
+   },
+   "VAD10_P01" : {
+      "cmn-CHN" : [ "哪一个？" ],
+      "eng-USA" : [ "Which one?" ],
+      "ind-IDN" : [ "Yang ke-berapa?" ]
+   },
+   "VAD10_P02" : {
+      "cmn-CHN" : [ "我找不到那个。你想打电话给哪一个？" ],
+      "eng-USA" : [ "I can't find that one. Which one would you like to call?" ],
+      "ind-IDN" : [ "Saya tidak dapat menemukannya, yang mana yang ingin Anda hubungi?" ]
+   },
+   "VAD10_P03" : {
+      "cmn-CHN" : [ "你想给谁打电话？" ],
+      "eng-USA" : [ "Who would you like to call?" ],
+      "ind-IDN" : [ "Siapa yang ingin Anda hubungi?" ]
+   },
+   "VAD10_P04" : {
+      "cmn-CHN" : [ "请再说一遍？" ],
+      "eng-USA" : [ "I beg your pardon?" ],
+      "ind-IDN" : [ "Maaf, bisa diulang?" ]
+   },
+   "VAD10_P05" : {
+      "cmn-CHN" : [ "我不确定我是否理解。请再试一次。" ],
+      "eng-USA" : [ "I'm not sure I understand. Try again please." ],
+      "ind-IDN" : [ "Saya tidak mengerti, bisa diulang lagi?" ]
+   },
+   "VAD10_P06" : {
+      "cmn-CHN" : [ "我很困惑。让我们稍后再试一次。" ],
+      "eng-USA" : [ "I'm confused. Let's try again later." ],
+      "ind-IDN" : [ "Saya bingung, silakan dicoba lagi." ]
+   },
+   "VAD11_P01" : {
+      "cmn-CHN" : [ "请连接您的移动设备，然后重试。" ],
+      "eng-USA" : [ "Please connect your mobile device and try again." ],
+      "ind-IDN" : [ "Silakan hubungkan HP Anda dan coba lagi." ]
+   },
+   "VAD12_P01" : {
+      "cmn-CHN" : [ "请在拨打电话前手动同步您的联系人。" ],
+      "eng-USA" : [ "Please sync your contacts manually before making a call." ],
+      "ind-IDN" : [
+         "Silakan sinkronisasikan kontak Anda secara manual sebelum membuat panggilan."
+      ]
    },
    "VEH01_P01" : {
       "cmn-CHN" : [ "天窗完全打开。" ],
