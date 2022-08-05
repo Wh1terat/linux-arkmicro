@@ -101,39 +101,6 @@
       }
     },
     {
-      "name": "DCC_CUSTOM_ENTRY",
-      "content": [
-        {
-          "type": "string",
-          "name": "EntryName_Ortho"
-        },
-        {
-          "type": "integer64",
-          "name": "EntryName_ID"
-        }
-      ],
-      "type": "local",
-      "local": {
-        "lexicon": {
-          "uses": "clc_mnc"
-        },
-        "context": {
-          "name": "dcc_custom_entry_ctx",
-          "acmod": "acmod6_6000_mnc_gen_car_f16_v1_0_1.dat",
-          "link": [
-            {
-              "type": "content",
-              "content": {
-                "clc_category": "normal",
-                "name": "EntryName_Ortho"
-              }
-            }
-          ]
-        },
-        "persistContexts": false
-      }
-    },
-    {
       "name": "DCC_CONTACT",
       "content": [
         {
