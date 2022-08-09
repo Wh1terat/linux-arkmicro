@@ -25,9 +25,9 @@
   "voice_config": [
     {
       "name": "ind-IDN_damayanti_embedded-pro_1-0-3_female",
-      "language": "mnc",
-      "voice": "lilian-ml",
-      "vop_version": "2.1.1",
+      "language": "idi",
+      "voice": "damayanti",
+      "vop_version": "1.0.3",
       "operating_point": "embedded-pro",
       "waitfactor": 1
     }
