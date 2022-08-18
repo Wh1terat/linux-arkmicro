@@ -14,11 +14,11 @@
     "dictionary": ["../asr/dct"]
   },
   "lexicon": {
-    "name": "clc_mnc",
+    "name": "clc_idi",
     "clc": {
-      "filename": "clc_mnc_mpthreevadml_v6_5_003003.dat",
+      "filename": "clc_idi_mpthreevadml_v6_5_000000.dat",
       "dictionary": [{
-        "filename": "wuw.dcb"
+        "filename": "userwords_phonebook.dcb"
       }]
     },
     "lexcache": {

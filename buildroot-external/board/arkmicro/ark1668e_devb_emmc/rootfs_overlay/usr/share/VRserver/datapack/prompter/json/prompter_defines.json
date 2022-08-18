@@ -522,7 +522,7 @@
    "SYS12_P01" : {
       "cmn-CHN" : [ "<day> 是 <weekday>。" ],
       "eng-USA" : [ "<day> is <weekday>." ],
-      "ind-IDN" : [ "<day>hari<weekday>." ],
+      "ind-IDN" : [ "<day> hari <weekday>." ],
       "slot_name" : [ "<weekday>" ]
    },
    "TUNER01_P01" : {
@@ -642,8 +642,8 @@
       "ind-IDN" : [ "Oke, menghubungi <contact_name>." ]
    },
    "VAD02_P01" : {
-      "cmn-CHN" : [ "<VAD_number_chunk>, <800ms Pause> 你想打电话吗？" ],
-      "eng-USA" : [ "<VAD_number_chunk>, <800ms Pause> would you like to call?" ],
+      "cmn-CHN" : [ "<VAD_number_chunk>, 你想打电话吗？" ],
+      "eng-USA" : [ "<VAD_number_chunk>, would you like to call?" ],
       "ind-IDN" : [ "Apakah Anda ingin menghubungi <VAD_number_chunk>?" ],
       "slot_name" : [ "<VAD_number_chunk>" ]
    },
