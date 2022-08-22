@@ -18,7 +18,8 @@ start() {
 	echo 190 > /sys/class/gpio/export
 	echo out > /sys/class/gpio/gpio190/direction
 	echo 1 > /sys/class/gpio/gpio190/value
-	/usr/share/VRserver/vrserver /usr/share/VRserver/datapack /tmp ind-IDN &
+#	/usr/share/VRserver/vrserver /usr/share/VRserver/datapack /tmp ind-IDN &
+        /usr/share/VRserver/vrserver /usr/share/VRserver/datapack /media/udisk/ ind-IDN &
 	echo "vrserver---- is start"
 	Launcher &
 	echo "Launcher is start"	
