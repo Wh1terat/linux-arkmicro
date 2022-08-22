@@ -7,16 +7,6 @@
       "filename": "Sgwm_lihua.fcf",
       "do_crc_check": "true"
     },
-    "slot_filling": {
-      "slot": "Utils#Custom_Entry_Command",
-      "context": {
-        "type": "dynamic",
-        "dynamic": {
-          "dynamic_content_consumer": "DCC_CUSTOM_ENTRY",
-          "context_name": "dcc_custom_entry_ctx"
-        }
-      }
-    },
     "vocon_parameters": {
       "LH_CTX_PARAM_TIMEOUT_SPEECH": 8000,
       "LH_CTX_PARAM_TSILENCE": 800,

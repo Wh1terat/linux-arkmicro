@@ -16,11 +16,11 @@
       "type": "local",
       "local": {
         "lexicon": {
-          "uses": "clc_idi"
+          "uses": "clc_mnc"
         },
         "context": {
           "name": "custom_main_wuw_ctx",
-          "acmod": "acmod6_6000_idi_gen_car_f16_v1_0_0.dat",
+          "acmod": "acmod6_6000_mnc_cfmoto_wuw_f16_v1_0_0.dat",
           "link": [
             {
               "type": "content",
@@ -49,11 +49,11 @@
       "type": "local",
       "local": {
         "lexicon": {
-          "uses": "clc_idi"
+          "uses": "clc_mnc"
         },
         "context": {
           "name": "custom_shortcut_wuw_ctx",
-          "acmod": "acmod6_6000_idi_gen_car_f16_v1_0_0.dat",
+          "acmod": "acmod6_6000_mnc_cfmoto_wuw_f16_v1_0_0.dat",
           "link": [
             {
               "type": "content",
@@ -82,50 +82,17 @@
       "type": "local",
       "local": {
         "lexicon": {
-          "uses": "clc_idi"
+          "uses": "clc_mnc"
         },
         "context": {
           "name": "asr_custom_main_wuw_ctx",
-          "acmod": "acmod6_6000_idi_gen_car_f16_v1_0_0.dat",
+          "acmod": "acmod6_6000_mnc_gen_car_f16_v1_0_1.dat",
           "link": [
             {
               "type": "content",
               "content": {
                 "clc_category": "normal",
                 "name": "MainWuwAsr_Ortho"
-              }
-            }
-          ]
-        },
-        "persistContexts": false
-      }
-    },
-    {
-      "name": "DCC_CUSTOM_ENTRY",
-      "content": [
-        {
-          "type": "string",
-          "name": "EntryName_Ortho"
-        },
-        {
-          "type": "integer64",
-          "name": "EntryName_ID"
-        }
-      ],
-      "type": "local",
-      "local": {
-        "lexicon": {
-          "uses": "clc_idi"
-        },
-        "context": {
-          "name": "dcc_custom_entry_ctx",
-          "acmod": "acmod6_6000_idi_gen_car_f16_v1_0_0.dat",
-          "link": [
-            {
-              "type": "content",
-              "content": {
-                "clc_category": "normal",
-                "name": "EntryName_Ortho"
               }
             }
           ]
@@ -148,12 +115,12 @@
       "type": "local",
       "local": {
         "lexicon": {
-          "uses": "clc_idi"
+          "uses": "clc_mnc"
         },
         "persist_contexts": "true",
         "context": {
           "name": "slm_contact",
-          "acmod": "acmod6_6000_idi_gen_car_f16_v1_0_0.dat",
+          "acmod": "acmod6_6000_mnc_gen_car_f16_v1_0_1.dat",
           "link": [
             {
               "type": "content",
@@ -198,13 +165,13 @@
       "type": "local",
       "local": {
         "lexicon": {
-          "uses": "clc_idi"
+          "uses": "clc_mnc"
         },
         "persist_contexts": "true",
         "context": [
           {
             "name": "slm_song_name",
-            "acmod": "acmod6_6000_idi_gen_car_f16_v1_0_0.dat",
+            "acmod": "acmod6_6000_mnc_gen_car_f16_v1_0_1.dat",
             "link": [
               {
                 "type": "content",
@@ -217,7 +184,7 @@
           },
           {
             "name": "slm_artist_name",
-            "acmod": "acmod6_6000_idi_gen_car_f16_v1_0_0.dat",
+            "acmod": "acmod6_6000_mnc_gen_car_f16_v1_0_1.dat",
             "link": [
               {
                 "type": "content",
@@ -230,7 +197,7 @@
           },
           {
             "name": "slm_album_name",
-            "acmod": "acmod6_6000_idi_gen_car_f16_v1_0_0.dat",
+            "acmod": "acmod6_6000_mnc_gen_car_f16_v1_0_1.dat",
             "link": [
               {
                 "type": "content",
@@ -259,12 +226,12 @@
       "type": "local",
       "local": {
         "lexicon": {
-          "uses": "clc_idi"
+          "uses": "clc_mnc"
         },
         "persist_contexts": "true",
         "context": {
           "name": "slm_app_name",
-          "acmod": "acmod6_6000_idi_gen_car_f16_v1_0_0.dat",
+          "acmod": "acmod6_6000_mnc_gen_car_f16_v1_0_1.dat",
           "link": [
             {
               "type": "content",
@@ -286,11 +253,11 @@
       "type": "local",
       "local": {
         "lexicon": {
-          "uses": "clc_idi"
+          "uses": "clc_mnc"
         },
         "context": {
           "name": "nvsl_utt",
-          "acmod": "acmod6_6000_idi_gen_car_f16_v1_0_0.dat",
+          "acmod": "acmod6_6000_mnc_gen_car_f16_v1_0_1.dat",
           "link": [
             {
               "type": "content",
