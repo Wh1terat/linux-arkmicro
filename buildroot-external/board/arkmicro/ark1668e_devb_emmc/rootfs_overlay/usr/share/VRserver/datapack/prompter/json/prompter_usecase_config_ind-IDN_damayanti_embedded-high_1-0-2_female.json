@@ -1,0 +1,35 @@
+{
+  "version": "Prompter 1.0",
+  "usecase": [
+    {
+      "name": "default_ind-IDN_damayanti_embedded-high_1-0-2_female",
+      "type": "local",
+      "local": {
+        "voice_config": {
+          "uses": "ind-IDN_damayanti_embedded-high_1-0-2_female"
+        },
+        "enabled_markers": "textunit,bookmark"
+      }
+    },
+    {
+      "name": "sds_ind-IDN_damayanti_embedded-high_1-0-2_female",
+      "type": "local",
+      "local": {
+        "voice_config": {
+          "uses": "ind-IDN_damayanti_embedded-high_1-0-2_female"
+        },
+        "enabled_markers": "textunit,bookmark"
+      }
+    }
+  ],
+  "voice_config": [
+    {
+      "name": "ind-IDN_damayanti_embedded-high_1-0-2_female",
+      "language": "idi",
+      "voice": "damayanti",
+      "vop_version": "1.0.2",
+      "operating_point": "embedded-high",
+      "waitfactor": 1
+    }
+  ]
+}
