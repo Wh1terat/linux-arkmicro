@@ -969,7 +969,8 @@ static void axi_chan_block_xfer_complete(struct axi_dma_chan *chan)
 
 	if (!vd) {
 		spin_unlock_irqrestore(&chan->vc.lock, flags);
-		return;
+		return;	
+
 	}
 
 	if (chan->cyclic) {
