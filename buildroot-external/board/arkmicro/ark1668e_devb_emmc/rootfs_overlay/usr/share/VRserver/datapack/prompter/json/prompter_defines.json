@@ -1842,39 +1842,9 @@
       "ind-IDN" : [ "Oke, menutup setengah semua jendela." ]
    },
    "VEH53_P02" : {
-      "cmn-CHN" : [
-         "好的，将 <area_description> 窗口关闭一半。",
-         "好的，把所有的窗户都打开一点。",
-         "好的，稍微打开 <area_description> 窗口。",
-         "好的，把所有的窗户关上一点。",
-         "好的，稍微关闭 <area_description> 窗口。",
-         "好的，完全打开所有窗口。",
-         "好的，完全打开 <area_description> 窗口。",
-         "好的，完全关闭所有窗口。",
-         "好的，完全关闭 <area_description> 窗口。"
-      ],
-      "eng-USA" : [
-         "OK, half closing the <area_description> window.",
-         "OK, opening all the windows by a little.",
-         "OK, opening the <area_description>  window by a little.",
-         "OK, closing all the windows by a little.",
-         "OK, closing the <area_description>  window by a little.",
-         "OK, fully opening all windows.",
-         "OK, fully opening the <area_description> window.",
-         "OK, fully closing all windows.",
-         "OK, fully closing the <area_description> window."
-      ],
-      "ind-IDN" : [
-         "Oke, menutup setengah jendela <area_description>.",
-         "Oke, membuka sedikit semua jendela.",
-         "Oke, membuka sedikit jendela <area_description> .",
-         "Oke, menutup sedikit semua jendela.",
-         "Oke, menutup sedikit jendela <area_description> .",
-         "Oke, membuka semua jendela seluruhnya.",
-         "Oke, membuka jendela  <area_description> seluruhnya.",
-         "Oke, menutup semua jendela seluruhnya.",
-         "Oke, menutup jendela  <area_description> seluruhnya."
-      ],
+      "cmn-CHN" : [ "好的，将 <area_description> 窗口关闭一半。" ],
+      "eng-USA" : [ "OK, half closing the <area_description> window." ],
+      "ind-IDN" : [ "Oke, menutup setengah jendela <area_description>." ],
       "slot_name" : [ "<area_description>" ]
    },
    "VEH53_P03" : {
