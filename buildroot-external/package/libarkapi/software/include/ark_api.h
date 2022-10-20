@@ -353,6 +353,9 @@ int arkapi_video_show_mode(video_handle *handle, int mode, int enable);
 void arkapi_video_release(video_handle *handle);
 int arkapi_enter_carback(void);
 int arkapi_exit_carback(void);
+video_handle * arkapi_softdec_init(void);
+void arkapi_softdec_release(video_handle *handle);
+int arkapi_softdec_play(video_handle *handle, const void *src_addr);
 
 /*-----------------------------ARK API BASE:  DISPLAY------------------------------*/
 disp_handle *arkapi_display_open_layer(enum ark_disp_layer layer);

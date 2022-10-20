@@ -25,6 +25,8 @@ struct display_data *pdd = NULL;
 
 //#define DECODE_SCALE_PARALLEL
 
+static int mirror_w = 0, mirror_h = 0;
+
 static int get_shared_display_data(void)
 {
 	if (pdd == NULL) {
@@ -49,6 +51,7 @@ static int get_shared_display_data(void)
 			}
 			p->kernel_used = 0;
 			p->avin_used = 0;
+			p->softdec_used = 0;
 			p->display_mode = DISP_NONE;
 			p->active_handle = NULL;
 			p->init = 1;
@@ -339,14 +342,18 @@ void sig_handler(int sigio)
 		if (handle && handle->handle_disp)
 			arkapi_display_hide_layer(handle->handle_disp);
 	} else if (sigio == SIGUSR2) {
-		ark_dbg("rev SIGUSR2\n");
+		ark_dbg("rev SIGUSR2,softdec_used = %d\n",pdd->softdec_used);
 		handle->first_show = 1;
-		if (handle)
-			video_display_process(handle, handle->last_render_yaddr, handle->last_render_uaddr,
-				handle->last_render_vaddr);
+		if(!pdd->softdec_used){
+			if (handle)
+				video_display_process(handle, handle->last_render_yaddr, handle->last_render_uaddr,
+					handle->last_render_vaddr);
 #if LIBARKAPI_PLATFORM != LIBARKAPI_ARK1668 && defined(DECODE_SCALE_PARALLEL)
-		video_display_process(handle, 0, 0, 0);
+			video_display_process(handle, 0, 0, 0);
 #endif
+		}else{
+			arkapi_softdec_play(handle,handle->last_display_addr);
+		}
 	}
 }
 
@@ -362,7 +369,7 @@ video_handle *arkapi_video_init(int stream_type)
 	int ret;
 
 	ark_dbg("%s: stream_type=%d.\n", __func__, stream_type);
-	printf("arkapi video init -20220531\n");
+	printf("arkapi video init -20221015\n");
 
 	if(stream_type < RAW_STRM_TYPE_H264 || (stream_type > RAW_STRM_TYPE_MP4_CUSTOM && \
 	                                       stream_type != RAW_STRM_TYPE_H264_NOREORDER)){
@@ -604,6 +611,9 @@ void arkapi_video_release(video_handle *handle)
 		return;
 	}
 
+	mirror_w = 0;
+	mirror_h = 0;
+
 	display_lock();
 	if(pdd->active_handle == handle)
 		pdd->active_handle = NULL;
@@ -639,7 +649,6 @@ void arkapi_video_release(video_handle *handle)
 
 int arkapi_video_play(video_handle *handle, const void *src_addr, int len, int fps)
 {
-	static int mirror_w = 0, mirror_h = 0;
 	int count = ROTATE_BUF_MAX;
 	ark2d_cfg cfg_2d;
     int i, time_delay = 0;
@@ -819,3 +828,134 @@ int arkapi_set_vin_start(int start)
 	display_unlock();
 	return 0;
 }
+
+video_handle * arkapi_softdec_init(void)
+{
+	memalloc_handle *handle_mem = NULL;
+	disp_handle *handle_disp= NULL;
+	video_handle *handle = NULL;
+	struct list_head *list;
+	int ret;
+
+	get_shared_display_data();
+
+	pdd->softdec_used = 1;
+
+	handle = (video_handle *)malloc(sizeof(video_handle));
+	if(!handle){
+		printf("%s: malloc video handle error.\n", __func__);
+		goto err;
+	}
+	memset(handle, 0, sizeof(video_handle));
+	video_handle_default(handle);
+
+	handle_disp = arkapi_display_open_layer(VIDEO_LAYER);
+	if (!handle_disp) {
+		printf("open VIDEO_LAYER fail.\n");
+		goto err;
+	}
+	handle->handle_disp = handle_disp;
+
+	if (sem_init(&handle->sem_lock, 1, 1) < 0) {
+		printf("%s sem_init fail\n", __func__);
+		goto err2;
+	}
+
+	signal(SIGUSR1, sig_handler);
+	signal(SIGUSR2, sig_handler);
+
+	ark_dbg("%s: success.\n", __func__);
+
+	return handle;
+err2:
+err1:
+err:
+	if(handle) free(handle);
+
+	return NULL;
+}
+
+void arkapi_softdec_release(video_handle *handle)
+{
+	struct list_head *pos;
+	struct list_head *del_tmp;
+	video_handle *vid_tmp;
+
+	if(!handle){
+		printf("%s: handle null, error.\n", __func__);
+		return;
+	}
+
+	display_lock();
+	if(pdd->active_handle == handle)
+		pdd->active_handle = NULL;
+	display_unlock();
+
+	arkapi_video_lock(handle);
+
+	pdd->softdec_used = 0;
+	ark_dbg("+++++++++++++arkapi_softdec_release\n");
+
+	if(!pdd->kernel_used)
+		arkapi_display_hide_layer(handle->handle_disp);
+	if (handle->handle_disp)
+		arkapi_display_close_layer(handle->handle_disp);
+
+	arkapi_video_unlock(handle);
+
+	sem_destroy(&handle->sem_lock);
+	free(handle);
+	
+	ark_dbg("%s: <---sucess.\n", __func__);
+
+	return;
+}
+
+int arkapi_softdec_play(video_handle *handle, const void *src_addr)
+{
+	if(!handle || !handle->handle_disp){
+		printf("%s: handle null, error.\n", __func__);
+		return -1;
+	}
+
+	if (!handle->active) {
+		printf("%s not active.\n", __func__);
+		return -1;
+	}
+
+	display_lock();
+	if (pdd->active_handle != handle) {
+		ark_dbg("%s: active_handle=0x%p != handle=0x%p, exit.\n", __func__, pdd->active_handle, handle);
+		display_unlock();
+		return -1;
+	}
+	if (pdd->kernel_used) {
+		ark_dbg("%s display used by kernel.\n", __func__);
+		display_unlock();
+		return -1;
+	}
+	display_unlock();
+
+	handle->last_display_addr = src_addr;
+
+	if(handle->last_display_addr){
+		unsigned int display_addr = handle->last_display_addr;
+		if (handle->first_show) {
+			int format = ARK_LCDC_FORMAT_Y_UV420 | ARK_LCDC_ORDER_VYUY;
+			arkapi_display_set_layer_pos_atomic(handle->handle_disp,  handle->cfg_vid.disp_x,  handle->cfg_vid.disp_y);
+			arkapi_display_set_layer_size_atomic(handle->handle_disp,  handle->cfg_vid.disp_width, handle->cfg_vid.disp_height);
+			arkapi_display_set_layer_format_atomic(handle->handle_disp, format);
+			arkapi_display_layer_update_commit(handle->handle_disp);
+			arkapi_display_set_layer_addr(handle->handle_disp, display_addr,display_addr+handle->cfg_vid.disp_width*handle->cfg_vid.disp_height, 0);
+			usleep(20000);
+			arkapi_display_show_layer(handle->handle_disp);
+			handle->first_show = 0;
+		} else {
+			arkapi_display_set_layer_addr(handle->handle_disp, display_addr,display_addr+handle->cfg_vid.disp_width*handle->cfg_vid.disp_height, 0);
+		}
+	}
+
+	return 0;
+}
+
+
