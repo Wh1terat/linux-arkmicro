@@ -42,6 +42,12 @@ DECLARE_GLOBAL_DATA_PTR;
 
 #define rSYS_USB_CFG			*((volatile unsigned int *)(0xe4900260))	/* LiXH(ZHong) 2022.05.24 add */
 
+/* LiXH(ZHong) 2022.09.16 add flow 3 lines */
+#define rSYS_LCDPLL_CFG0		*((volatile unsigned int *)(0xe490028c))
+#define rSYS_LCDPLL_CFG1		*((volatile unsigned int *)(0xe4900290))
+#define rSYS_LCDPLL_CFG2		*((volatile unsigned int *)(0xe4900294))
+
+
 #define rWDT_CR		*((volatile unsigned int *)(0xe4b00000))
 
 #define MUSB_BASE				0xe0100000
@@ -237,6 +243,11 @@ int board_init(void)
 	/* select pwm0 pad */
 	rSYS_PAD_CTRL05 &= ~0x7;
 	rSYS_PAD_CTRL05 |= 1;
+
+	/* LiXH(ZHong) 2022.09.16, enable spread frequency to fix EMI issue */
+	rSYS_LCDPLL_CFG0 = 0xFFC12340;
+	rSYS_LCDPLL_CFG1 = 0x62500000;
+	rSYS_LCDPLL_CFG2 = 0xFE000081;
 
     return 0;
 }
