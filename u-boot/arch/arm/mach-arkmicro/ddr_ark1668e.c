@@ -340,13 +340,13 @@ unsigned int ddr3_sdramc_init(void)
     rDDR_PHYCR0  = 1 << 13 | 1 << 11 | 1 << 10 | 1 << 9 | 1 << 8 | 2<<4 | 2<<0; 	
 
 //0x24
-    rDDR_PHYRDTR   =  7<<28 | 7<<24 | 7<<20 | 7<<16 | 7<<12 | 7<<8 | 7<<4 | 7<<0;	
+    rDDR_PHYRDTR   =  9<<4 | 9<<0;	
 	
 //0x130                   
-    rDDR_PHYRDTFR  	 =  7<<28 | 7<<24 | 7<<20 | 7<<16 | 7<<12 | 7<<8 | 7<<4 | 7<<0;	
+    rDDR_PHYRDTFR  	 =  9<<4 | 9<<0;	
 	
  //0x78
-    rDDR_WRDLLCR     =  8<<12 | 8<<8 | 8<<4 | 8<<0;
+    rDDR_WRDLLCR     =  10<<4 | 10<<0;
 /*	
 //0x28
     rDDR_COMPBLKCR =   0x1f<<7 | 0x1f<<1 | 1<<0;
@@ -418,6 +418,6 @@ unsigned int ddr3_sdramc_init(void)
  	while(!((rDDR_MCSR>>8)&0x1));
 	udelay (1);
 
-	printf("DDR3 256*16_20220402\n");
+	printf("DDR3 256*16_20221130\n");
     return 0;
 }
