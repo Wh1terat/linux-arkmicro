@@ -172,6 +172,7 @@ struct dvr_dev{
 	int first_show_flag;
 	int dev_major, dev_minor;
     spinlock_t spin_lock;
+	struct semaphore vin_sem;
 	struct work_struct scale_work;
 	struct workqueue_struct *scale_queue;
 	struct work_struct detect_work;
@@ -255,6 +256,8 @@ struct vin_screen {
 #define VIN_STOP				_IO(ARK_DVR_IOC_MAGIC, 52)
 #define VIN_SWITCH_CHANNEL		_IOWR(ARK_DVR_IOC_MAGIC, 53, int)
 #define VIN_CONFIG				_IOWR(ARK_DVR_IOC_MAGIC, 54, struct vin_para)
+#define VIN_IOCTL_DOWN_IDLE            _IO(ARK_DVR_IOC_MAGIC, 55)
+#define VIN_IOCTL_UP_IDLE                              _IO(ARK_DVR_IOC_MAGIC, 56)
 
 #endif
 

@@ -21,11 +21,22 @@
 #include "ark_2d.h"
 #endif
 
+#define ARK_DVR_IOC_MAGIC			'n'
+
+#define VIN_UPDATE_WINDOW		_IOWR(ARK_DVR_IOC_MAGIC, 50, struct vin_screen)
+#define VIN_START				_IO(ARK_DVR_IOC_MAGIC, 51)
+#define VIN_STOP				_IO(ARK_DVR_IOC_MAGIC, 52)
+#define VIN_SWITCH_CHANNEL		_IOWR(ARK_DVR_IOC_MAGIC, 53, int)
+#define VIN_CONFIG				_IOWR(ARK_DVR_IOC_MAGIC, 54, int)
+#define VIN_IOCTL_DOWN_IDLE		_IO(ARK_DVR_IOC_MAGIC, 55)
+#define VIN_IOCTL_UP_IDLE				_IO(ARK_DVR_IOC_MAGIC, 56)
+
 struct display_data *pdd = NULL;
 
 //#define DECODE_SCALE_PARALLEL
 
 static int mirror_w = 0, mirror_h = 0;
+static int vin_fd;
 
 static int get_shared_display_data(void)
 {
@@ -418,6 +429,13 @@ video_handle *arkapi_video_init(int stream_type)
 		goto err2;
 	}
 
+	vin_fd = open("/dev/video0",O_RDWR);
+	if( vin_fd < 0 )
+	{
+		printf("++++++open error.\n");
+		goto err2;
+	}
+
 	if (sem_init(&handle->sem_lock, 1, 1) < 0) {
 		printf("%s sem_init fail\n", __func__);
 		goto err2;
@@ -642,6 +660,8 @@ void arkapi_video_release(video_handle *handle)
 	sem_destroy(&handle->sem_lock);
 	free(handle);
 
+	close(vin_fd);
+
 	ark_dbg("%s: <---sucess.\n", __func__);
 
 	return;
@@ -679,7 +699,17 @@ int arkapi_video_play(video_handle *handle, const void *src_addr, int len, int f
 		len = MAX_STREAM_BUFFER_SIZE;
 	handle->in_buffer.size = len;
 	handle->out_buffer.num = 0;
+
+	ret = ioctl(vin_fd, VIN_IOCTL_DOWN_IDLE, 0);
+	if(ret < 0)
+		printf("VIN_IOCTL_DOWN_IDLE error\n");
+
 	ret = mfc_decode(handle->handle_mfc, &handle->in_buffer, &handle->out_buffer);
+
+	ret = ioctl(vin_fd, VIN_IOCTL_UP_IDLE, 0);
+	if(ret < 0)
+		printf("VIN_IOCTL_UP_IDLE error\n");
+
 	if (ret) {
 		printf("mfc_decode fail, ret=%d.\n", ret);
 		arkapi_video_unlock(handle);

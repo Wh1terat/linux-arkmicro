@@ -490,7 +490,21 @@ static long vin_ioctl_default(struct file *file, void *priv,
 			vin_aux_config(para);
 			break;
 		}
-		
+
+		case VIN_IOCTL_DOWN_IDLE:
+		{
+			//printk(KERN_ALERT "++++++VIN_IOCTL_DOWN_IDLE++++++\n");
+			down_interruptible(&dvr_dev->vin_sem);
+			break;
+		}
+
+		case VIN_IOCTL_UP_IDLE:
+		{
+			//printk(KERN_ALERT "++++++VIN_IOCTL_DOWN_IDLE++++++\n");
+			up(&dvr_dev->vin_sem);
+			break;
+		}
+
 		default:
 			printk("%s: error cmd 0x%x\n", __func__, cmd);
 			error = -EFAULT;
@@ -765,6 +779,8 @@ int dvr_exit_carback(void)
 	ark_vin_disable_write(); /*stop write data back*/
 	ark_vin_disable();
 	spin_unlock(&vin->dvr_dev->spin_lock);
+
+	up(&vin->dvr_dev->vin_sem);
 
 	if(vin->dvr_dev->chip_info == TYPE_RN6752){
 		ret = v4l2_subdev_call(vin->current_subdev->sd,core,ioctl,VIDIOC_EXIT_CARBACK,0);
@@ -1310,11 +1326,12 @@ static void dither_timeout_timer(struct timer_list *t)
 }
 
 static int vin_start(struct dvr_dev *dvr_dev)
-{ 
+{
 	struct ark1668e_vin_device* vin = NULL;
 	int ret = 0;
 	vin = g_ark1668e_vin;
 	if(!dvr_dev->work_status){
+		down_interruptible(&dvr_dev->vin_sem);
 		dvr_dev->work_status = 1;
 		dvr_dev->discard_frame = START_DISCARD_FRAME;
 		dvr_dev->cur_frame = 0;
@@ -1860,6 +1877,8 @@ static int ark1668e_vin_probe(struct platform_device *pdev)
 	dev_err(&pdev->dev, "%s %d: can't get assigned deinterlace_irq %d, error %d\n",
 	    __FUNCTION__, __LINE__, ark_vin->dvr_dev->context.deinterlace_irq, ret);
 	}
+
+	sema_init(&ark_vin->dvr_dev->vin_sem, 1);
 
 	timer_setup(&ark_vin->dvr_dev->timer, dither_timeout_timer, 0);
 	timer_setup(&ark_vin->dvr_dev->signal_timer, vin_get_signal_time, 0);
