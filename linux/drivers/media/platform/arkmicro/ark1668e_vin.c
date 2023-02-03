@@ -845,7 +845,7 @@ static void vin_get_signal_work(struct work_struct *work)
 			{
 				if(vin->dvr_dev->first_show_flag){
 					if(vin->dvr_dev->signal_flag == 20){
-					printk(KERN_ALERT "ark_vin_display_int_handler-->show_video\n");
+					printk(KERN_ALERT "ark_vin_display_int_handler-->show_video, first=%d\n", vin->dvr_dev->first_show_flag);
 					ark_vin_display_init(DISPLAY_LAYER,vin->dvr_dev->screen_width,vin->dvr_dev->screen_height,vin->dvr_dev->screen_xpos,vin->dvr_dev->screen_ypos);
 					ark_disp_set_layer_en(DISPLAY_LAYER, 1);
 					vin->dvr_dev->layer_status = 1;
@@ -857,8 +857,8 @@ static void vin_get_signal_work(struct work_struct *work)
 						vin->dvr_dev->signal_flag++;
 					}
 				}else{
-					if(vin->dvr_dev->signal_flag == 10){
-						printk(KERN_ALERT "ark_vin_display_int_handler-->show_video\n");
+					if(vin->dvr_dev->signal_flag == 20){	// LiXH(2023.02.02) fixed issue: RVC video flashing when enter carback
+						printk(KERN_ALERT "ark_vin_display_int_handler-->show_video, first=%d\n", vin->dvr_dev->first_show_flag);
 						ark_vin_display_init(DISPLAY_LAYER,vin->dvr_dev->screen_width,vin->dvr_dev->screen_height,vin->dvr_dev->screen_xpos,vin->dvr_dev->screen_ypos);
 						ark_disp_set_layer_en(DISPLAY_LAYER, 1);
 						vin->dvr_dev->layer_status = 1;

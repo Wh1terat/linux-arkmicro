@@ -135,25 +135,26 @@ static void carback_signal_detect(void)
 	struct carback_context *context = g_carback_context;
 	int status = !gpiod_get_value(context->detect);	
 	int temp_signal;
-    if(status){
-        temp_signal = dvr_detect_carback_signal();
-        if(temp_signal == 0){
+	if(status){
+		temp_signal = dvr_detect_carback_signal();
+		if(temp_signal == 0){
 			carback_detect_count++;
 			if(carback_detect_count == 10){
-                printk(KERN_ALERT "carback delect itu no signal\n");
+				printk(KERN_ALERT "carback detect itu no signal\r\n");
 				if(status)
-                context->carback_signal = temp_signal;
+					context->carback_signal = temp_signal;
 				else
 					context->carback_signal = 1;
+
 				carback_detect_count = 0;
-            }
-        }
-        else{
-            context->carback_signal = temp_signal;
-            context->carback_count = 0;
+			}
+		}
+		else{
+			context->carback_signal = temp_signal;
+			context->carback_count = 0;
 			carback_detect_count = 0;
-        }
-    }
+		}
+	}
 }
 
 #ifdef CONFIG_REVERSING_TRACK
