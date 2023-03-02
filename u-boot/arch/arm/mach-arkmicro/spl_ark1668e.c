@@ -12,7 +12,7 @@
 #define AXIPLL_CLK	720
 #define AHBPLL_CLK	336
 #define APBPLL_CLK	552
-#define DDRPLL_CLK  360
+#define DDRPLL_CLK  300
 #define MACPLL_CLK	1000
 #define AUDPLL_CLK	720
 
