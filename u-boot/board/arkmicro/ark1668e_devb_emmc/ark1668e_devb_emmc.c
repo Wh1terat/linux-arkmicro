@@ -513,7 +513,11 @@ static int do_update_from_media(void)
 	mdelay(30);
 	if(!ret)
 	{
-		sprintf(cmd, "setenv fdtsize %s",env_get("filesize"));
+		if(flag_partiton == 0)		
+			sprintf(cmd, "setenv fdtsize_a %s",env_get("filesize"));
+		else
+			sprintf(cmd, "setenv fdtsize_b %s",env_get("filesize"));
+
 		run_command(cmd, 0);
 		printf("cmd=%s\n", cmd);	
 		mdelay(30);
@@ -531,7 +535,11 @@ static int do_update_from_media(void)
 	mdelay(30);
 	if(!ret)
 	{
-		sprintf(cmd, "setenv kernelsize %s",env_get("filesize"));
+		if(flag_partiton == 0)		
+			sprintf(cmd, "setenv kernelsize_a %s",env_get("filesize"));
+		else
+			sprintf(cmd, "setenv kernelsize_b %s",env_get("filesize"));
+
 		printf("cmd=%s\n", cmd);
 		run_command(cmd, 0);
 		mdelay(30);
@@ -610,6 +618,15 @@ static int do_update_from_media(void)
 		env_set("kernel_part", "kernel");
 		env_set("fdt_part", "fdt");
 		env_set("emmcroot", "/dev/mmcblk0p10 rw");
+		sprintf(cmd, "setenv fdtsize %s",env_get("fdtsize_a"));
+		run_command(cmd, 0);
+		printf("cmd=%s\n", cmd);	
+		mdelay(30);
+
+		sprintf(cmd, "setenv kernelsize %s",env_get("kernelsize_a"));
+		run_command(cmd, 0);
+		printf("cmd=%s\n", cmd);	
+		mdelay(30);
 
 	}
 	else if(!strcmp(update_dev, "usb"))
@@ -621,6 +638,16 @@ static int do_update_from_media(void)
 			env_set("kernel_part", "kernel_b");
 			env_set("fdt_part", "fdt_b");
 			env_set("emmcroot", "/dev/mmcblk0p14 rw");
+
+			sprintf(cmd, "setenv fdtsize %s",env_get("fdtsize_b"));
+			run_command(cmd, 0);
+			printf("cmd=%s\n", cmd);	
+			mdelay(30);
+
+			sprintf(cmd, "setenv kernelsize %s",env_get("kernelsize_b"));
+			run_command(cmd, 0);
+			printf("cmd=%s\n", cmd);	
+			mdelay(30);
 		}		
 		else if(!strcmp(curr_partition, "B"))
 		{
@@ -628,6 +655,15 @@ static int do_update_from_media(void)
 			env_set("kernel_part", "kernel");
 			env_set("fdt_part", "fdt");
 			env_set("emmcroot", "/dev/mmcblk0p10 rw");
+			sprintf(cmd, "setenv fdtsize %s",env_get("fdtsize_a"));
+			run_command(cmd, 0);
+			printf("cmd=%s\n", cmd);	
+			mdelay(30);
+
+			sprintf(cmd, "setenv kernelsize %s",env_get("kernelsize_a"));
+			run_command(cmd, 0);
+			printf("cmd=%s\n", cmd);	
+			mdelay(30);
 		}
 
 	}
@@ -664,6 +700,9 @@ int board_late_init(void)
 	int do_update = 0, update_from_mmc = 1;
 
 
+	char *curr_partition = NULL;
+
+
 #ifdef CONFIG_USB_MUSB_HOST
 	usb_controller_reset();
 	musb_register(&musb_platform_data, NULL, (void *)MUSB_BASE);
@@ -684,6 +723,7 @@ int board_late_init(void)
 		run_command(cmd, 0);
 		if (loadaddr && !memcmp((void *)loadaddr, ARK1668_UPDATE_MAGIC, strlen(ARK1668_UPDATE_MAGIC))) {
 			do_update = 1;
+			run_command("env default -f -a", 0);
 			goto update_done;
 		} else {
 			printf("Wrong update magic, do not update from mmc.\n");
@@ -696,6 +736,18 @@ int board_late_init(void)
 		if (loadaddr && !memcmp((void *)loadaddr, ARK1668_UPDATE_MAGIC, strlen(ARK1668_UPDATE_MAGIC))) {
 			do_update = 1;
 			update_from_mmc = 0;
+			curr_partition  = env_get("updata_from_part");
+			printf("++updata_from_part %s++\n", curr_partition);
+			run_command("env default -f -a", 0);
+			mdelay(500);		
+			if(!strcmp(curr_partition, "A"))
+			    env_set("updata_from_part", "A");	
+			else if(!strcmp(curr_partition, "B"))
+			    env_set("updata_from_part", "B");
+			else
+			    env_set("updata_from_part", "A");			
+			printf("++++++++++++++%s++++++++++\n",curr_partition);
+
 		} else {
 			printf("Wrong update magic, do not update from usb.\n");
 		}
@@ -703,7 +755,18 @@ int board_late_init(void)
 	}
 	else if(!strcmp(update_from_ota, "yes")){
 
-		do_update = 0;		
+		do_update = 0;
+		curr_partition  = env_get("updata_from_part");
+		printf("++updata_from_part %s++\n", curr_partition);
+		run_command("env default -f -a", 0);
+		mdelay(500);		
+		if(!strcmp(curr_partition, "A"))
+		    env_set("updata_from_part", "A");	
+		else if(!strcmp(curr_partition, "B"))
+		    env_set("updata_from_part", "B");
+		else
+		    env_set("updata_from_part", "A");			
+		printf("++++++++++++++%s++++++++++\n",curr_partition);	
 		sprintf(cmd, "update_from_emmc_ota");
 		printf("cmd=%s\n", cmd);	
 		run_command(cmd, 0); 

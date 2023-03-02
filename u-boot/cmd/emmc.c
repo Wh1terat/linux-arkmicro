@@ -1078,7 +1078,7 @@ int do_update_from_ota(cmd_tbl_t * cmdtp, int flag, int argc, char *const argv[]
 		env_set("updata_from_part", "B");
 		env_set("kernel_part", "kernel_b");
 		env_set("fdt_part", "fdt_b");
-		env_set("emmcroot", "/dev/mmcblk0p13 rw");
+		env_set("emmcroot", "/dev/mmcblk0p14 rw");
 		sprintf(cmd, "setenv fdtsize %s",env_get("fdtsize_b"));
 		run_command(cmd, 0);
 		printf("cmd=%s\n", cmd);	
@@ -1089,18 +1089,13 @@ int do_update_from_ota(cmd_tbl_t * cmdtp, int flag, int argc, char *const argv[]
 		printf("cmd=%s\n", cmd);	
 		mdelay(30);
 
-
-		sprintf(cmd, "setenv bootanimationsize %s",env_get("bootanimationsize_b"));
-		run_command(cmd, 0);
-		printf("cmd=%s\n", cmd);	
-		mdelay(30);
 	}		
 	else if(!strcmp(curr_partition, "B"))
 	{
 		env_set("updata_from_part", "A");
 		env_set("kernel_part", "kernel");
 		env_set("fdt_part", "fdt");
-		env_set("emmcroot", "/dev/mmcblk0p9 rw");
+		env_set("emmcroot", "/dev/mmcblk0p10 rw");
 
 		sprintf(cmd, "setenv fdtsize %s",env_get("fdtsize_a"));
 		run_command(cmd, 0);
@@ -1112,11 +1107,6 @@ int do_update_from_ota(cmd_tbl_t * cmdtp, int flag, int argc, char *const argv[]
 		printf("cmd=%s\n", cmd);	
 		mdelay(30);
 
-
-		sprintf(cmd, "setenv bootanimationsize %s",env_get("bootanimationsize_a"));
-		run_command(cmd, 0);
-		printf("cmd=%s\n", cmd);	
-		mdelay(30);
 	}
 
 	env_set("updata_status", "ok");
