@@ -1696,10 +1696,6 @@ unsigned int track_paint_fill(void *dest, unsigned int width, unsigned int heigh
 		if(ph->append2_total)  
 			subjoin_append2_pic(dest);
 	}else{
-		if(!g_carback_context->track_append_setting){
-            memset(dest,0,g_carback_context->track_display_size);
-            g_carback_context->track_append_setting = 1;
-		}
 		if(g_carback_context->layer_status){
 			if(ph->track_total )
 				subjoin_track_pic(dest);
@@ -1709,12 +1705,6 @@ unsigned int track_paint_fill(void *dest, unsigned int width, unsigned int heigh
 
 			if(ph->radar_total)  
 				subjoin_radar_pic(dest);
-
-			if(ph->append1_total)  
-				subjoin_append1_pic(dest);
-
-			if(ph->append2_total)  
-				subjoin_append2_pic(dest);
 		 
 			if(ph->track2_total) 
 				subjoin_track2_pic(dest);
