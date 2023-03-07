@@ -187,7 +187,7 @@ struct uart_amba_port {
 #endif
 };
 
-static bool enable_console = false;//false;
+static bool enable_console = true;//false;
 
 static void (*mcu_serial_rev_handler)(unsigned char ch);
 static struct work_struct *mcu_serial_rev_task;
