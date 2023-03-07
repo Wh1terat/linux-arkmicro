@@ -133,8 +133,9 @@ static void usb_controller_reset(void)
 	rSYS_USB1_CFG = 0x3c2e0020;
 }
 
-#define ARK_MMC_CLK     	24000000
-struct dwmci_host dwmcihost[2];
+#define ARK_MMC_CLK     	45000000
+#define ARK_MMC_NUM			3
+struct dwmci_host dwmcihost[ARK_MMC_NUM];
 static int ark_dwmci_init(char *name,u32 regbase, int bus_width, int index)
 {
     struct dwmci_host *host = NULL;
