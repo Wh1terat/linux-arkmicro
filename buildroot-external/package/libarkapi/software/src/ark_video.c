@@ -34,6 +34,10 @@
 struct display_data *pdd = NULL;
 
 //#define DECODE_SCALE_PARALLEL
+#define VIDEO_USE_LOCK
+#if LIBARKAPI_PLATFORM == LIBARKAPI_ARK1668E && defined(VIDEO_USE_LOCK)
+static int vin_fd;
+#endif
 
 static int mirror_w = 0, mirror_h = 0;
 static int vin_fd;
@@ -380,7 +384,7 @@ video_handle *arkapi_video_init(int stream_type)
 	int ret;
 
 	ark_dbg("%s: stream_type=%d.\n", __func__, stream_type);
-	printf("arkapi video init -20221015\n");
+	printf("++++++arkapi video init -20230308\n");
 
 	if(stream_type < RAW_STRM_TYPE_H264 || (stream_type > RAW_STRM_TYPE_MP4_CUSTOM && \
 	                                       stream_type != RAW_STRM_TYPE_H264_NOREORDER)){
@@ -429,12 +433,14 @@ video_handle *arkapi_video_init(int stream_type)
 		goto err2;
 	}
 
+#if LIBARKAPI_PLATFORM == LIBARKAPI_ARK1668E && defined(VIDEO_USE_LOCK)
 	vin_fd = open("/dev/video0",O_RDWR);
 	if( vin_fd < 0 )
 	{
 		printf("++++++open error.\n");
 		goto err2;
 	}
+#endif
 
 	if (sem_init(&handle->sem_lock, 1, 1) < 0) {
 		printf("%s sem_init fail\n", __func__);
@@ -660,7 +666,9 @@ void arkapi_video_release(video_handle *handle)
 	sem_destroy(&handle->sem_lock);
 	free(handle);
 
+#if LIBARKAPI_PLATFORM == LIBARKAPI_ARK1668E && defined(VIDEO_USE_LOCK)
 	close(vin_fd);
+#endif
 
 	ark_dbg("%s: <---sucess.\n", __func__);
 
@@ -700,15 +708,19 @@ int arkapi_video_play(video_handle *handle, const void *src_addr, int len, int f
 	handle->in_buffer.size = len;
 	handle->out_buffer.num = 0;
 
+#if LIBARKAPI_PLATFORM == LIBARKAPI_ARK1668E && defined(VIDEO_USE_LOCK)
 	ret = ioctl(vin_fd, VIN_IOCTL_DOWN_IDLE, 0);
 	if(ret < 0)
 		printf("VIN_IOCTL_DOWN_IDLE error\n");
+#endif
 
 	ret = mfc_decode(handle->handle_mfc, &handle->in_buffer, &handle->out_buffer);
 
+#if LIBARKAPI_PLATFORM == LIBARKAPI_ARK1668E && defined(VIDEO_USE_LOCK)
 	ret = ioctl(vin_fd, VIN_IOCTL_UP_IDLE, 0);
 	if(ret < 0)
 		printf("VIN_IOCTL_UP_IDLE error\n");
+#endif
 
 	if (ret) {
 		printf("mfc_decode fail, ret=%d.\n", ret);
